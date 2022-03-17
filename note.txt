@@ -1,3 +1,7 @@
 ngay 11/3/2022
 thẻ div danh sách món : https://getbootstrap.com/docs/4.0/components/alerts/
 xử lý hiển thị ảnh khi ipload: https://www.youtube.com/watch?v=K_aJrOu2aak
+
+
+pass github: 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
+https://www.youtube.com/watch?v=u1Uwj9VqqxY
