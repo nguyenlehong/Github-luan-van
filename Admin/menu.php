@@ -1,27 +1,30 @@
 <div class="menu ">
 
     <div class="menu2 ">
-        <li class="item2 " id="giaovien">
-            <a href="#giaovien" class="btn2 ">
-                <ion-icon name="person-outline"></ion-icon> Quản lý giáo viên
+        <li class="item2 " id="canbo">
+            <a href="#canbo" class="btn2 ">
+                <ion-icon name="person-outline"></ion-icon> Quản lý cán bộ
             </a>
             <div class="smenu ">
-                <a href="index.php?a=them-giao-vien"> Thêm GV</a>
-                <a href="index.php?a=danh-sach-giao-vien ">Danh sách GV</a>
+                <a href="index.php?a=them-can-bo"> Thêm cán bộ</a>
+                <a href="index.php?a=danh-sach-can-bo ">Danh sách CB</a>
+                <a href="index.php?a=phan-cong ">Phân công</a>
+                <a href="index.php?a=nhiem-vu ">Nhiệm vụ</a>
+
+
             </div>
         </li>
 
-        <li class="item2 " id="hocsinh">
-            <a href="#hocsinh" class="btn2 ">
+        <li class="item2 " id="tre">
+            <a href="#tre" class="btn2 ">
                 <ion-icon name="person-outline"></ion-icon>
                 </ion-icon>
-                Quản lý học sinh
+                Quản lý trẻ
             </a>
             <div class="smenu">
-                <a href=" "> Thêm</a>
-                <a href=" ">Danh sách món ăn</a>
-                <a href=" ">Danh sách món ăn</a>
-                <a href=" ">Danh sách món ăn</a>
+                <a href="index.php?a=them-tre">Thêm trẻ</a>
+                <a href="index.php?a=danh-sach-tre ">Danh sách trẻ</a>
+                <a href=" ">Chỉ số</a>
 
             </div>
         </li>
@@ -32,8 +35,11 @@
                 Quản lý lớp
             </a>
             <div class="smenu ">
-                <a href=" "> Thêm lớp</a>
-                <a href=" ">Danh sách lớp</a>
+                <a href="index.php?a=them-nam-hoc "> Thêm năm học</a>
+                <a href="index.php?a=them-khoi "> Thêm khối</a>
+                <a href="index.php?a=danh-sach-khoi ">Danh sách khối</a>
+                <a href="index.php?a=them-lop  "> Thêm lớp</a>
+                <a href="index.php?a=danh-sach-lop ">Danh sách lớp</a>
             </div>
         </li>
 

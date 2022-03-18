@@ -29,7 +29,7 @@
             </div>
 
 
-            <img class="padleft155 pad20px" src="" alt="" height="200px" width="auto" id="image">
+            <img class="padleft170 pad20px" src="" alt="" height="200px" width="auto" id="image">
 
 
 

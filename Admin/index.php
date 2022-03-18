@@ -21,13 +21,44 @@ if(isset($_GET['a'])){
             include "Mon-an/Mon-an-them.php";
             break;   
                 
-        case 'them-giao-vien':
-            include "Giao-vien/Them-giao-vien.php";
+        case 'them-can-bo':
+            include "Can-bo/Them-can-bo.php";
             break;
-        case 'danh-sach-giao-vien':
-            include "Giao-vien/Danh-sach-giao-vien.php";
+        case 'danh-sach-can-bo':
+            include "Can-bo/Danh-sach-can-bo.php";
             break;
             
+
+        case 'phan-cong':
+            include "Can-bo/Phan-cong.php";
+            break;
+        case 'nhiem-vu':
+            include "Can-bo/Nhiem-vu.php";
+            break;
+
+            
+        case 'them-tre':
+            include "Tre/Tre-them.php";
+            break;
+        case 'danh-sach-tre':
+            include "Tre/Tre-danh-sach.php";
+            break;
+
+         case 'them-lop':
+            include "Lop/Lop-them.php";
+            break;
+        case 'danh-sach-lop':
+            include "Lop/Lop-danh-sach.php";
+            break;
+        case 'them-khoi':
+            include "Lop/Khoi-them.php";
+            break;
+        case 'danh-sach-khoi':
+            include "Lop/Khoi-danh-sach.php";
+            break;
+        case 'them-nam-hoc':
+            include "Lop/Nam-hoc-them.php";
+            break;
         default:
             # code...
             break;

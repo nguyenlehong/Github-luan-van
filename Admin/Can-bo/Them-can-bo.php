@@ -1,6 +1,6 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font">Thêm giáo viên</h3>
+        <h3 class="font">Thêm cán bộ</h3>
     </div>
     <div class=noi-dung-80>
         <form>

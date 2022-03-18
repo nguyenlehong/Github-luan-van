@@ -203,12 +203,12 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
         
         .content {
             border: 1px solid black;
-            width: 1285px;
+            width: 1270px;
             height: auto;
             margin-left: 240px;
             margin-top: 11px;
             border-radius: 5px;
-            /* background-color: #F7F7F9; */
+            /* background-color: #F7F7F9;  width 1285px*/
         }
         /*  giao diện  header menu user*/
         
@@ -309,6 +309,16 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
             margin-top: 10px;
         }
         
+        .noi-dung-80b {
+            width: 80%;
+            height: auto;
+            border: 0px solid #333;
+            margin: 0 auto;
+            margin-top: 10px;
+            /* position: relative; */
+            /* background-color: #80cbc4; */
+        }
+        
         .noi-dung-100 {
             width: 100%;
             height: auto;
@@ -339,6 +349,10 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
             padding-left: 155px;
         }
         
+        .padleft170 {
+            padding-left: 175px;
+        }
+        
         .width100 {
             width: 100px;
         }
@@ -357,4 +371,20 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
         
         .width-table-550 {
             width: 550px;
+        }
+        
+        .height1000 {
+            height: 400px;
+        }
+        
+        .formphuynh1 {
+            width: 500px;
+            height: auto;
+            float: right;
+            padding-right: 40px;
+        }
+        
+        .formphuynh2 {
+            width: 500px;
+            height: auto;
         }
