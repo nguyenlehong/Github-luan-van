@@ -1,94 +1,94 @@
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppons', sans-serif;
-        }
-        /* giao diện đăng nhập 
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppons', sans-serif;
+    }
+    /* giao diện đăng nhập 
 https://www.youtube.com/watch?v=PTGnpXbMU1U
 */
-        
-        .dangnhap {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            /* background: linear-gradient(45deg, #fead06, #c00def); */
-            background: linear-gradient(45deg, #80cbc4, #e1bee7);
-        }
-        
-        .container {
-            position: relative;
-            padding: 70px 40px;
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .container h2 {
-            font-size: 35px;
-            color: #111;
-            margin-bottom: 45px;
-            line-height: 1em;
-            font-weight: 500;
-            padding-left: 10px;
-            border-left: 5px solid #e91e63;
-        }
-        
-        .container .inputBox {
-            position: relative;
-            width: 300px;
-            height: 46px;
-            margin-bottom: 30px;
-        }
-        
-        .container .inputBox:last-child {
-            margin-bottom: 0;
-        }
-        
-        .container .inputBox input {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            border: 1px solid #111;
-            background: transparent;
-            padding: 10px;
-            border-radius: 4px;
-            box-sizing: border-box;
-            outline: none;
-            font-size: 16px;
-            color: #111;
-            font-weight: 300;
-        }
-        
-        .container .inputBox span {
-            position: absolute;
-            top: 1px;
-            left: 1px;
-            padding: 10px;
-            display: inline-block;
-            font-size: 16px;
-            color: #111;
-            font-weight: 300;
-            transition: 0.5s;
-            pointer-events: none;
-        }
-        
-        .container .inputBox input:focus~span,
-        .container .inputBox input:valid~span {
-            transform: translateX(-10px) translateY(-32px);
-            font-size: 16px;
-        }
-        
-        .container .inputBox input[type="submit"] {
-            background: #2196f3;
-            color: #fff;
-            border: none;
-            max-width: 120px;
-            cursor: pointer;
-            font-weight: 500;
-        }
-        /* @media only screen and (max-width: 480px) {
+    
+    .dangnhap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        /* background: linear-gradient(45deg, #fead06, #c00def); */
+        background: linear-gradient(45deg, #80cbc4, #e1bee7);
+    }
+    
+    .container {
+        position: relative;
+        padding: 70px 40px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .container h2 {
+        font-size: 35px;
+        color: #111;
+        margin-bottom: 45px;
+        line-height: 1em;
+        font-weight: 500;
+        padding-left: 10px;
+        border-left: 5px solid #e91e63;
+    }
+    
+    .container .inputBox {
+        position: relative;
+        width: 300px;
+        height: 46px;
+        margin-bottom: 30px;
+    }
+    
+    .container .inputBox:last-child {
+        margin-bottom: 0;
+    }
+    
+    .container .inputBox input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border: 1px solid #111;
+        background: transparent;
+        padding: 10px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        outline: none;
+        font-size: 16px;
+        color: #111;
+        font-weight: 300;
+    }
+    
+    .container .inputBox span {
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        padding: 10px;
+        display: inline-block;
+        font-size: 16px;
+        color: #111;
+        font-weight: 300;
+        transition: 0.5s;
+        pointer-events: none;
+    }
+    
+    .container .inputBox input:focus~span,
+    .container .inputBox input:valid~span {
+        transform: translateX(-10px) translateY(-32px);
+        font-size: 16px;
+    }
+    
+    .container .inputBox input[type="submit"] {
+        background: #2196f3;
+        color: #fff;
+        border: none;
+        max-width: 120px;
+        cursor: pointer;
+        font-weight: 500;
+    }
+    /* @media only screen and (max-width: 480px) {
     .container h2 {
         color: red;
     }
@@ -97,294 +97,312 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
         width: 400px;
     }
 } */
-        /* giao diện đăng nhập  */
-        /* giao diện menu */
-        
-        .menu {
-            position: absolute;
-            top: 0;
-            left: 0;
-            list-style: none;
-            padding-top: 65px;
-        }
-        
-        .menu2 {
-            width: 230px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .item2 {
-            border: 0.5px solid #2980b9;
-            overflow: hidden;
-        }
-        
-        .item2 ion-icon {
-            font-size: 23px;
-            color: #fff;
-        }
-        
-        .item2 a {
-            font-size: 20px;
-            text-decoration: none;
-            color: white;
-        }
-        
-        .item2 a:hover {
-            color: white;
-        }
-        
-        .btn2 {
-            display: block;
-            padding: 16px 20px;
-            background: #3498db;
-            color: white;
-            position: relative;
-        }
-        
-        .btn2::before {
-            content: "";
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            background: #3498db;
-            left: 20px;
-            bottom: -7px;
-            transform: rotate(45deg);
-        }
-        
-        .btn2 i {
-            margin-right: 10px;
-        }
-        
-        .smenu {
-            background: #333;
-            overflow: hidden;
-            transition: max-height 0.3s;
-            max-height: 0;
-        }
-        
-        .smenu a:hover {
-            color: white;
-            text-shadow: 1px 1px 5px wheat;
-        }
-        
-        .smenu a {
-            display: block;
-            padding: 16px 26px;
-            color: white;
-            font-size: 17px;
-            margin: 4px 0;
-            position: relative;
-        }
-        
-        .smenu a::before {
-            color: white;
-            content: "";
-            position: absolute;
-            width: 6px;
-            height: 100%;
-            background: #3498db;
-            left: 0;
-            top: 0;
-            transition: 0.3s;
-            opacity: 0;
-        }
-        
-        .smenu a:hover::before {
-            opacity: 1;
-        }
-        
-        .item2:target .smenu {
-            max-height: 20em;
-        }
-        /* giao diện menu */
-        /* nội dung */
-        
-        .content {
-            border: 1px solid black;
-            width: 1270px;
-            height: auto;
-            margin-left: 240px;
-            margin-top: 11px;
-            border-radius: 5px;
-            /* background-color: #F7F7F9;  width 1285px*/
-        }
-        /*  giao diện  header menu user*/
-        
-        .haeder {
-            border: 1px solid #2980b9;
-            height: 55px;
-            background-color: #2980b9;
-            position: relative;
-        }
-        
-        .haeder h3 {
-            color: #fff;
-            padding: 10px;
-            float: left;
-            margin-right: 1050px;
-        }
-        
-        .haeder img {
-            margin-top: 6px;
-            border-radius: 50%;
-            float: left;
-            margin-right: 10px;
-            position: relative;
-        }
-        
-        .br-top-radius {
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-        
-        .br-bot-radius {
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
-        
-        .haeder ul li {
-            color: #fff;
-            list-style-type: none;
-            position: relative;
-        }
-        
-        .haeder ul li p {
-            margin-top: 15px;
-        }
-        
-        .sub-menu li {
-            background-color: #FAFAFA;
-            height: 25px;
-            line-height: 25px;
-            width: 180px;
-            font-size: 15px;
-            padding-left: 5px;
-            border-bottom: 1px solid #fff;
-        }
-        
-        .sub-menu li a {
-            text-decoration: none;
-            color: #111;
-        }
-        
-        .sub-menu li:hover {
-            background-color: #e6e6e6;
-        }
-        
-        .haeder .sub-menu {
-            position: absolute;
-            right: 30px;
-            top: 20px;
-            display: none;
-        }
-        
-        .haeder:hover .sub-menu {
-            display: block;
-        }
-        /*  giao diện  header menu user*/
-        
-        .tieu-de {
-            background-color: #fff;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            border-bottom: 2px solid #333;
-            /* box-shadow: 0px 5px 20px 0px#333; */
-        }
-        
-        .noi-dung-70 {
-            width: 70%;
-            height: auto;
-            border: 0px solid #333;
-            margin: 0 auto;
-            margin-top: 5px;
-        }
-        
-        .noi-dung-80 {
-            width: 80%;
-            height: auto;
-            border: 0px solid #333;
-            margin: 0 auto;
-            margin-top: 10px;
-        }
-        
-        .noi-dung-80b {
-            width: 80%;
-            height: auto;
-            border: 0px solid #333;
-            margin: 0 auto;
-            margin-top: 10px;
-            /* position: relative; */
-            /* background-color: #80cbc4; */
-        }
-        
-        .noi-dung-100 {
-            width: 100%;
-            height: auto;
-            border: 0px solid #333;
-            margin-top: 5px;
-        }
-        
-        .gachchan {
-            text-decoration: none;
-            padding-right: 10px;
-            float: right;
-        }
-        
-        .gachchan2 {
-            text-decoration: none;
-            padding-right: 10px;
-        }
-        
-        .font {
-            font-family: 'Poppons', sans-serif;
-        }
-        
-        .pad20px {
-            padding-bottom: 20px;
-        }
-        
-        .padleft155 {
-            padding-left: 155px;
-        }
-        
-        .padleft170 {
-            padding-left: 175px;
-        }
-        
-        .width100 {
-            width: 100px;
-        }
-        
-        .width-table-50 {
-            width: 50px;
-        }
-        
-        .width-table-300 {
-            width: 300px;
-        }
-        
-        .width-table-250 {
-            width: 250px;
-        }
-        
-        .width-table-550 {
-            width: 550px;
-        }
-        
-        .height1000 {
-            height: 400px;
-        }
-        
-        .formphuynh1 {
-            width: 500px;
-            height: auto;
-            float: right;
-            padding-right: 40px;
-        }
-        
-        .formphuynh2 {
-            width: 500px;
-            height: auto;
-        }
+    /* giao diện đăng nhập  */
+    /* giao diện menu */
+    
+    .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        list-style: none;
+        padding-top: 65px;
+    }
+    
+    .menu2 {
+        width: 230px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .item2 {
+        border: 0.5px solid #2980b9;
+        overflow: hidden;
+    }
+    
+    .item2 ion-icon {
+        font-size: 23px;
+        color: #fff;
+    }
+    
+    .item2 a {
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+    }
+    
+    .item2 a:hover {
+        color: white;
+    }
+    
+    .btn2 {
+        display: block;
+        padding: 16px 20px;
+        background: #3498db;
+        color: white;
+        position: relative;
+    }
+    
+    .btn2::before {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: #3498db;
+        left: 20px;
+        bottom: -7px;
+        transform: rotate(45deg);
+    }
+    
+    .btn2 i {
+        margin-right: 10px;
+    }
+    
+    .smenu {
+        background: #333;
+        overflow: hidden;
+        transition: max-height 0.3s;
+        max-height: 0;
+    }
+    
+    .smenu a:hover {
+        color: white;
+        text-shadow: 1px 1px 5px wheat;
+    }
+    
+    .smenu a {
+        display: block;
+        padding: 16px 26px;
+        color: white;
+        font-size: 17px;
+        margin: 4px 0;
+        position: relative;
+    }
+    
+    .smenu a::before {
+        color: white;
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 100%;
+        background: #3498db;
+        left: 0;
+        top: 0;
+        transition: 0.3s;
+        opacity: 0;
+    }
+    
+    .smenu a:hover::before {
+        opacity: 1;
+    }
+    
+    .item2:target .smenu {
+        max-height: 20em;
+    }
+    /* giao diện menu */
+    /* nội dung */
+    
+    .content {
+        border: 1px solid black;
+        width: 1270px;
+        height: auto;
+        margin-left: 240px;
+        margin-top: 11px;
+        border-radius: 5px;
+        /* background-color: #F7F7F9;  width 1285px*/
+    }
+    /*  giao diện  header menu user*/
+    
+    .haeder {
+        border: 1px solid #2980b9;
+        height: 55px;
+        background-color: #2980b9;
+        position: relative;
+    }
+    
+    .haeder h3 {
+        color: #fff;
+        padding: 10px;
+        float: left;
+        margin-right: 1050px;
+    }
+    
+    .haeder img {
+        margin-top: 6px;
+        border-radius: 50%;
+        float: left;
+        margin-right: 5px;
+        position: relative;
+    }
+    
+    .br-top-radius {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    
+    .br-bot-radius {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    
+    .header-user {
+        color: #fff;
+        width: 180px;
+        height: auto;
+        float: right;
+        margin-left: 0px;
+        margin-top: 10px;
+        position: relative;
+    }
+    
+    .header-user ul {
+        background-color: #F0F8FF;
+        width: 170px;
+        padding: 0;
+        list-style-type: none;
+        position: absolute;
+        display: none;
+    }
+    
+    .header-user ul li {
+        width: 170px;
+        height: 30px;
+        line-height: 30px;
+        border-bottom: 1px solid #2980b9;
+        padding: 0 1em;
+    }
+    
+    .header-user ul li a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        font-family: 'Poppons', sans-serif;
+    }
+    
+    .header-user ul li:hover {
+        background-color: #DCDCDC;
+    }
+    /*  giao diện  header menu user*/
+    
+    .header-user:hover ul {
+        display: block;
+    }
+    
+    .tieu-de {
+        background-color: #fff;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom: 2px solid #333;
+        /* box-shadow: 0px 5px 20px 0px#333; */
+    }
+    
+    .noi-dung-70 {
+        width: 70%;
+        height: auto;
+        border: 0px solid #333;
+        margin: 0 auto;
+        margin-top: 5px;
+    }
+    
+    .noi-dung-80 {
+        width: 80%;
+        height: auto;
+        border: 0px solid #333;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    
+    .noi-dung-80b {
+        width: 80%;
+        height: auto;
+        border: 0px solid #333;
+        margin: 0 auto;
+        margin-top: 10px;
+        /* position: relative; */
+        /* background-color: #80cbc4; */
+    }
+    
+    .noi-dung-100 {
+        width: 100%;
+        height: auto;
+        border: 0px solid #333;
+        margin-top: 5px;
+    }
+    
+    .gachchan {
+        text-decoration: none;
+        padding-right: 10px;
+        float: right;
+    }
+    
+    .gachchan2 {
+        text-decoration: none;
+        padding-right: 0px;
+    }
+    
+    .gachchands {
+        text-decoration: none;
+        padding-right: 5px;
+        float: right;
+        margin-top: -7px;
+    }
+    
+    .font {
+        font-family: 'Poppons', sans-serif;
+    }
+    
+    .pad20px {
+        padding-bottom: 20px;
+    }
+    
+    .padleft155 {
+        padding-left: 155px;
+    }
+    
+    .padleft170 {
+        padding-left: 175px;
+    }
+    
+    .width100 {
+        width: 100px;
+    }
+    
+    .width-table-50 {
+        width: 50px;
+    }
+    
+    .width-table-400 {
+        width: 400px;
+    }
+    
+    .width-table-250 {
+        width: 250px;
+    }
+    
+    .width-table-350 {
+        width: 350px;
+    }
+    
+    .width-table-600 {
+        width: 600px;
+    }
+    
+    .height1000 {
+        height: 400px;
+    }
+    
+    .formphuynh1 {
+        width: 500px;
+        height: auto;
+        float: right;
+        padding-right: 40px;
+    }
+    
+    .formphuynh2 {
+        width: 500px;
+        height: auto;
+    }
+    
+    .loadhinh {
+        width: auto;
+        height: 100px;
+    }

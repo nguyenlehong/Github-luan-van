@@ -8,3 +8,16 @@ function hienthi(fileInput) {
 
     }
 }
+
+function thongbaothemloaimon() {
+    var tenloai = document.getElementsByClassName('tenloaimon');
+    alert("Thêm thành công" + tenloai);
+}
+
+function deleteLM() {
+    alert("Đã xóa thành công!");
+}
+
+function insertLM() {
+    alert("Đã thêm thành công!");
+}
