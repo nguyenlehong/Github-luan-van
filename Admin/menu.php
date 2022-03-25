@@ -11,7 +11,6 @@
                 <a href="index.php?a=phan-cong ">Phân công</a>
                 <a href="index.php?a=nhiem-vu ">Nhiệm vụ</a>
 
-
             </div>
         </li>
 
@@ -36,8 +35,9 @@
             </a>
             <div class="smenu ">
                 <a href="index.php?a=them-nam-hoc "> Thêm năm học</a>
+                <a href="index.php?a=danh-sach-nam-hoc ">Danh sách năm học</a>
                 <a href="index.php?a=them-khoi "> Thêm khối</a>
-                <a href="index.php?a=danh-sach-khoi ">Danh sách khối</a>
+                <a href="index.php?a=danh-sach-khoi">Danh sách khối</a>
                 <a href="index.php?a=them-lop  "> Thêm lớp</a>
                 <a href="index.php?a=danh-sach-lop ">Danh sách lớp</a>
             </div>

@@ -1,6 +1,16 @@
 <div class="content">
     <div class="tieu-de">
         <h3 class="font">Thêm loại món</h3>
+        <div class="timkiem">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
+
+        </div>
+        <div class="btntimkiem">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
     </div>
     <div class=noi-dung-70>
         <form action="index.php?a=insert-loai-mon" method="POST">

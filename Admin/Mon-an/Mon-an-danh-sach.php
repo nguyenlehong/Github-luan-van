@@ -25,7 +25,7 @@
                     echo '                   
                     <tr>
                     <th class="width-table-50" scope="row">'.$i.'</th>
-                    <td class="width-table-250">'.$M_TEN.' '.$M_HINH.'</td>
+                    <td class="width-table-250">'.$M_TEN.'</td>
                     <td class="width-table-250">'.$hinh.' </td>
                     <td class="width-table-600">'.$M_MOTA.'</td>
                     <td>

@@ -3,7 +3,7 @@
         <h3 class="font">Thêm lớp</h3>
     </div>
     <div class=noi-dung-70>
-        <form>
+        <form action="index.php?a=insert-lop" method="POST">
             <fieldset disabled>
                 <div class="form-group row ">
                     <label for="inputText3" class="col-sm-2 col-form-label">Mã lớp</label>
@@ -15,28 +15,37 @@
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Tên lớp</label>
                 <div class="col-sm-10 pad20px">
-                    <input type="text" class="form-control " id="inputText3" placeholder="VD: Mầm 1">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Khối</label>
-                <div class="col-sm-10 pad20px">
-                    <select class="custom-select form-control">
-
-                        <option value="1">Mầm</option>
-                        <option value="2">Chồi</option>
-                        <option value="3">Lá</option>
-                    </select>
+                    <input type="text" class="form-control " id="inputText3" placeholder="VD: Mầm 1" name="tenlop">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Năm học</label>
                 <div class="col-sm-10 pad20px">
-                    <select class="custom-select form-control">
+                    <select class="custom-select form-control" name="NAMHOC">
+                        <?php
+                            foreach ($list_nam_hoc as $namhoc) {
+                            extract($namhoc);
+                            echo '
+                            <option value="'.$NAMHOC.'">'.$NAMHOC.'</option>                            
+                            ';
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Khối</label>
+                <div class="col-sm-10 pad20px">
+                    <select class="custom-select form-control" name="KHOI">
 
-                        <option value="1">2020-2021</option>
-                        <option value="2">2021-2022</option>
-                        <option value="3">2022-2023</option>
+                        <?php
+                            foreach ($list_khoi as $khoi) {
+                            extract($khoi);
+                            echo '
+                            <option value="'.$KHOI.'">'.$KHOI.'</option>                            
+                            ';
+                        }
+                        ?>
                     </select>
                 </div>
             </div>

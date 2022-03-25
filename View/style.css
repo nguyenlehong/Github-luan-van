@@ -223,14 +223,14 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
         color: #fff;
         padding: 10px;
         float: left;
-        margin-right: 1050px;
+        margin-right: 1080px;
     }
     
     .haeder img {
         margin-top: 6px;
         border-radius: 50%;
         float: left;
-        margin-right: 5px;
+        margin-right: 0px;
         position: relative;
     }
     
@@ -288,7 +288,7 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
     }
     
     .tieu-de {
-        background-color: #fff;
+        /* background-color: #fff; */
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         border-bottom: 2px solid #333;
@@ -405,4 +405,20 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
     .loadhinh {
         width: auto;
         height: 100px;
+    }
+    
+    .timkiem {
+        width: 300px;
+        height: 40px;
+        float: right;
+        margin-top: -40px;
+        margin-right: 95px;
+    }
+    
+    .btntimkiem {
+        width: 80px;
+        height: 40px;
+        float: right;
+        margin-top: -40px;
+        margin-right: 10px;
     }

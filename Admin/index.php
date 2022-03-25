@@ -1,6 +1,8 @@
 <?php
 include "../Model/pdo.php";
 include "../Model/Mon-an.php";
+include "../Model/Lop.php";
+
 
 include "header.php";
 // include "View/login.php";
@@ -11,6 +13,7 @@ include "menu.php";
 if(isset($_GET['a'])){
     $a=$_GET['a'];
     switch ($a) {
+
         case 'danh-sach-loai-mon':
             $list_loai_mon=load_all_loai_mon();
             include "Mon-an/Loai-mon-danh-sach.php";
@@ -56,9 +59,6 @@ if(isset($_GET['a'])){
             include "Mon-an/Mon-an-them.php";
             break;
 
-
-
-
             
         case 'them-can-bo':
             include "Can-bo/Them-can-bo.php";
@@ -84,6 +84,8 @@ if(isset($_GET['a'])){
             break;
 
          case 'them-lop':
+            $list_nam_hoc=load_all_nam_hoc();
+            $list_khoi=load_all_khoi();
             include "Lop/Lop-them.php";
             break;
         case 'danh-sach-lop':
@@ -92,16 +94,37 @@ if(isset($_GET['a'])){
         case 'them-khoi':
             include "Lop/Khoi-them.php";
             break;
+        case 'insert-khoi':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $ten_khoi=$_POST['khoi'];
+                insert_khoi($ten_khoi);        
+            }
+            include "Lop/Khoi-them.php";
+            break;
         case 'danh-sach-khoi':
+            $list_khoi=load_all_khoi();
             include "Lop/Khoi-danh-sach.php";
             break;
         case 'them-nam-hoc':
             include "Lop/Nam-hoc-them.php";
             break;
+        case 'insert-nam-hoc':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $namhoc=$_POST['namhoc'];
+                insert_nam_hoc($namhoc);        
+                }
+                include "Lop/Nam-hoc-them.php";
+            break;
+        case 'danh-sach-nam-hoc':
+            $list_nam_hoc=load_all_nam_hoc();
+            include "Lop/Nam-hoc-danh-sach.php";
+            break;
         default:
-            # code...
+           include "home.php";
             break;
     }
+}else{
+    include "home.php";
 }
 include "footer.php";
 ?>
