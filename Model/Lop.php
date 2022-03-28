@@ -18,4 +18,9 @@ function load_all_nam_hoc(){
 	$list=pdo_query($sql);
 	return $list; 
 }
+
+function insert_lop($tenlop,$KHOI,$NAMHOC){
+	$sql="insert into lop(L_TEN,KHOI,NAMHOC) values('$tenlop','$KHOI','$NAMHOC')";
+	pdo_execute($sql);
+}
 ?>

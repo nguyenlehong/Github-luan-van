@@ -7,47 +7,46 @@
             <thead>
                 <tr>
                     <th scope="col">STT</th>
-                    <th class="width-table-300" scope="col">Họ & tên</th>
-                    <th scope="col">Ngày sinh</th>
-                    <th scope="col">SĐT</th>
+                    <th class="width-table-250" scope="col">Họ & tên</th>
+                    <th class="width-table-200" scope="col">Ngày sinh</th>
+                    <th class="width-table-200" scope="col">Giới tính</th>
+                    <th class="width-table-200" scope="col">SĐT</th>
                     <th scope="col">Email</th>
                     <th scope="col">Thao thác</th>
-
-
 
                 </tr>
             </thead>
             <tbody>
+                <?php
+                $i = 1;
+                foreach ($list_can_bo as $canbo) {
+                    extract($canbo);
+                echo '
                 <tr>
-                    <th scope="row">1</th>
-                    <td class="width-table-300">Lê Hồng Nguyên</td>
-                    <td> 04/01/2000</td>
-                    <td>0987123123</td>
-                    <td>Nguyen@gmail.com</td>
-                    <td>
-                        <a href="" class="gachchan2">
+                <th scope="row">'.$i.'</th>
+                <td class="width-table-250">'.$CB_HOTEN.'</td>
+                <td class="width-table-200"> '.$CB_NGAYSINH.'</td>
+                <td class="width-table-200"> '.$CB_PHAI.'</td>
+
+                <td class="width-table-200">0'.$CB_SDT.'</td>
+                <td>'.$CB_EMAIL.'</td>
+                <td>
+                    <a href="" class="gachchan2">
+                        <button type=" reset" class="btn btn-success">
                             <ion-icon name="pencil-outline"></ion-icon>
-                        </a>
-                        <a href="" class="gachchan2">
+                        </button>
+                    </a>
+                    <a href="" class="gachchan2">
+                        <button type=" reset" class="btn btn-danger">
                             <ion-icon name="trash-outline"></ion-icon>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="width-table-300">Lê Hồng Huỳnh ngọc mỹ thúy vy dfasdfa</td>
-                    <td> 04/01/2000</td>
-                    <td>0987123123</td>
-                    <td>Nguyen@gmail.com</td>
-                    <td>
-                        <a href="" class="gachchan2">
-                            <ion-icon name="pencil-outline"></ion-icon>
-                        </a>
-                        <a href="" class="gachchan2">
-                            <ion-icon name="trash-outline"></ion-icon>
-                        </a>
-                    </td>
-                </tr>
+                        </button>
+                    </a>
+                </td>
+            </tr> ';  
+            $i++;               
+                }  
+                           
+                ?>
             </tbody>
         </table>
 

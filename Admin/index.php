@@ -2,12 +2,14 @@
 include "../Model/pdo.php";
 include "../Model/Mon-an.php";
 include "../Model/Lop.php";
+include "../Model/Can-bo.php";
+
 
 
 include "header.php";
 // include "View/login.php";
 include "nav.php";
-include "menu.php";
+// include "menu.php";
 
 
 if(isset($_GET['a'])){
@@ -57,13 +59,24 @@ if(isset($_GET['a'])){
             }
             $list_loai_mon=load_all_loai_mon();
             include "Mon-an/Mon-an-them.php";
-            break;
-
-            
+            break;     
         case 'them-can-bo':
             include "Can-bo/Them-can-bo.php";
             break;
+        case 'insert-can-bo':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $hoten=$_POST['hoten'];
+                $ngaysinh=$_POST['ngaysinh'];
+                $phai=$_POST['phai'];
+                $sdt=$_POST['sdt'];
+                $email=$_POST['email'];
+                $diachi=$_POST['diachi'];
+                insert_can_bo($hoten,$ngaysinh,$phai,$sdt,$email,$diachi);
+            }   
+            include  "Can-bo/Them-can-bo.php";
+            break;   
         case 'danh-sach-can-bo':
+            $list_can_bo=load_all_can_bo();
             include "Can-bo/Danh-sach-can-bo.php";
             break;
             
@@ -75,6 +88,16 @@ if(isset($_GET['a'])){
             include "Can-bo/Nhiem-vu.php";
             break;
 
+        case 'insert-nhiem-vu':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $tennv=$_POST['tennv'];
+                $motanv=$_POST['motanv'];
+                insert_nhiem_vu($tennv,$motanv);
+            }
+            include "Can-bo/Nhiem-vu.php";
+            break;
+
+            
             
         case 'them-tre':
             include "Tre/Tre-them.php";
@@ -84,6 +107,17 @@ if(isset($_GET['a'])){
             break;
 
          case 'them-lop':
+            $list_nam_hoc=load_all_nam_hoc();
+            $list_khoi=load_all_khoi();
+            include "Lop/Lop-them.php";
+            break;
+        case 'insert-lop':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $tenlop=$_POST['tenlop'];
+                $NAMHOC=$_POST['NAMHOC'];
+                $KHOI=$_POST['KHOI'];                
+                insert_lop($tenlop,$KHOI,$NAMHOC);
+            }
             $list_nam_hoc=load_all_nam_hoc();
             $list_khoi=load_all_khoi();
             include "Lop/Lop-them.php";

@@ -3,10 +3,10 @@
         <h3 class="font">Nhiệm vụ</h3>
     </div>
     <div class=noi-dung-70>
-        <form>
+        <form action="index.php?a=insert-nhiem-vu" method="POST">
             <fieldset disabled>
                 <div class="form-group row ">
-                    <label for="inputText3" class="col-sm-2 col-form-label">Mã</label>
+                    <label for="inputText3" class="col-sm-2 col-form-label">ID nhiệm vụ</label>
                     <div class="col-sm-10 pad20px">
                         <input type="text" class="form-control" id="" placeholder="">
                     </div>
@@ -15,19 +15,19 @@
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Tên nhiệm vụ</label>
                 <div class="col-sm-10 pad20px">
-                    <input type="text" class="form-control " id="inputText3" placeholder="VD: bảo vệ">
+                    <input type="text" class="form-control " id="inputText3" placeholder="VD: bảo vệ" name="tennv">
                 </div>
             </div>
             <div class=" form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Mô tả</label>
                 <div class="col-sm-10 pad20px">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="motanv"></textarea>
                 </div>
             </div>
 
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-success width100">Lưu</button>
+                    <button type="submit" class="btn btn-success width100" value="luu">Lưu</button>
                     <button type="reset" class="btn btn-danger">Nhập lại</button>
 
                 </div>
