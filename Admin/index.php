@@ -9,7 +9,7 @@ include "../Model/Can-bo.php";
 include "header.php";
 // include "View/login.php";
 include "nav.php";
-// include "menu.php";
+include "menu.php";
 
 
 if(isset($_GET['a'])){
@@ -82,12 +82,19 @@ if(isset($_GET['a'])){
             
 
         case 'phan-cong':
+            $list_nam_hoc=load_all_nam_hoc();
+            $list_nhiem_vu=load_all_nhiem_vu();
+            $list_can_bo=load_all_can_bo();
+
             include "Can-bo/Phan-cong.php";
             break;
         case 'nhiem-vu':
             include "Can-bo/Nhiem-vu.php";
             break;
-
+        case 'danh-sach-nhiem-vu':
+            $list_nhiem_vu=load_all_nhiem_vu();
+            include "Can-bo/Danh-sach-nhiem-vu.php";
+            break;
         case 'insert-nhiem-vu':
             if(isset($_POST['luu'])&&($_POST['luu'])){
                 $tennv=$_POST['tennv'];

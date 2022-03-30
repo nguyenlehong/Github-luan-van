@@ -8,11 +8,16 @@
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Năm học</label>
                 <div class="col-sm-10 pad20px">
-                    <select class="custom-select form-control">
+                    <select class="custom-select form-control" name="NAMHOC">
+                        <?php
+                            foreach ($list_nam_hoc as $namhoc) {
+                            extract($namhoc);
+                            echo '
+                            <option value="'.$NAMHOC.'">'.$NAMHOC.'</option>                            
+                            ';
+                        }
+                        ?>
 
-                        <option value="1">2019-2020</option>
-                        <option value="2">2020-2021</option>
-                        <option value="3">2021-2022</option>
                     </select>
                 </div>
             </div>
@@ -29,24 +34,34 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Giáo viên</label>
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Cán bộ</label>
                 <div class="col-sm-10 pad20px">
-                    <select class="custom-select form-control">
+                    <select class="custom-select form-control" name="CD_ID">
+                        <?php
+                            foreach ($list_can_bo as $canbo) {
+                            extract($canbo);
+                            echo '
+                            <option value="'.$CB_ID.'">'.$CB_HOTEN.'</option>                            
+                            ';
+                        }
+                        ?>
 
-                        <option value="1">Nguyễn văn Anh</option>
-                        <option value="2">Lê Ngọc Thanh</option>
-                        <option value="3">Trần Thị Hoa</option>
                     </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nhiệm vụ</label>
                 <div class="col-sm-10 pad20px">
-                    <select class="custom-select form-control">
+                    <select class="custom-select form-control" name="NV_ID">
 
-                        <option value="1">giáo viên</option>
-                        <option value="2">bảo mẫu</option>
-                        <option value="3">giáo viên thể dục</option>
+                        <?php
+                            foreach ($list_nhiem_vu as $nhiemvu) {
+                            extract($nhiemvu);
+                            echo '
+                            <option value="'.$NV_ID.'">'.$NV_TEN.'</option>                            
+                            ';
+                        }
+                        ?>
                     </select>
                 </div>
             </div>
@@ -54,7 +69,9 @@
                 <div class="col-sm-10">
                     <button type="submit" class="btn btn-success width100">Lưu</button>
                     <button type="reset" class="btn btn-danger">Nhập lại</button>
-
+                    <a href="index.php?a=danh-sach-phan-cong"> <button type="button"
+                            class=" trang btn btn-info text-white">Danh
+                            sách</button></a>
                 </div>
             </div>
         </form>

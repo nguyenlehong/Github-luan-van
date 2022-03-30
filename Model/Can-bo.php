@@ -13,4 +13,11 @@ function  insert_nhiem_vu($tennv,$motanv){
     $sql="insert into nhiem_vu(NV_TEN,NV_MOTA)values('$tennv','$motanv')";
     pdo_execute($sql);
 }
+
+
+function load_all_nhiem_vu(){
+	$sql="select * from nhiem_vu order by NV_ID desc";
+	$list=pdo_query($sql);
+	return $list;
+}
 ?>
