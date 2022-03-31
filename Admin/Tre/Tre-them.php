@@ -6,7 +6,6 @@
         <form>
             <fieldset disabled>
                 <div class="form-group row ">
-
                     <label for="inputText3" class="col-sm-2 col-form-label">Mã số</label>
                     <div class="col-sm-10 pad20px">
                         <input type="text" class="form-control" id="" placeholder="">
@@ -26,7 +25,6 @@
                     <input type="date" class="form-control " id="inputText3" placeholder="" name="ngaysinh">
                 </div>
             </div>
-
             <div class="form-group row">
                 <label for="inputDate3" class="col-sm-2 col-form-label">Giới tính</label>
                 <div class="col-sm-10 pad20px">
@@ -45,7 +43,6 @@
                     </div>
                 </div>
             </div>
-
             <div class=" form-group row">
                 <label for="inputText3" class="col-sm-2 col-form-label">Địa Chỉ</label>
                 <div class="col-sm-10 pad20px">
@@ -61,7 +58,6 @@
                     </select>
                 </div>
             </div>
-
     </div>
 </div>
 <div class="content">
@@ -103,7 +99,6 @@
             <div class="col-sm-10">
                 <button type="submit" class="btn btn-success width100" value="luu" name="luu">Lưu</button>
                 <button type="reset" class="btn btn-danger">Nhập lại</button>
-
             </div>
         </div>
         </form>

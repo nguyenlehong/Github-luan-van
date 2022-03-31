@@ -3,7 +3,7 @@
         <h3 class="font">Phân công nhiệm vụ</h3>
     </div>
     <div class=noi-dung-70>
-        <form>
+        <form action="index.php?a=insert-phan-cong" method="POST">
 
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Năm học</label>
@@ -17,7 +17,6 @@
                             ';
                         }
                         ?>
-
                     </select>
                 </div>
             </div>
@@ -25,18 +24,24 @@
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Lớp</label>
                 <div class="col-sm-10 pad20px">
-                    <select class="custom-select form-control">
+                    <select class="custom-select form-control" name="L_ID">
 
-                        <option value="1">Lớp mầm 1</option>
-                        <option value="2">Lớp mầm 2</option>
-                        <option value="3">Lớp mầm 3</option>
+                        <?php
+                            foreach ($list_lop as $lop) {
+                            extract($lop);
+                            echo '
+                            <option value="'.$L_ID.'">'.$L_TEN.'</option>                            
+                            ';
+                        }
+                        ?>
+
                     </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Cán bộ</label>
                 <div class="col-sm-10 pad20px">
-                    <select class="custom-select form-control" name="CD_ID">
+                    <select class="custom-select form-control" name="CB_ID">
                         <?php
                             foreach ($list_can_bo as $canbo) {
                             extract($canbo);
@@ -67,8 +72,8 @@
             </div>
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-success width100">Lưu</button>
-                    <button type="reset" class="btn btn-danger">Nhập lại</button>
+                    <button type="submit" class="btn btn-success width100" name="luu" value="luu">Lưu</button>
+                    <button type=" reset" class="btn btn-danger">Nhập lại</button>
                     <a href="index.php?a=danh-sach-phan-cong"> <button type="button"
                             class=" trang btn btn-info text-white">Danh
                             sách</button></a>

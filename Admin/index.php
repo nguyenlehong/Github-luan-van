@@ -85,8 +85,27 @@ if(isset($_GET['a'])){
             $list_nam_hoc=load_all_nam_hoc();
             $list_nhiem_vu=load_all_nhiem_vu();
             $list_can_bo=load_all_can_bo();
+            $list_lop=load_all_lop();
 
             include "Can-bo/Phan-cong.php";
+            break;
+        case 'insert-phan-cong':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $NAMHOC=$_POST['NAMHOC'];
+                $L_ID=$_POST['L_ID'];
+                $NV_ID=$_POST['NV_ID'];
+                $CB_ID=$_POST['CB_ID'];
+                insert_phan_cong($NAMHOC,$L_ID,$NV_ID,$CB_ID);
+            }            
+            $list_nam_hoc=load_all_nam_hoc();
+            $list_nhiem_vu=load_all_nhiem_vu();
+            $list_can_bo=load_all_can_bo();
+            $list_lop=load_all_lop();
+            include "Can-bo/Phan-cong.php";
+            break;
+        case 'danh-sach-phan-cong':
+            $list_phan_cong=load_all_phan_cong();
+            include "Can-bo/Danh-sach-phan-cong.php";
             break;
         case 'nhiem-vu':
             include "Can-bo/Nhiem-vu.php";
@@ -130,6 +149,7 @@ if(isset($_GET['a'])){
             include "Lop/Lop-them.php";
             break;
         case 'danh-sach-lop':
+            $list_lop=load_all_lop();
             include "Lop/Lop-danh-sach.php";
             break;
         case 'them-khoi':

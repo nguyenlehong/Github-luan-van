@@ -23,4 +23,10 @@ function insert_lop($tenlop,$KHOI,$NAMHOC){
 	$sql="insert into lop(L_TEN,KHOI,NAMHOC) values('$tenlop','$KHOI','$NAMHOC')";
 	pdo_execute($sql);
 }
+
+function load_all_lop(){
+	$sql="select * from lop order by L_ID desc";
+	$list=pdo_query($sql);
+	return $list; 
+}
 ?>

@@ -223,14 +223,14 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
         color: #fff;
         padding: 10px;
         float: left;
-        margin-right: 1080px;
+        margin-right: 1000px;
     }
     
     .haeder img {
-        margin-top: 6px;
+        margin-top: -5px;
         border-radius: 50%;
         float: left;
-        margin-right: 0px;
+        margin-right: 2px;
         position: relative;
     }
     
@@ -261,6 +261,7 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
         list-style-type: none;
         position: absolute;
         display: none;
+        top: 44px;
     }
     
     .header-user ul li {
@@ -368,6 +369,10 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
     
     .width-table-50 {
         width: 50px;
+    }
+    
+    .width-table-100 {
+        width: 100px;
     }
     
     .width-table-150 {
