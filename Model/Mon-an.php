@@ -24,4 +24,18 @@ function load_all_mon(){
 	$list=pdo_query($sql);
 	return $list; 
 }
+function load_all_buoi(){
+	$sql="select * from buoi";
+	$list=pdo_query($sql);
+	return $list; 
+}
+function load_all_thu(){
+	$sql="select * from thu";
+	$list=pdo_query($sql);
+	return $list; 
+}
+function insert_thuc_don($khoi,$buoi,$thu,$mon){
+	$sql="insert into thuc_don(KHOI,BUOI,THU,MONAN) values('$khoi','$buoi','$thu','$mon')";
+	pdo_execute($sql);
+}
 ?>

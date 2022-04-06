@@ -48,10 +48,12 @@
                 Quản lý Món Ăn
             </a>
             <div class="smenu ">
-                <a href="index.php?a=them-loai-mon "> Thêm loại món</a>
-                <a href="index.php?a=danh-sach-loai-mon ">Dánh sách loại món</a>
-                <a href="index.php?a=them-mon-an "> Thêm món ăn</a>
-                <a href="index.php?a=danh-sach-mon-an ">Dánh sách món ăn</a>
+                <a href="index.php?a=them-thuc-don "> Thực đơn</a>
+
+                <a href="index.php?a=them-loai-mon "> Loại món</a>
+                <!-- <a href="index.php?a=danh-sach-loai-mon ">Dánh sách loại món</a> -->
+                <a href="index.php?a=them-mon-an "> Món ăn</a>
+                <!-- <a href="index.php?a=danh-sach-mon-an ">Dánh sách món ăn</a> -->
             </div>
         </li>
 

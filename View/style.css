@@ -435,3 +435,15 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
     .trang {
         color: #fff;
     }
+    
+    .floatleft {
+        float: left;
+        margin-left: auto;
+        margin-left: 50px;
+        padding: 5px;
+        width: 200px;
+    }
+    
+    .clearleft {
+        clear: left;
+    }

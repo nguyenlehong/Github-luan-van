@@ -9,7 +9,7 @@ include "../Model/Can-bo.php";
 include "header.php";
 // include "View/login.php";
 include "nav.php";
-include "menu.php";
+// include "menu.php";
 
 
 if(isset($_GET['a'])){
@@ -59,7 +59,31 @@ if(isset($_GET['a'])){
             }
             $list_loai_mon=load_all_loai_mon();
             include "Mon-an/Mon-an-them.php";
-            break;     
+            break;  
+        case 'them-thuc-don':
+            $list_khoi=load_all_khoi();
+            $list_buoi=load_all_buoi();
+            $list_thu=load_all_thu();
+            $list_mon=load_all_mon();
+            include 'Mon-an/Thuc-don-them.php';
+            break;
+        case 'insert-thuc-don':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $khoi=$_POST['KHOI'];
+                $buoi=$_POST['BUOI'];
+                $thu=$_POST['THU'];
+                $mon=$_POST['M_TEN'];
+                insert_thuc_don($khoi,$buoi,$thu,$mon);        
+            }
+
+
+            
+            $list_khoi=load_all_khoi();
+            $list_buoi=load_all_buoi();
+            $list_thu=load_all_thu();
+            $list_mon=load_all_mon();
+            include 'Mon-an/Thuc-don-them.php';
+            break;   
         case 'them-can-bo':
             include "Can-bo/Them-can-bo.php";
             break;
