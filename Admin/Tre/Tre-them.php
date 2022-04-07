@@ -3,12 +3,12 @@
         <h3 class="font">Thêm trẻ </h3>
     </div>
     <div class=noi-dung-80>
-        <form>
+        <form action="index.php?a=insert-tre" method="POST">
             <fieldset disabled>
                 <div class="form-group row ">
-                    <label for="inputText3" class="col-sm-2 col-form-label">Mã số</label>
+                    <label for="inputText3" class="col-sm-2 col-form-label">ID</label>
                     <div class="col-sm-10 pad20px">
-                        <input type="text" class="form-control" id="" placeholder="">
+                        <input type="text" class="form-control" id="" placeholder="" name="id">
                     </div>
                 </div>
             </fieldset>
@@ -16,7 +16,7 @@
                 <label for="inputText3" class="col-sm-2 col-form-label">Họ & tên</label>
                 <div class="col-sm-10 pad20px">
                     <input type="text" class="form-control " id="inputText3" placeholder="VD: Lê Hồng Nguyên"
-                        name="tentre">
+                        name="ten">
                 </div>
             </div>
             <div class="form-group row">
@@ -52,9 +52,15 @@
             <div class="form-group row">
                 <label for="inputText3" class="col-sm-2 col-form-label">Học lớp:</label>
                 <div class="col-sm-10 pad20px">
-                    <select class="custom-select form-control" name="LM_ID">
-                        <option value="">lớp mần 1</option>
-                        <option value="">lớp mần 2</option>
+                    <select class="custom-select form-control" name="L_ID">
+                        <?php
+                            foreach ($list_lop as $lop) {
+                            extract($lop);
+                            echo '
+                            <option value="'.$L_ID.'">'.$L_TEN.'</option>                            
+                            ';
+                        }
+                        ?>
                     </select>
                 </div>
             </div>
@@ -80,7 +86,7 @@
             </div>
         </div>
     </div>
-    <div class="noi-dung-80b height1000">
+    <div class="noi-dung-80b height400">
         <div class="formphuynh2">
             <div class="form-group pad20px">
                 <label for="formGroupExampleInput">Họ tên cha</label>

@@ -60,7 +60,7 @@
                 extract($mon);
                 echo '
                 <div class="form-check floatleft">
-                <input class="form-check-input" type="checkbox" name="M_TEN" value="'.$M_TEN.'"  id="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" name="M_TEN[]" value="'.$M_TEN.'"  id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
                     '.$M_TEN.'
                 </label>
@@ -69,7 +69,6 @@
             ';
             }
             ?>
-
 
             <div class="form-group row clearleft">
                 <div class="col-sm-10">

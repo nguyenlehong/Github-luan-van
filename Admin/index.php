@@ -3,14 +3,12 @@ include "../Model/pdo.php";
 include "../Model/Mon-an.php";
 include "../Model/Lop.php";
 include "../Model/Can-bo.php";
-
-
+include "../Model/Tre.php";
 
 include "header.php";
 // include "View/login.php";
 include "nav.php";
-// include "menu.php";
-
+include "menu.php";
 
 if(isset($_GET['a'])){
     $a=$_GET['a'];
@@ -72,12 +70,9 @@ if(isset($_GET['a'])){
                 $khoi=$_POST['KHOI'];
                 $buoi=$_POST['BUOI'];
                 $thu=$_POST['THU'];
-                $mon=$_POST['M_TEN'];
+                $mon=implode('\n' ,$_POST['M_TEN']);
                 insert_thuc_don($khoi,$buoi,$thu,$mon);        
-            }
-
-
-            
+            }          
             $list_khoi=load_all_khoi();
             $list_buoi=load_all_buoi();
             $list_thu=load_all_thu();
@@ -104,7 +99,6 @@ if(isset($_GET['a'])){
             include "Can-bo/Danh-sach-can-bo.php";
             break;
             
-
         case 'phan-cong':
             $list_nam_hoc=load_all_nam_hoc();
             $list_nhiem_vu=load_all_nhiem_vu();
@@ -150,6 +144,29 @@ if(isset($_GET['a'])){
             
             
         case 'them-tre':
+            $list_lop=load_all_lop();
+            include "Tre/Tre-them.php";
+            break;
+        case 'insert-tre':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $lop=$_POST['L_ID'];
+                $id=$_POST['id'];
+                $ten=$_POST['ten'];
+                $ngaysinh=$_POST['ngaysinh'];
+                $phai=$_POST['phai'];
+                $diachi=$_POST['diachi'];
+                $hotenme=$_POST['hotenme'];
+                $sdtme=$_POST['sdtme'];
+                $nnme=$_POST['nnme'];
+                $hotencha=$_POST['hotencha'];
+                $sdtcha=$_POST['sdtcha'];
+                $nncha=$_POST['nncha'];
+                insert_tre($ten,$ngaysinh,$phai,$diachi,$hotencha,$sdtcha,$nncha,$hotenme,$sdtme,$nnme);
+
+                // insert_lop_tre($lop,$id);
+
+            }  
+            $list_lop=load_all_lop();
             include "Tre/Tre-them.php";
             break;
         case 'danh-sach-tre':
