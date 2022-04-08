@@ -355,6 +355,10 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
         padding-bottom: 20px;
     }
     
+    .pad2px {
+        padding-top: 5px;
+    }
+    
     .padleft155 {
         padding-left: 155px;
     }
@@ -401,6 +405,10 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
     
     .height400 {
         height: 350px;
+    }
+    
+    .height500 {
+        height: 450px;
     }
     
     .formphuynh1 {

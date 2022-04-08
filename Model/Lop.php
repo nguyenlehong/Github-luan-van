@@ -29,4 +29,15 @@ function load_all_lop(){
 	$list=pdo_query($sql);
 	return $list; 
 }
+
+function load_lop_thuoc_khoi($KHOI){
+	$sql="select * from lop where 1";
+	if($KHOI!=""){
+	$sql.=" and KHOI ='".$KHOI."'";	
+	}
+	$sql.=" order by L_ID desc";
+	
+	$list=pdo_query($sql);
+	return $list; 
+}
 ?>

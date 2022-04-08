@@ -11,4 +11,12 @@
         $sql="insert into lop_tre(L_ID,T_ID) values('$lop','$id')";
         pdo_execute($sql);
     }
+
+
+
+    function load_1_tre(){
+        $sql="select * from tre order by T_ID desc limit 1";
+        $list=pdo_query($sql);
+        return $list; 
+    }
 ?>

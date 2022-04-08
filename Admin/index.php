@@ -149,8 +149,7 @@ if(isset($_GET['a'])){
             break;
         case 'insert-tre':
             if(isset($_POST['luu'])&&($_POST['luu'])){
-                $lop=$_POST['L_ID'];
-                $id=$_POST['id'];
+                
                 $ten=$_POST['ten'];
                 $ngaysinh=$_POST['ngaysinh'];
                 $phai=$_POST['phai'];
@@ -166,8 +165,28 @@ if(isset($_GET['a'])){
                 // insert_lop_tre($lop,$id);
 
             }  
+            $KHOI='';
+            $list_khoi=load_all_khoi();
+            
+            $list_lop=load_lop_thuoc_khoi($KHOI);
+            $list_tre=load_1_tre();
+
             $list_lop=load_all_lop();
-            include "Tre/Tre-them.php";
+            include "Tre/Tre-chon-lop.php";
+            break;
+        case 'chon-lop':
+            if(isset($_POST['loc-lop'])&&($_POST['loc-lop'])){
+                $KHOI=$_POST['KHOI'];
+            }else{
+            $KHOI='';
+            }
+            
+            $list_khoi=load_all_khoi();
+            
+            $list_lop=load_lop_thuoc_khoi($KHOI);
+            $list_tre=load_1_tre();
+
+            include "Tre/Tre-chon-lop.php";
             break;
         case 'danh-sach-tre':
             include "Tre/Tre-danh-sach.php";
