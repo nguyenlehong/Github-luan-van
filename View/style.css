@@ -383,6 +383,18 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
         width: 150px;
     }
     
+    .width-table-130 {
+        width: 130px;
+    }
+    
+    .width-table-228 {
+        width: 226px;
+    }
+    
+    .width-table-200 {
+        width: 200px;
+    }
+    
     .width-table-400 {
         width: 400px;
     }
@@ -458,4 +470,9 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
     
     .clearleft {
         clear: left;
+    }
+    
+    .ogiua {
+        text-align: center;
+        vertical-align: middle;
     }

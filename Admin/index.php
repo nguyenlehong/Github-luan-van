@@ -79,6 +79,9 @@ if(isset($_GET['a'])){
             $list_mon=load_all_mon();
             include 'Mon-an/Thuc-don-them.php';
             break;   
+        case 'danh-sach-thuc-don':
+            include 'Mon-an/Thuc-don-danh-sach.php';
+            break;
         case 'them-can-bo':
             include "Can-bo/Them-can-bo.php";
             break;
