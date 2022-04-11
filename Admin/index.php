@@ -151,8 +151,7 @@ if(isset($_GET['a'])){
             include "Tre/Tre-them.php";
             break;
         case 'insert-tre':
-            if(isset($_POST['luu'])&&($_POST['luu'])){
-                
+            if(isset($_POST['luu'])&&($_POST['luu'])){       
                 $ten=$_POST['ten'];
                 $ngaysinh=$_POST['ngaysinh'];
                 $phai=$_POST['phai'];
@@ -164,9 +163,7 @@ if(isset($_GET['a'])){
                 $sdtcha=$_POST['sdtcha'];
                 $nncha=$_POST['nncha'];
                 insert_tre($ten,$ngaysinh,$phai,$diachi,$hotencha,$sdtcha,$nncha,$hotenme,$sdtme,$nnme);
-
-                // insert_lop_tre($lop,$id);
-
+              
             }  
             $KHOI='';
             $list_khoi=load_all_khoi();
@@ -191,10 +188,26 @@ if(isset($_GET['a'])){
 
             include "Tre/Tre-chon-lop.php";
             break;
-        case 'danh-sach-tre':
+        case 'insert-tre-chon-lop':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $idlop=$_POST['L_ID'];
+                $idtre=$_POST['T_ID'];                
+                insert_tre_chon_lop($idlop,$idtre);
+            }
+            $list_all_tre=load_all_tre();
+
             include "Tre/Tre-danh-sach.php";
             break;
+        case 'danh-sach-tre':
+            $list_all_tre=load_all_tre();
+            include "Tre/Tre-danh-sach.php";
+            break;
+        case 'chi-so-tre':
+            $list_thang=load_all_thang();
 
+            
+            include "Tre/Tre-chi-so.php";
+            break;
          case 'them-lop':
             $list_nam_hoc=load_all_nam_hoc();
             $list_khoi=load_all_khoi();

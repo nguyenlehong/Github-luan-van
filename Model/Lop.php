@@ -8,6 +8,11 @@ function load_all_khoi(){
 	$list=pdo_query($sql);
 	return $list; 
 }
+function load_all_thang(){
+	$sql="select * from thang ";
+	$list=pdo_query($sql);
+	return $list; 
+}
 
 function insert_nam_hoc($namhoc){
 	$sql="insert into nam_hoc(NAMHOC) values('$namhoc')";

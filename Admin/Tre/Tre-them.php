@@ -49,21 +49,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="diachi"></textarea>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="inputText3" class="col-sm-2 col-form-label">Học lớp:</label>
-                <div class="col-sm-10 pad20px">
-                    <select class="custom-select form-control" name="L_ID">
-                        <?php
-                            foreach ($list_lop as $lop) {
-                            extract($lop);
-                            echo '
-                            <option value="'.$L_ID.'">'.$L_TEN.'</option>                            
-                            ';
-                        }
-                        ?>
-                    </select>
-                </div>
-            </div>
+
     </div>
 </div>
 <div class="content">
@@ -103,7 +89,7 @@
         </div>
         <div class="form-group row">
             <div class="col-sm-10">
-                <button type="submit" class="btn btn-success width100" value="luu" name="luu">Lưu</button>
+                <button type="submit" class="btn btn-success width100" value="luu" name="luu">Tiếp theo</button>
                 <button type="reset" class="btn btn-danger">Nhập lại</button>
             </div>
         </div>

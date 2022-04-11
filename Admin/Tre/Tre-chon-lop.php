@@ -20,24 +20,24 @@
             </form>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="loc-lop"
                 value="loc-lop">Tìm</button>
-
         </div>
-
-        <div class="form-group ">
-            <label for="formGroupExampleInput">Chọn lớp</label>
-            <select multiple class="form-control" id="exampleFormControlSelect2">
-                <?php
+        <form action="index.php?a=insert-tre-chon-lop" method="POST">
+            <div class="form-group ">
+                <label for="formGroupExampleInput">Chọn lớp</label>
+                <select multiple class="form-control" id="exampleFormControlSelect2" name="L_ID">
+                    <?php
                             foreach ($list_lop as $lop) {
                             extract($lop);
                             echo '
-                            <option value="'.$L_ID.'">'.$L_TEN.'</option>                            
+                            <option name="L_ID" value="'.$L_ID.'">'.$L_TEN.'</option>       
+                                            
                             ';
                         }
                         ?>
 
-            </select>
+                </select>
 
-        </div>
+            </div>
 
 
     </div>
@@ -55,9 +55,10 @@
             <div class="alert alert-success" role="alert">
                 <strong>
                     <?=$T_HOTEN?>
+                    <?=$T_ID?>
+                    <input type="hidden" name="T_ID" value="<?=$T_ID?>">
                 </strong>
             </div>
-
         </div>
 
         <div class="form-group ">
@@ -89,3 +90,4 @@
     </div>
 
 </div>
+</form>
