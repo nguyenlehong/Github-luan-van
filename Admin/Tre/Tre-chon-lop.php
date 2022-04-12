@@ -29,7 +29,7 @@
                             foreach ($list_lop as $lop) {
                             extract($lop);
                             echo '
-                            <option name="L_ID" value="'.$L_ID.'">'.$L_TEN.'</option>       
+                            <option name="L_ID" value="'.$L_ID.'">'.$L_TEN.' năm học '.$NAMHOC.' </option>       
                                             
                             ';
                         }
@@ -55,7 +55,7 @@
             <div class="alert alert-success" role="alert">
                 <strong>
                     <?=$T_HOTEN?>
-                    <?=$T_ID?>
+
                     <input type="hidden" name="T_ID" value="<?=$T_ID?>">
                 </strong>
             </div>

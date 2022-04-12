@@ -6,22 +6,20 @@
         <?php
         foreach ($list_loai_mon as $loaimon) {
             extract($loaimon);
-            $delete="index.php?a=update-loai-mon&LM_ID=".$LM_ID;
-            $update="index.php?a=delete-loai-mon&LM_ID=".$LM_ID;
-
-            
+            $delete="index.php?a=delete-loai-mon&LM_ID=".$LM_ID;
+            $list_mon_theo_loai="index.php?a=list-mon-theo-loai&LM_ID=".$LM_ID;    
             echo '
             <div class="alert alert-primary" role="alert">
             '.$LM_TEN.'
            
-        <a href="'.$update.'" class="gachchands">
+        <a href="'.$delete.'" class="gachchands">
             <button type=" reset" class="btn btn-danger" onclick="deleteLM()">
                 <ion-icon name="trash-outline"></ion-icon>
             </button>
         </a>
-        <a href="'.$delete.'" class="gachchands">
-        <button type=" reset" class="btn btn-success">
-            <ion-icon name="pencil-outline"></ion-icon>
+        <a href="'.$list_mon_theo_loai.'" class="gachchands">
+        <button type="button" class="btn btn-success">
+        <ion-icon name="list-outline"></ion-icon>
         </button>
     </a>
         </div>

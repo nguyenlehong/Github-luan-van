@@ -9,11 +9,7 @@
             echo '
             <div class="alert alert-info" role="alert">
            '.$NAMHOC.'
-            <a href="" class="gachchands">
-                <button type=" reset" class="btn btn-danger" onclick="deleteLM()">
-                    <ion-icon name="trash-outline"></ion-icon>
-                </button>
-            </a>
+           
             <a href="" class="gachchands">
                 <button type=" reset" class="btn btn-success">
                     <ion-icon name="pencil-outline"></ion-icon>

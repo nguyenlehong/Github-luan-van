@@ -31,8 +31,7 @@
 
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-success width100" name="luu" value="luu"
-                        onclick="insertLM()">Lưu</button>
+                    <button type="submit" class="btn btn-success width100" name="luu" value="luu">Lưu</button>
                     <button type="reset" class="btn btn-danger">Nhập lại</button>
                     <a href="index.php?a=danh-sach-loai-mon"> <button type="button"
                             class=" trang btn btn-info text-white">Danh

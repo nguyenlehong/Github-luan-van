@@ -1,6 +1,6 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font">Thực đơn Khối 24-30 tháng</h3>
+        <h3 class="font">Thực đơn Khối 25-36 tháng</h3>
     </div>
     <div class=noi-dung-100>
         <table class="table table-bordered">
@@ -17,12 +17,31 @@
                 </tr>
                 <tr>
                     <th scope="row" class="ogiua">BUỔI SÁNG</th>
-                    <td>Gà chiên bột <br>sửa tươi
+                    <td>
+                        <?php
+            foreach ($list_thuc_don as $thucdon) {
+                extract($thucdon);
+                if(($THU=="Thứ 2")&&($BUOI=="Buổi sáng"))
+                    echo'                  
+                        '.$MONAN.'
+                    ';
+            }      
+            ?>
                     </td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
+                    <td>
+                        <?php
+            foreach ($list_thuc_don as $thucdon) {
+                extract($thucdon);
+                if(($THU=="Thứ 3")&&($BUOI=="Buổi sáng"))
+                    echo'                  
+                        '.$MONAN.'
+                    ';
+            }      
+            ?>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
 
                 </tr>
                 <tr>

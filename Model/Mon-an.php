@@ -38,4 +38,26 @@ function insert_thuc_don($khoi,$buoi,$thu,$mon){
 	$sql="insert into thuc_don(KHOI,BUOI,THU,MONAN) values('$khoi','$buoi','$thu','$mon')";
 	pdo_execute($sql);
 }
+
+function load_mon_thuoc_loai_mon($LM_ID){
+	$sql="select * from mon where 1";
+	if($LM_ID>0){
+	$sql.=" and LM_ID ='".$LM_ID."'";	
+	}
+	$sql.=" order by LM_ID desc";
+	$list=pdo_query($sql);
+	return $list; 
+}
+
+function load_ten_loai_mon($LM_ID){
+	$sql="select * from loai_mon where LM_ID=".$LM_ID;
+	$list=pdo_query_one($sql);
+	extract($list);
+	return $LM_TEN; 
+}
+function load_all_thuc_don(){
+	$sql="select * from thuc_don";
+	$list=pdo_query($sql);
+	return $list; 
+}
 ?>

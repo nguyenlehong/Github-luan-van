@@ -4,7 +4,7 @@ function insert_khoi($ten_khoi){
 	pdo_execute($sql);
 }
 function load_all_khoi(){
-	$sql="select * from khoi order by KHOI desc";
+	$sql="select * from khoi ";
 	$list=pdo_query($sql);
 	return $list; 
 }
@@ -30,7 +30,7 @@ function insert_lop($tenlop,$KHOI,$NAMHOC){
 }
 
 function load_all_lop(){
-	$sql="select * from lop order by L_ID desc";
+	$sql="select * from lop ";
 	$list=pdo_query($sql);
 	return $list; 
 }

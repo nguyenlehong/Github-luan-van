@@ -1,11 +1,12 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font">Danh sách món ăn</h3>
+        <h3 class="font">Danh sách <?=$ten_loai_mon?></h3>
     </div>
     <div class="noi-dung-100">
         <table class="table table-hover">
-            <thead>
-                <tr>
+
+            <tbody>
+                <tr class="table-primary">
                     <th class="width-table-50" scope="col">STT</th>
                     <th class="width-table-250" scope="col">Tên món</th>
                     <th class="width-table-250" scope="col">Ảnh</th>
@@ -13,13 +14,10 @@
                     <th scope="col">Thao tác</th>
 
                 </tr>
-            </thead>
-            <tbody>
                 <?php
                  $i=1;
                 foreach ($list_mon as $mon) {
-                    extract($mon);
-                   
+                    extract($mon);                 
                     $duong_dan="../Upload/".$M_HINH;
                     $hinh="<img  src='".$duong_dan."' height='100' width='auto'>";
                     echo '                   

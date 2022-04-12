@@ -26,7 +26,8 @@ if(isset($_GET['a'])){
                 $ten_loai_mon=$_POST['tenloaimon'];
                 insert_loai_mon($ten_loai_mon);        
             }
-            include "Mon-an/Loai-mon-them.php";
+            $list_loai_mon=load_all_loai_mon();
+            include "Mon-an/Loai-mon-danh-sach.php";
             break;
         case 'delete-loai-mon':
             if(isset($_GET['LM_ID'])&&($_GET['LM_ID'])>0){
@@ -34,7 +35,15 @@ if(isset($_GET['a'])){
             }
             $list_loai_mon=load_all_loai_mon();
             include "Mon-an/Loai-mon-danh-sach.php";
-            break;   
+            break;  
+        case 'list-mon-theo-loai':
+            if(isset($_GET['LM_ID'])&&($_GET['LM_ID']>0)){
+                $LM_ID=$_GET['LM_ID'];              
+                $list_mon=load_mon_thuoc_loai_mon($_GET['LM_ID']);
+                $ten_loai_mon=load_ten_loai_mon($LM_ID);
+            }
+            include 'Mon-an/Mon-an-danh-sach-theo-loai.php';
+            break; 
         case 'danh-sach-mon-an':
             $list_mon=load_all_mon();
             include "Mon-an/Mon-an-danh-sach.php";
@@ -56,7 +65,8 @@ if(isset($_GET['a'])){
                 insert_mon($ten_mon,$hinh_mon,$mo_ta_mon,$LM_ID);        
             }
             $list_loai_mon=load_all_loai_mon();
-            include "Mon-an/Mon-an-them.php";
+            $list_mon=load_all_mon();
+            include "Mon-an/Mon-an-danh-sach.php";
             break;  
         case 'them-thuc-don':
             $list_khoi=load_all_khoi();
@@ -70,16 +80,18 @@ if(isset($_GET['a'])){
                 $khoi=$_POST['KHOI'];
                 $buoi=$_POST['BUOI'];
                 $thu=$_POST['THU'];
-                $mon=implode('\n' ,$_POST['M_TEN']);
+                $mon=implode(', ' ,$_POST['M_TEN']);
                 insert_thuc_don($khoi,$buoi,$thu,$mon);        
             }          
             $list_khoi=load_all_khoi();
             $list_buoi=load_all_buoi();
             $list_thu=load_all_thu();
             $list_mon=load_all_mon();
-            include 'Mon-an/Thuc-don-them.php';
+            $list_thuc_don=load_all_thuc_don();
+            include 'Mon-an/Thuc-don-danh-sach.php';
             break;   
         case 'danh-sach-thuc-don':
+            $list_thuc_don=load_all_thuc_don();
             include 'Mon-an/Thuc-don-danh-sach.php';
             break;
         case 'them-can-bo':
@@ -166,11 +178,9 @@ if(isset($_GET['a'])){
               
             }  
             $KHOI='';
-            $list_khoi=load_all_khoi();
-            
+            $list_khoi=load_all_khoi();           
             $list_lop=load_lop_thuoc_khoi($KHOI);
             $list_tre=load_1_tre();
-
             $list_lop=load_all_lop();
             include "Tre/Tre-chon-lop.php";
             break;
@@ -222,11 +232,20 @@ if(isset($_GET['a'])){
             }
             $list_nam_hoc=load_all_nam_hoc();
             $list_khoi=load_all_khoi();
-            include "Lop/Lop-them.php";
+            $list_lop=load_all_lop();
+            include "Lop/Lop-danh-sach.php";
             break;
         case 'danh-sach-lop':
             $list_lop=load_all_lop();
             include "Lop/Lop-danh-sach.php";
+            break;
+        case 'loc-lop-theo-khoi':
+            if(isset($_GET['KHOI'])&&($_GET['KHOI']!='')){
+                $KHOI=$_GET['KHOI'];
+               
+                $list_lop=load_lop_thuoc_khoi($_GET['KHOI']);
+            }
+            include "Lop/Lop-danh-sach-theo-khoi.php";
             break;
         case 'them-khoi':
             include "Lop/Khoi-them.php";
@@ -250,7 +269,8 @@ if(isset($_GET['a'])){
                 $namhoc=$_POST['namhoc'];
                 insert_nam_hoc($namhoc);        
                 }
-                include "Lop/Nam-hoc-them.php";
+                $list_nam_hoc=load_all_nam_hoc();
+                include "Lop/Nam-hoc-danh-sach.php";
             break;
         case 'danh-sach-nam-hoc':
             $list_nam_hoc=load_all_nam_hoc();
