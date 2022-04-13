@@ -15,58 +15,104 @@
                     <th class="width-table-130 ogiua">THỨ 6</th>
 
                 </tr>
+                <!-- buổi sáng -->
                 <tr>
                     <th scope="row" class="ogiua">BUỔI SÁNG</th>
                     <td>
                         <?php
             foreach ($list_thuc_don as $thucdon) {
                 extract($thucdon);
-                if(($THU=="Thứ 2")&&($BUOI=="Buổi sáng"))
-                    echo'                  
-                        '.$MONAN.'
-                    ';
-            }      
-            ?>
+                if(($THU=="Thứ 2")&&($BUOI=="Buổi sáng")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                    echo''.$MONAN.'';
+            }   ?>
                     </td>
                     <td>
                         <?php
             foreach ($list_thuc_don as $thucdon) {
                 extract($thucdon);
-                if(($THU=="Thứ 3")&&($BUOI=="Buổi sáng"))
-                    echo'                  
-                        '.$MONAN.'
-                    ';
-            }      
-            ?>
+                if(($THU=="Thứ 3")&&($BUOI=="Buổi sáng")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                    echo''.$MONAN.'';
+            }?>
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php
+                        foreach ($list_thuc_don as $thucdon) {
+                        extract($thucdon);
+                        if(($THU=="Thứ 4")&&($BUOI=="Buổi sáng")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                        echo''.$MONAN.'';
+                        }?>
+                    </td>
+                    <td><?php 
+                    foreach ($list_thuc_don as $thucdon) {
+                        extract($thucdon);
+                        if(($THU=="Thứ 5")&&($BUOI=="Buổi sáng")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                        echo''.$MONAN.''; }?> </td>
+                    <td>
+                        <?php 
+                            foreach ($list_thuc_don as $thucdon) {
+                                extract($thucdon);
+                                if(($THU=="Thứ 6")&&($BUOI=="Buổi sáng")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                                echo''.$MONAN.'';
+                        }?>
+                    </td>
 
                 </tr>
+                <!-- buổi sáng -->
+                <!-- buổi trưa-->
+
                 <tr>
                     <th scope="row" class="ogiua">BUỔI TRƯA</th>
-                    <td>Cháo thịt bò nấu cải bó xôi<br> Sữa tươ</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
+                    <td><?php 
+                            foreach ($list_thuc_don as $thucdon) {
+                                extract($thucdon);
+                                if(($THU=="Thứ 2")&&($BUOI=="Buổi trưa")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                                echo''.$MONAN.'';
+                        }?>
+                    </td>
+                    <td><?php 
+                            foreach ($list_thuc_don as $thucdon) {
+                                extract($thucdon);
+                                if(($THU=="Thứ 3")&&($BUOI=="Buổi trưa")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                                echo''.$MONAN.'';
+                        }?></td>
+                    <td><?php 
+                            foreach ($list_thuc_don as $thucdon) {
+                                extract($thucdon);
+                                if(($THU=="Thứ 4")&&($BUOI=="Buổi trưa")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                                echo''.$MONAN.'';
+                        }?>
+                    </td>
+                    <td><?php 
+                            foreach ($list_thuc_don as $thucdon) {
+                                extract($thucdon);
+                                if(($THU=="Thứ 5")&&($BUOI=="Buổi trưa")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                                echo''.$MONAN.'';
+                        }?>
+                    </td>
+                    <td><?php 
+                            foreach ($list_thuc_don as $thucdon) {
+                                extract($thucdon);
+                                if(($THU=="Thứ 6")&&($BUOI=="Buổi trưa")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                                echo''.$MONAN.'';
+                        }?>
+                    </td>
                 </tr>
+                <!-- buổi trưa-->
+
                 <tr>
                     <th scope="row" class="ogiua">BUỔI PHỤ</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
+                    <td>Sữa chua, 150ml </td>
+                    <td>Chuối</td>
+                    <td>Sữa chua, 150ml</td>
+                    <td>Xoài</td>
+                    <td>Sữa chua, 150ml</td>
                 </tr>
                 <tr>
                     <th scope="row" class="ogiua">BUỔI CHIỀU</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>

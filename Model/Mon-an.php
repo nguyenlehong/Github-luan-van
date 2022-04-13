@@ -24,6 +24,11 @@ function load_all_mon(){
 	$list=pdo_query($sql);
 	return $list; 
 }
+function delete_mon_an($M_ID){
+	$sql="delete from mon where M_ID=".$M_ID;
+	pdo_execute($sql);
+}
+
 function load_all_buoi(){
 	$sql="select * from buoi";
 	$list=pdo_query($sql);

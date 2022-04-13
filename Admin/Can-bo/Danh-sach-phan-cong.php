@@ -4,18 +4,17 @@
     </div>
     <div class="noi-dung-100">
         <table class="table table-hover">
-            <thead>
-                <tr>
+            <tbody>
+                <tr class="table-primary">
                     <th class="width-table-100" scope="col">STT</th>
-                    <th class="width-table-100">ID Cán bộ</th>
                     <th class="width-table-250" scope="col">Họ & tên</th>
                     <th class="width-table-250" scope="col">Nhiệm vụ</th>
                     <th class="width-table-250" scope="col">Lớp</th>
                     <th class="width-table-250" scope="col">Năm học</th>
                     <th scope="col">Thao thác</th>
                 </tr>
-            </thead>
-            <tbody>
+
+
                 <?php
                 $i = 1;
                 foreach ($list_phan_cong as $phancong) {
@@ -23,7 +22,7 @@
                     echo'           
                     <tr>
                     <th class="width-table-100" scope="row">'.$i.'</th>
-                    <td class="width-table-100">'.$CB_ID.'</td>
+                    
                     <td class="width-table-300">'.$CB_HOTEN.'</td>
                     <td class="width-table-250"> '.$NV_TEN.'</td>
                     <td class="width-table-250">'.$L_TEN.'</td>

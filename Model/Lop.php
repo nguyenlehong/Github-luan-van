@@ -45,4 +45,22 @@ function load_lop_thuoc_khoi($KHOI){
 	$list=pdo_query($sql);
 	return $list; 
 }
+
+function load_tre_thuoc_lop($L_ID){
+	$sql="select *
+			FROM lop INNER JOIN lop_tre
+			ON lop.L_ID=lop_tre.L_ID
+			INNER JOIN tre
+			ON tre.T_ID=lop_tre.T_ID where lop.L_ID=".$L_ID;
+	
+	$list=pdo_query($sql);
+	return $list; 
+}
+function load_ten_lop($L_ID){
+	$sql="select * from lop where L_ID=".$L_ID;
+	$list=pdo_query_one($sql);
+	extract($list);
+	return $L_TEN; 
+}
+
 ?>

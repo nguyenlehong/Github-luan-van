@@ -6,8 +6,8 @@
                 <ion-icon name="person-outline"></ion-icon> Quản lý cán bộ
             </a>
             <div class="smenu ">
-                <a href="index.php?a=them-can-bo"> Thêm cán bộ</a>
-                <a href="index.php?a=danh-sach-can-bo ">Danh sách CB</a>
+                <!-- <a href="index.php?a=them-can-bo"> Thêm cán bộ</a> -->
+                <a href="index.php?a=danh-sach-can-bo ">Danh sách cán bộ</a>
                 <a href="index.php?a=phan-cong ">Phân công</a>
                 <a href="index.php?a=nhiem-vu ">Nhiệm vụ</a>
 

@@ -16,8 +16,9 @@
                 </tr>
                 <?php
                  $i=1;
-                foreach ($list_mon as $mon) {
-                    extract($mon);                 
+                foreach ($list_mon as $mon) {                  
+                    extract($mon);           
+                    $xoa_mon="index.php?a=delete-mon-an&M_ID=".$M_ID;      
                     $duong_dan="../Upload/".$M_HINH;
                     $hinh="<img  src='".$duong_dan."' height='100' width='auto'>";
                     echo '                   
@@ -28,12 +29,12 @@
                     <td class="width-table-600">'.$M_MOTA.'</td>
                     <td>
                         <a href="" class="gachchan2">
-                            <button type=" reset" class="btn btn-success">
+                            <button type="button" class="btn btn-success">
                                 <ion-icon name="pencil-outline"></ion-icon>
                             </button>
                         </a>
-                        <a href="" class="gachchan2">
-                            <button type=" reset" class="btn btn-danger">
+                        <a href="'.$xoa_mon.'" class="gachchan2">
+                            <button type="button" class="btn btn-danger">
                                 <ion-icon name="trash-outline"></ion-icon>
                             </button>
                         </a>

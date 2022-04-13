@@ -15,7 +15,8 @@
             <div class="form-group row">
                 <label for="inputText3" class="col-sm-2 col-form-label">Tên món ăn</label>
                 <div class="col-sm-10 pad20px">
-                    <input type="text" class="form-control " name="tenmon" id="inputText3" placeholder="VD: Gà chiên">
+                    <input type="text" class="form-control " name="tenmon" id="inputText3" placeholder="VD: Gà chiên"
+                        required>
                 </div>
             </div>
             <div class="form-group row">

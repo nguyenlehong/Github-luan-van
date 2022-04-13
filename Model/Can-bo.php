@@ -8,7 +8,10 @@ function load_all_can_bo(){
 	$list=pdo_query($sql);
 	return $list; 
 }
-
+function delete_can_bo($CB_ID){
+	$sql="delete from can_bo where CB_ID=".$CB_ID;
+	pdo_execute($sql);
+}
 function  insert_nhiem_vu($tennv,$motanv){
     $sql="insert into nhiem_vu(NV_TEN,NV_MOTA)values('$tennv','$motanv')";
     pdo_execute($sql);

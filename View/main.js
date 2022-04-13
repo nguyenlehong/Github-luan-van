@@ -15,9 +15,14 @@ function thongbaothemloaimon() {
 }
 
 function deleteLM() {
-    alert("Đã xóa thành công!");
+    confirm("Bạn có muốn xóa?");
 }
 
 function insertLM() {
     alert("Đã thêm thành công!");
+}
+
+function xacnhan() {
+    confirm("Bạn có muốn xóa?");
+
 }

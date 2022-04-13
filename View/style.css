@@ -379,6 +379,10 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
         width: 100px;
     }
     
+    .width-table-120 {
+        width: 120px;
+    }
+    
     .width-table-150 {
         width: 150px;
     }
@@ -393,6 +397,10 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
     
     .width-table-200 {
         width: 200px;
+    }
+    
+    .width-table-300 {
+        width: 300px;
     }
     
     .width-table-400 {

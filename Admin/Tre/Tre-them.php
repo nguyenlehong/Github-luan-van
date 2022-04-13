@@ -15,14 +15,15 @@
             <div class="form-group row">
                 <label for="inputText3" class="col-sm-2 col-form-label">Họ & tên</label>
                 <div class="col-sm-10 pad20px">
-                    <input type="text" class="form-control " id="inputText3" placeholder="VD: Lê Hồng Nguyên"
-                        name="ten">
+                    <input type="text" class="form-control " id="inputText3" placeholder="VD: Lê Hồng Nguyên" name="ten"
+                        required>
+
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputDate3" class="col-sm-2 col-form-label">Ngày sinh</label>
                 <div class="col-sm-10 pad20px">
-                    <input type="date" class="form-control " id="inputText3" placeholder="" name="ngaysinh">
+                    <input type="date" class="form-control " id="inputText3" placeholder="" name="ngaysinh" required>
                 </div>
             </div>
             <div class="form-group row">
@@ -46,7 +47,8 @@
             <div class=" form-group row">
                 <label for="inputText3" class="col-sm-2 col-form-label">Địa Chỉ</label>
                 <div class="col-sm-10 pad20px">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="diachi"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="diachi"
+                        required></textarea>
                 </div>
             </div>
 
@@ -60,11 +62,13 @@
         <div class="formphuynh1">
             <div class="form-group pad20px">
                 <label for="formGroupExampleInput">Họ tên mẹ</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" name="hotenme">
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" name="hotenme"
+                    required>
             </div>
             <div class="form-group pad20px">
                 <label for="formGroupExampleInput">Số điện thoại</label>
-                <input type="number" class="form-control" id="formGroupExampleInput" placeholder="" name="sdtme">
+                <input type="number" class="form-control" id="formGroupExampleInput" placeholder="" name="sdtme"
+                    required>
             </div>
             <div class="form-group pad20px">
                 <label for="formGroupExampleInput">Nghề nghiệp</label>
@@ -76,11 +80,13 @@
         <div class="formphuynh2">
             <div class="form-group pad20px">
                 <label for="formGroupExampleInput">Họ tên cha</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" name="hotencha">
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" name="hotencha"
+                    required>
             </div>
             <div class="form-group pad20px">
                 <label for="formGroupExampleInput">Số điện thoại</label>
-                <input type="number" class="form-control" id="formGroupExampleInput" placeholder="" name="sdtcha">
+                <input type="number" class="form-control" id="formGroupExampleInput" placeholder="" name="sdtcha"
+                    required>
             </div>
             <div class="form-group pad20px">
                 <label for="formGroupExampleInput">Nghề nghiệp</label>
@@ -91,6 +97,8 @@
             <div class="col-sm-10">
                 <button type="submit" class="btn btn-success width100" value="luu" name="luu">Tiếp theo</button>
                 <button type="reset" class="btn btn-danger">Nhập lại</button>
+                <a href="index.php?a=danh-sach-tre"> <button type="button" class=" trang btn btn-info text-white">Danh
+                        sách</button></a>
             </div>
         </div>
         </form>
