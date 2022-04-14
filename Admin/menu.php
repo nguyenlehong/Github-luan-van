@@ -10,10 +10,8 @@
                 <a href="index.php?a=danh-sach-can-bo ">Danh sách cán bộ</a>
                 <a href="index.php?a=phan-cong ">Phân công</a>
                 <a href="index.php?a=nhiem-vu ">Nhiệm vụ</a>
-
             </div>
         </li>
-
         <li class="item2 " id="tre">
             <a href="#tre" class="btn2 ">
                 <ion-icon name="person-outline"></ion-icon>
@@ -23,7 +21,7 @@
             <div class="smenu">
                 <a href="index.php?a=them-tre">Thêm trẻ</a>
                 <a href="index.php?a=danh-sach-tre ">Danh sách trẻ</a>
-                <a href="index.php?a=chi-so-tre">Chỉ số</a>
+                <a href="index.php?a=danh-sach-chi-so-tre">Chỉ số</a>
 
             </div>
         </li>

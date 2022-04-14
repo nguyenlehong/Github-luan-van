@@ -150,9 +150,18 @@ if(isset($_GET['a'])){
             $list_nhiem_vu=load_all_nhiem_vu();
             $list_can_bo=load_all_can_bo();
             $list_lop=load_all_lop();
-            include "Can-bo/Phan-cong.php";
+            $list_phan_cong=load_all_phan_cong();
+            include "Can-bo/Danh-sach-phan-cong.php";
             break;
         case 'danh-sach-phan-cong':
+            $list_phan_cong=load_all_phan_cong();
+            include "Can-bo/Danh-sach-phan-cong.php";
+            break;
+        case 'xoa-phan-cong':
+            if(isset($_GET['PC_ID'])&&($_GET['PC_ID'])>0){
+                delete_phan_cong($_GET['PC_ID']);
+            }
+            
             $list_phan_cong=load_all_phan_cong();
             include "Can-bo/Danh-sach-phan-cong.php";
             break;
@@ -172,7 +181,14 @@ if(isset($_GET['a'])){
             $list_nhiem_vu=load_all_nhiem_vu();
             include "Can-bo/Danh-sach-nhiem-vu.php";
             break;
-
+        case 'xoa-nhiem-vu':
+        if(isset($_GET['NV_ID'])&&($_GET['NV_ID'])>0){
+            $NV_ID=$_GET['NV_ID'];
+            delete_nhiem_vu($NV_ID);
+        }  
+            $list_nhiem_vu=load_all_nhiem_vu();
+            include "Can-bo/Danh-sach-nhiem-vu.php";    
+        break;
             
             
         case 'them-tre':
@@ -249,7 +265,13 @@ if(isset($_GET['a'])){
                 $cannang=$_POST['cannang'];
                 insert_chi_so_tre($T_ID,$THANG,$chieucao,$cannang);       
             }
+            include "Tre/Tre-chi-so.php";
+
             break;   
+        case 'danh-sach-chi-so-tre':
+            include "Tre/Tre-danh-sach-chi-so.php";
+            
+            break;
          case 'them-lop':
             $list_nam_hoc=load_all_nam_hoc();
             $list_khoi=load_all_khoi();

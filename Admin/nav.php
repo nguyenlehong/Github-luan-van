@@ -4,7 +4,7 @@
     <div class="header-user">
         <img src="../Upload/user.png" alt="" width="40px" height="40px">
 
-        <p class="">Lê huỳnh ngọc mỹ thúy vy</p>
+        <p class="">Lê Hồng Nguyên</p>
         <ul>
             <li> <a href="">Hồ sơ</a></li>
             <li> <a href="">Đăng xuất</a></li>

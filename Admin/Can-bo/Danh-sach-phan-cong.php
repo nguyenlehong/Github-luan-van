@@ -19,6 +19,7 @@
                 $i = 1;
                 foreach ($list_phan_cong as $phancong) {
                     extract($phancong);
+                    $delete="index.php?a=xoa-phan-cong&PC_ID=".$PC_ID;
                     echo'           
                     <tr>
                     <th class="width-table-100" scope="row">'.$i.'</th>
@@ -28,13 +29,13 @@
                     <td class="width-table-250">'.$L_TEN.'</td>
                     <td class="width-table-250">'.$NAMHOC.'</td>
                     <td>
-                        <a href="" class="gachchan2">
+                        <a href="#" class="gachchan2">
                             <button type=" reset" class="btn btn-success">
                                 <ion-icon name="pencil-outline"></ion-icon>
                             </button>
                         </a>
-                        <a href="" class="gachchan2">
-                            <button type=" reset" class="btn btn-danger">
+                        <a href="'.$delete.'" class="gachchan2">
+                            <button type="button" class="btn btn-danger">
                                 <ion-icon name="trash-outline"></ion-icon>
                             </button>
                         </a>

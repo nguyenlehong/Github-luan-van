@@ -20,6 +20,7 @@
                 $i=1;
                 foreach ($list_all_tre as $tre) {
                    extract($tre);
+                   $xoa="index.php?a=xoa-tre&T_ID=".$T_ID;
                    echo '
                    <tr>
                    <th scope="row">'.$i.'</th>
@@ -30,12 +31,12 @@
                    <td>'.$T_HTME.'</td>
                    <td>'.$T_SDTME.'</td>
                    <td>
-                       <a href="" class="gachchan2">
+                       <a href="#" class="gachchan2">
                            <button type=" reset" class="btn btn-success">
                                <ion-icon name="pencil-outline"></ion-icon>
                            </button>
-                           <a href="" class="gachchan2">
-                               <button type=" reset" class="btn btn-danger">
+                           <a href="'.$xoa.'" class="gachchan2">
+                               <button type="button" class="btn btn-danger">
                                <ion-icon name="trash-outline"></ion-icon>
                                </button>
                            </a>
