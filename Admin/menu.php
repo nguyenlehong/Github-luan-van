@@ -35,7 +35,7 @@
                 <a href="index.php?a=them-nam-hoc "> Thêm năm học</a>
                 <a href="index.php?a=danh-sach-khoi "> Danh sách khối</a>
                 <a href="index.php?a=them-lop  "> Thêm lớp</a>
-                <a href="index.php?a=danh-sach-lop ">Danh sách lớp</a>
+                <a href="index.php?a=them-khoan-thu">Khoản thu</a>
             </div>
         </li>
 
@@ -47,7 +47,7 @@
             </a>
             <div class="smenu ">
                 <a href="index.php?a=them-thuc-don "> Thực đơn</a>
-
+                <a href="index.php?a=them-thuc-don-v2 "> Thực đơn v2</a>
                 <a href="index.php?a=them-loai-mon "> Loại món</a>
                 <!-- <a href="index.php?a=danh-sach-loai-mon ">Dánh sách loại món</a> -->
                 <a href="index.php?a=them-mon-an "> Món ăn</a>

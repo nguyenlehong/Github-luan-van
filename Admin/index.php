@@ -83,6 +83,14 @@ if(isset($_GET['a'])){
             $list_mon=load_all_mon();
             include 'Mon-an/Thuc-don-them.php';
             break;
+        case 'them-thuc-don-v2':       
+            $list_khoi=load_all_khoi();
+            $list_buoi=load_all_buoi();
+            $list_thu=load_all_thu();
+            $list_mon=load_all_mon();
+
+            include 'Mon-an/Thuc-don-them-v2.php';
+            break;
         case 'insert-thuc-don':
             if(isset($_POST['luu'])&&($_POST['luu'])){
                 $khoi=$_POST['KHOI'];
@@ -182,15 +190,21 @@ if(isset($_GET['a'])){
             include "Can-bo/Danh-sach-nhiem-vu.php";
             break;
         case 'xoa-nhiem-vu':
-        if(isset($_GET['NV_ID'])&&($_GET['NV_ID'])>0){
-            $NV_ID=$_GET['NV_ID'];
-            delete_nhiem_vu($NV_ID);
-        }  
+            if(isset($_GET['NV_ID'])&&($_GET['NV_ID'])>0){
+                $NV_ID=$_GET['NV_ID'];
+                delete_nhiem_vu($NV_ID);
+            }  
             $list_nhiem_vu=load_all_nhiem_vu();
             include "Can-bo/Danh-sach-nhiem-vu.php";    
-        break;
-            
-            
+            break;
+        case 'them-khoan-thu':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $ten=$_POST['ten'];
+                $mota=$_POST['mota'];
+                insert_khoan_thu($ten,$mota);
+            }
+            include "Lop/Khoan-thu-them.php";    
+            break;
         case 'them-tre':
             $list_lop=load_all_lop();
             include "Tre/Tre-them.php";
