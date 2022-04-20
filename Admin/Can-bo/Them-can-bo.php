@@ -3,7 +3,7 @@
         <h3 class="font">Thêm cán bộ</h3>
     </div>
     <div class=noi-dung-80>
-        <form action="index.php?a=insert-can-bo" method="POST">
+        <form action="index.php?a=insert-can-bo" method="POST" autocomplete="off">
             <fieldset disabled>
                 <div class=" form-group row ">
 

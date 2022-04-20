@@ -63,11 +63,15 @@ function load_ten_lop($L_ID){
 	return $L_TEN; 
 }
 
-function insert_khoan_thu($ten,$mota){
-	$sql="insert into khoan_thu(KT_TEN,KT_MOTA) values('$ten','$mota')";
+function insert_khoan_thu($noidung,$ghichu){
+	$sql="insert into khoan_thu(KT_NOIDUNG,KT_GHICHU) values('$noidung','$ghichu')";
 	pdo_execute($sql);
 	
 }
-
+function load_all_khoan_thu(){
+	$sql="select * from khoan_thu order by KT_ID desc";
+	$list=pdo_query($sql);
+	return $list; 
+}
 
 ?>

@@ -199,11 +199,24 @@ if(isset($_GET['a'])){
             break;
         case 'them-khoan-thu':
             if(isset($_POST['luu'])&&($_POST['luu'])){
-                $ten=$_POST['ten'];
-                $mota=$_POST['mota'];
-                insert_khoan_thu($ten,$mota);
-            }
-            include "Lop/Khoan-thu-them.php";    
+                $noidung=$_POST['noidung'];
+                $ghichu=$_POST['ghichu'];
+                insert_khoan_thu($noidung,$ghichu);               
+            }       
+             include "Lop/Khoan-thu-them.php";    
+            break;
+        case 'danh-sach-khoan-thu':
+            $list_khoan_thu=load_all_khoan_thu();
+            include "Lop/Khoan-thu-danh-sach.php";   
+            break;
+        case 'them-tien-khoan-thu':
+            $list_nam_hoc=load_all_nam_hoc();
+            $list_khoi=load_all_khoi();
+            $list_khoan_thu=load_all_khoan_thu();
+
+            
+            
+            include "Lop/Muc-thu-them.php"; 
             break;
         case 'them-tre':
             $list_lop=load_all_lop();

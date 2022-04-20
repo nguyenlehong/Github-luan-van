@@ -3,7 +3,7 @@
         <h3 class="font">Khoản thu</h3>
     </div>
     <div class=noi-dung-80>
-        <form action="index.php?a=them-khoan-thu" method="POST">
+        <form action="index.php?a=them-khoan-thu" method="POST" autocomplete="off">
             <fieldset disabled>
                 <div class="form-group row ">
                     <label for="inputText3" class="col-sm-2 col-form-label">ID khoản thu</label>
@@ -13,17 +13,16 @@
                 </div>
             </fieldset>
             <div class="form-group row">
-                <label for="inputText3" class="col-sm-2 col-form-label">Tên khoản thu</label>
+                <label for="inputText3" class="col-sm-2 col-form-label">Nội dung khoản thu</label>
                 <div class="col-sm-10 pad20px">
-                    <input type="text" class="form-control " name="ten" id="inputText3" placeholder="VD: Học phí "
+                    <input type="text" class="form-control " name="noidung" id="inputText3" placeholder="VD: Học phí "
                         required>
                 </div>
             </div>
-
             <div class=" form-group row">
-                <label for="inputText3" class="col-sm-2 col-form-label">Mô tả</label>
+                <label for="inputText3" class="col-sm-2 col-form-label">Ghi chú</label>
                 <div class="col-sm-10 pad20px">
-                    <textarea class="form-control" name="mota" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" name="ghichu" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
             </div>
 
@@ -34,6 +33,9 @@
                     <a href="index.php?a=danh-sach-khoan-thu"> <button type="button"
                             class=" trang btn btn-info text-white">Danh
                             sách</button></a>
+                    <a href="index.php?a=them-tien-khoan-thu"> <button type="button"
+                            class=" trang btn btn-primary text-white">Chọn số tiền
+                        </button></a>
                 </div>
             </div>
         </form>
@@ -41,5 +43,6 @@
 </div>
 
 </form>
+
 </div>
 </div>
