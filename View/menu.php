@@ -3,11 +3,13 @@
     <div class="menu2 ">
         <li class="item2 " id="giaovien">
             <a href="#giaovien" class="btn2 ">
-                <ion-icon name="person-outline"></ion-icon> Quản lý giáo viên
+                <ion-icon name="person-outline"></ion-icon> Cán bộ
             </a>
             <div class="smenu ">
-                <a href=" "> Thêm GV</a>
-                <a href=" ">Danh sách GV</a>
+                <a href="Xu-ly.php?b=danh-sach-can-bo">Danh sách</a>
+                <a href="Xu-ly.php?b=danh-sach-nhiem-vu ">Nhiệm vụ</a>
+                <a href="Xu-ly.php?b=danh-sach-phan-cong ">Phân công</a>
+
             </div>
         </li>
 
@@ -18,10 +20,8 @@
                 Quản lý học sinh
             </a>
             <div class="smenu">
-                <a href=" "> Thêm</a>
-                <a href=" ">Danh sách món ăn</a>
-                <a href=" ">Danh sách món ăn</a>
-                <a href=" ">Danh sách món ăn</a>
+                <a href=" "> Cập nhật trẻ</a>
+                <a href=" ">Chỉ sổ</a>
 
             </div>
         </li>
@@ -32,8 +32,10 @@
                 Quản lý lớp
             </a>
             <div class="smenu ">
-                <a href=" "> Thêm lớp</a>
-                <a href=" ">Danh sách lớp</a>
+                <a href="Xu-ly.php?b=danh-sach-khoi ">Danh sách khối</a>
+                <a href="Xu-ly.php?b=danh-sach-lop ">Danh sách lớp</a>
+                <a href="Xu-ly.php?b=danh-sach-khoan-thu ">Khoản thu</a>
+
             </div>
         </li>
 
@@ -44,8 +46,10 @@
                 Quản lý Món Ăn
             </a>
             <div class="smenu ">
-                <a href=" "> Thêm món ăn</a>
-                <a href=" ">Dánh sách món ăn</a>
+                <a href="Xu-ly.php?b=danh-sach-loai-mon "> Loại món ăn</a>
+                <a href="Xu-ly.php?b=danh-sach-mon-an">Món ăn</a>
+                <a href="Xu-ly.php?b=danh-sach-thuc-don ">Thực đơn</a>
+
             </div>
         </li>
         <!-- fasdf -->

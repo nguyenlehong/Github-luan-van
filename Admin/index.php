@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../Model/pdo.php";
 include "../Model/Mon-an.php";
 include "../Model/Lop.php";
