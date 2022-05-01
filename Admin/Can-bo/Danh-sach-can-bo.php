@@ -56,6 +56,8 @@
             </tbody>
         </table><a href="index.php?a=them-can-bo"> <button type="submit" class="btn btn-success width100 ">Thêm
             </button></a>
+        <a href="xu-ly-in.php?b=in-can-bo"> <button type="submit" class="btn btn-info width100 ">In
+            </button></a>
     </div>
 </div>
 <!-- <a href="'.$xoacanbo.'" class="gachchan2">
