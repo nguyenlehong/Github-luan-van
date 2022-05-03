@@ -72,6 +72,15 @@ if(isset($_GET['b'])){
             session_unset();
             header('location: index.php');
         break;
+        case 'nhap-chi-so-tre':          
+            if(isset($_GET['L_ID'])&&($_GET['L_ID']>0)){
+                $L_ID=$_GET['L_ID'];            
+                $list_tre=chi_so_tre_thuoc_lop($L_ID);
+                $ten_lop=load_ten_lop($L_ID);
+            }
+            
+            include "View/Lop/Tre-chi-so-theo-lop.php";
+            break;
         default:
             # code...
             break;

@@ -24,11 +24,13 @@
                     extract($canbo);
                     $capnhatcanbo="index.php?a=update-can-bo&CB_ID=".$CB_ID ;
                     $xoacanbo="index.php?a=delete-can-bo&CB_ID=".$CB_ID;
+                    $time = strtotime($CB_NGAYSINH);
                 echo '
                 <tr>
                 <th scope="row">'.$i.'</th>
                 <td>'.$CB_HOTEN.'</td>
-                <td> '.$CB_NGAYSINH.'</td>
+                <td>'.date("d/m/Y", $time).'</td>
+
                 <td> '.$CB_PHAI.'</td>
                 <td>0'.$CB_SDT.'</td>
                 <td>'.$CB_EMAIL.'</td>

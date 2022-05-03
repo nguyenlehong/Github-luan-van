@@ -15,29 +15,33 @@ if(isset($_GET['b'])){
         //table
             $pdf->setLeftMargin(10);
             $pdf->Cell(10,10,"STT","1","0","C");
-            $pdf->Cell(40,10,"Họ và tên","1","0","C");
+            $pdf->Cell(15,10,"ID","1","0","C");
+
+            $pdf->Cell(45,10,"Họ và tên","1","0","C");
             $pdf->Cell(25,10,"Ngày sinh","1","0","C");    
-            $pdf->Cell(15,10,"Giới tính","1","0","C");
-            $pdf->Cell(20,10,"SĐT","1","0","C");
-            $pdf->Cell(35,10,"Email","1","0","C");
-            $pdf->Cell(50,10,"Địa chỉ","1","1","C");   
+            $pdf->Cell(20,10,"Giới tính","1","0","C");
+            $pdf->Cell(25,10,"SĐT","1","0","C");
+            $pdf->Cell(50,10,"Email","1","1","C");
 
             $con = new PDO("mysql: host=localhost; dbname=luanvan", "root","");
             $query = "SELECT * FROM can_bo";
             $result = $con->prepare($query);
             $result->execute();
             $i = 1;
+
             if($result->rowCount()!=0)
             {
             while ($cb = $result->fetch())
             {                
+            $time = strtotime($cb['CB_NGAYSINH']);
+
             $pdf->Cell(10,10,$i,"1","0","C");
-            $pdf->Cell(40,10,$cb['CB_HOTEN'],"1","0","L");
-            $pdf->Cell(25,10,$cb['CB_NGAYSINH'],"1","0","C");    
-            $pdf->Cell(15,10,$cb['CB_PHAI'],"1","0","C");
-            $pdf->Cell(20,10,$cb['CB_SDT'],"1","0","L");
-            $pdf->Cell(35,10,$cb['CB_EMAIL'],"1","0","L");
-            $pdf->Cell(50,10,$cb['CB_DIACHI'],"1","1","L"); 
+            $pdf->Cell(15,10,$cb['CB_ID'],"1","0","C");
+            $pdf->Cell(45,10,$cb['CB_HOTEN'],"1","0","L");
+            $pdf->Cell(25,10,date("d/m/Y",$time),"1","0","C");    
+            $pdf->Cell(20,10,$cb['CB_PHAI'],"1","0","C");
+            $pdf->Cell(25,10,$cb['CB_SDT'],"1","0","L");
+            $pdf->Cell(50,10,$cb['CB_EMAIL'],"1","1","L");
             $i++;
 
 

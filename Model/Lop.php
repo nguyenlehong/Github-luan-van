@@ -51,11 +51,28 @@ function load_tre_thuoc_lop($L_ID){
 			FROM lop INNER JOIN lop_tre
 			ON lop.L_ID=lop_tre.L_ID
 			INNER JOIN tre
-			ON tre.T_ID=lop_tre.T_ID where lop.L_ID=".$L_ID;
+			ON tre.T_ID=lop_tre.T_ID 
+			where lop.L_ID=".$L_ID;
 	
 	$list=pdo_query($sql);
 	return $list; 
 }
+
+function chi_so_tre_thuoc_lop($L_ID){
+	$sql="SELECT lop.L_TEN,tre.T_HOTEN,tre.T_NGAYSINH,chi_so_phat_trien.CHIEUCAO,chi_so_phat_trien.CANNANG,tre.T_PHAI,chi_so_phat_trien.T_ID
+	FROM lop INNER JOIN lop_tre
+	on lop.L_ID = lop_tre.L_ID
+	INNER JOIN tre
+	ON tre.T_ID = lop_tre.T_ID
+	INNER JOIN chi_so_phat_trien
+	on chi_so_phat_trien.T_ID = tre.T_ID
+	WHERE lop.L_ID=".$L_ID;
+	
+	
+	$list=pdo_query($sql);
+	return $list; 
+}
+
 function load_ten_lop($L_ID){
 	$sql="select * from lop where L_ID=".$L_ID;
 	$list=pdo_query_one($sql);
