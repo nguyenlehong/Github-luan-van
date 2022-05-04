@@ -1,70 +1,55 @@
-<div class="content">
-    <div class="tieu-de">
-        <h3 class="font"> Cập nhật chỉ số lần 1</h3>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="View/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+</head>
 
 
+<body>
     <?php
         $conn = new mysqli('localhost','root','','luanvan');
-        
     ?>
     <?php
-    $tb="";
     if(isset($_POST['but_update'])){
         if(isset($_POST['update'])){
-            foreach ($_POST['update'] as $updateid ){  
-                        
+            foreach ($_POST['update'] as $updateid ){           
                 $cc =$_POST['CHIEUCAO_'.$updateid];
                 $cn =$_POST['CANNANG_'.$updateid];      
-                $th=$_POST['thang'];
-                if($cc !='' && $cn !=''){
-                    
-                    $capnhat = "update chi_so_phat_trien set
-                    THANG='".$th."',CHIEUCAO='".$cc."',CANNANG='".$cn."'
-                    where T_ID=".$updateid;
-                    
-                    mysqli_query($conn,$capnhat);
-                                      
-                }
                 
+                if($cc !='' && $cn !=''){
+                    $capnhat = "update chi_so_phat_trien set
+                    CHIEUCAO='".$cc."',CANNANG='".$cn."'
+                    where T_ID=".$updateid;
+                    mysqli_query($conn,$capnhat);
+                   
+                    
+                }
+
             }
-            echo '
-            <div class="alert alert-success" role="alert">
-  Cập nhật cân nặng và chiều cao thành công!
-</div>
-            ';
 
     }
-    
 }
     ?>
-    <div class="noi-dung-100">
-
-        <form action="" method="POST">
-            <div class="form-group" style="width: 200px; float: left">
-                <select class="form-control" id="exampleFormControlSelect1" name=thang>
-
-                    <option value="Tháng 1">Tháng 1</option>
-                    <option value="Tháng 2">Tháng 2</option>
-                    <option value="Tháng 3">Tháng 3</option>
-                    <option value="Tháng 4">Tháng 4</option>
-                    <option value="Tháng 5">Tháng 5</option>
-                    <option value="Tháng 6">Tháng 6</option>
-                    <option value="Tháng 7">Tháng 7</option>
-                    <option value="Tháng 8">Tháng 8</option>
-                    <option value="Tháng 9">Tháng 9</option>
-                    <option value="Tháng 10">Tháng 10</option>
-                    <option value="Tháng 11">Tháng 11</option>
-                    <option value="Tháng 12">Tháng 12</option>
-
-
-                </select>
-            </div>
-            <button type=" submit" class="width100 trang btn btn-success text-white" name='but_update'>
-                Lưu</button>
-
-            <table class="table table-hover">
-
+    <form action="" method="POST">
+        <button type="submit" class="width100 trang btn btn-success text-white" name='but_update'>
+            Lưu</button>
+        <table class="table table-hover">
+            <tbody>
                 <tr class="table-primary">
                     <th scope="col" class="width-table-100"><input type="checkbox" name="" id='checkAll'>check
                     </th>
@@ -75,7 +60,9 @@
                     <th scope="col" class="width-table-150">Chiều cao </th>
                     <th scope="col" class="width-table-150">Cân nặng</th>
                 </tr>
-                <?php                           
+                <?php
+                    
+                              
                     if(isset($_GET['L_ID'])&&($_GET['L_ID']>0)){
                         $L_ID=$_GET['L_ID']; }
             
@@ -98,6 +85,10 @@
                             $T_PHAI=$row['T_PHAI'];                     
 
             ?>
+
+
+
+
                 <tr>
                     <td><input type="checkbox" name="update[]" value='<?=$T_ID?>' id=""></td>
 
@@ -112,21 +103,12 @@
                     <td><input type="number" name="CHIEUCAO_<?= $T_ID ?>" value="<?=$cc?>"></td>
                     <td><input type=" number" name="CANNANG_<?= $T_ID ?>" value='<?=$cn?>'></td>
 
-
-
                 </tr>
                 <?php
             }
             ?>
-
-
-
-
-        </form>
-    </div>
-
-
-</div>
+    </form>
+</body>
 <script type=" text/javascript">
 $(document).ready(function() {
     // Check/Uncheck AL1
@@ -151,4 +133,5 @@ $(document).ready(function() {
     });
 });
 </script>
-</script>
+
+</html>

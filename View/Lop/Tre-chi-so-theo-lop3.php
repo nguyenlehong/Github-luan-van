@@ -1,6 +1,6 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font"> Cập nhật chỉ số lần 1</h3>
+        <h3 class="font"> Cập nhật chỉ số lần 3 </h3>
     </div>
 
 
@@ -12,15 +12,14 @@
     $tb="";
     if(isset($_POST['but_update'])){
         if(isset($_POST['update'])){
-            foreach ($_POST['update'] as $updateid ){  
-                        
+            foreach ($_POST['update'] as $updateid ){                  
                 $cc =$_POST['CHIEUCAO_'.$updateid];
                 $cn =$_POST['CANNANG_'.$updateid];      
                 $th=$_POST['thang'];
                 if($cc !='' && $cn !=''){
                     
-                    $capnhat = "update chi_so_phat_trien set
-                    THANG='".$th."',CHIEUCAO='".$cc."',CANNANG='".$cn."'
+                    $capnhat = "update chi_so_phat_trien3 set
+                    THANG='".$th."',CHIEUCAO3='".$cc."',CANNANG3='".$cn."'
                     where T_ID=".$updateid;
                     
                     mysqli_query($conn,$capnhat);
@@ -79,20 +78,21 @@
                     if(isset($_GET['L_ID'])&&($_GET['L_ID']>0)){
                         $L_ID=$_GET['L_ID']; }
             
-                        $query="SELECT lop.L_TEN,tre.T_HOTEN,tre.T_NGAYSINH,chi_so_phat_trien.CHIEUCAO,chi_so_phat_trien.CANNANG,tre.T_PHAI,chi_so_phat_trien.T_ID
+                        $query="SELECT lop.L_TEN,tre.T_HOTEN,tre.T_NGAYSINH,chi_so_phat_trien3.CHIEUCAO3,chi_so_phat_trien3.CANNANG3,tre.T_PHAI,chi_so_phat_trien3.T_ID
                         FROM lop INNER JOIN lop_tre
                         on lop.L_ID = lop_tre.L_ID
                         INNER JOIN tre
                         ON tre.T_ID = lop_tre.T_ID
-                        INNER JOIN chi_so_phat_trien
-                        on chi_so_phat_trien.T_ID = tre.T_ID
+                        INNER JOIN chi_so_phat_trien3
+                        on chi_so_phat_trien3.T_ID = tre.T_ID
                         WHERE lop.L_ID=".$L_ID;
                         
                         $result=mysqli_query($conn,$query);
                         while($row = mysqli_fetch_array($result)){
+                            
                             $T_ID=$row['T_ID'];
-                            $cc=$row['CHIEUCAO'];
-                            $cn=$row['CANNANG'];  
+                            $cc=$row['CHIEUCAO3'];
+                            $cn=$row['CANNANG3'];  
                             $T_HOTEN=$row['T_HOTEN'];
                             $T_NGAYSINH=$row['T_NGAYSINH'];                     
                             $T_PHAI=$row['T_PHAI'];                     

@@ -72,14 +72,20 @@ if(isset($_GET['b'])){
             session_unset();
             header('location: index.php');
         break;
-        case 'nhap-chi-so-tre':          
-            if(isset($_GET['L_ID'])&&($_GET['L_ID']>0)){
-                $L_ID=$_GET['L_ID'];            
-                $list_tre=chi_so_tre_thuoc_lop($L_ID);
-                $ten_lop=load_ten_lop($L_ID);
-            }
-            
+        case 'nhap-chi-so-tre': 
+            $conn = new mysqli('localhost','root','','luanvan');
+            error_reporting(0);      
             include "View/Lop/Tre-chi-so-theo-lop.php";
+            break;
+        case 'nhap-chi-so-tre2': 
+            $conn = new mysqli('localhost','root','','luanvan');
+            error_reporting(0);
+            include "View/Lop/Tre-chi-so-theo-lop2.php";
+            break;
+        case 'nhap-chi-so-tre3': 
+            $conn = new mysqli('localhost','root','','luanvan');
+            error_reporting(0);     
+            include "View/Lop/Tre-chi-so-theo-lop3.php";
             break;
         default:
             # code...

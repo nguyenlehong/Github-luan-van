@@ -90,5 +90,8 @@ function load_all_khoan_thu(){
 	$list=pdo_query($sql);
 	return $list; 
 }
-
+function capnhat($cc,$cn){
+	$sql="update chi_so_phat_trien set CHIEUCAO='".$cc."', CANNANG='".$cn."' where T_ID=".$updateid;
+	pdo_execute($sql);
+}
 ?>

@@ -10,7 +10,13 @@
         foreach ($list_lop as $lop) {
             extract($lop);
             $chitiet="Xu-ly.php?b=loc-tre-theo-lop&L_ID=".$L_ID;    
-            $chiso="Xu-ly.php?b=nhap-chi-so-tre&L_ID=".$L_ID;    
+            $chiso="Xu-ly.php?b=nhap-chi-so-tre&L_ID=".$L_ID; 
+            $chiso2="Xu-ly.php?b=nhap-chi-so-tre2&L_ID=".$L_ID; 
+            $chiso3="Xu-ly.php?b=nhap-chi-so-tre3&L_ID=".$L_ID; 
+
+
+            // $chiso2="nhap.php?L_ID=".$L_ID;    
+
 
             echo '
             <div class="alert alert-primary" role="alert">
@@ -24,10 +30,20 @@
 </a>
 <a href="'.$chiso.'" class="gachchands">
     <button type="button" class="btn btn-info">
-        Nhập chỉ số
+        Lần 1
     </button>
 </a>
-        </div>
+<a href="'.$chiso2.'" class="gachchands">
+<button type="button" class="btn btn-info">
+    Lần 2
+</button>
+</a>
+<a href="'.$chiso3.'" class="gachchands">
+<button type="button" class="btn btn-info">
+    Lần 3
+</button>
+</a>
+ </div>
             
             ';
         }
