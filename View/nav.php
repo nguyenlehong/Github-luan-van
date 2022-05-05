@@ -14,7 +14,9 @@ if(isset($_SESSION['user'])){
             <?=$CB_HOTEN?>
         </p>
         <ul>
-            <li> <a href="">Hồ sơ</a></li>
+            <li> <a href="Xu-ly.php?b=ho-so">Hồ sơ</a></li>
+            <li> <a href="Xu-ly.php?b=doi-mat-khau">Đổi mật khẩu</a></li>
+
             <li> <a href="Xu-ly.php?b=dang-xuat">Đăng xuất</a></li>
 
         </ul>

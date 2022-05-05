@@ -18,7 +18,7 @@
 
             <form action="Login.php" method="POST">
                 <div class="inputBox">
-                    <input type="text" required="required" name="ID">
+                    <input type="text" required="required" name="ID" autocomplete="off">
                     <span>Tài khoản</span>
                 </div>
 

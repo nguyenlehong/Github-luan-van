@@ -16,6 +16,13 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
         background: linear-gradient(45deg, #80cbc4, #e1bee7);
     }
     
+    .dangnhap-doi-mk {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
     .container {
         position: relative;
         padding: 70px 40px;
@@ -210,6 +217,15 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
         border-radius: 5px;
         /* background-color: #F7F7F9;  width 1285px*/
     }
+    
+    .content-doi-mk {
+        width: 1270px;
+        height: auto;
+        margin-left: 240px;
+        margin-top: 11px;
+        border-radius: 5px;
+        top: 10px;
+    }
     /*  giao diện  header menu user*/
     
     .haeder {
@@ -256,16 +272,17 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
     
     .header-user ul {
         background-color: #F0F8FF;
-        width: 170px;
+        width: 144px;
         padding: 0;
         list-style-type: none;
         position: absolute;
         display: none;
-        top: 44px;
+        top: 30px;
+        right: 0px;
     }
     
     .header-user ul li {
-        width: 170px;
+        width: 130px;
         height: 30px;
         line-height: 30px;
         border-bottom: 1px solid #2980b9;
@@ -320,6 +337,19 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
         margin-top: 10px;
         /* position: relative; */
         /* background-color: #80cbc4; */
+    }
+    
+    .noi-dung-80c {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .contentc {
+        width: 1270px;
+        margin-left: 240px;
+        margin-top: 11px;
+        border-radius: 5px;
+        height: 300px;
     }
     
     .noi-dung-100 {
@@ -483,4 +513,8 @@ https://www.youtube.com/watch?v=PTGnpXbMU1U
     .ogiua {
         text-align: center;
         vertical-align: middle;
+    }
+    
+    .indam {
+        font-weight: bold;
     }

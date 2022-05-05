@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 include "Model/pdo.php";
 include "Model/Tai-khoan.php";
 include "Model/Mon-an.php";
@@ -71,7 +72,14 @@ if(isset($_GET['b'])){
         case 'dang-xuat':
             session_unset();
             header('location: index.php');
+            ob_end_flush();
         break;
+        case 'doi-mat-khau':
+            include "View/login.php";
+            break;
+        case 'ho-so':
+            include "View/home.php";
+            break;
         case 'nhap-chi-so-tre': 
             $conn = new mysqli('localhost','root','','luanvan');
             error_reporting(0);      
@@ -88,9 +96,12 @@ if(isset($_GET['b'])){
             include "View/Lop/Tre-chi-so-theo-lop3.php";
             break;
         default:
-            # code...
+            include "home.php";
             break;
     }
+}else{
+include "View/home.php";
+
 }
 
 include "View/footer.php";
