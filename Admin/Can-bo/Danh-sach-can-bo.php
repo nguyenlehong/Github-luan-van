@@ -12,7 +12,7 @@
                     <th class="width-table-100" scope="col">Giới tính</th>
                     <th class="width-table-150" scope="col">SĐT</th>
                     <th class="width-table-200" scope="col">Email</th>
-                    <th class="width-table-300" scope="col">Địa chỉ</th>
+                    <th class="width-table-250" scope="col">Địa chỉ</th>
                     <th scope="col">Thao thác</th>
 
                 </tr>
@@ -61,9 +61,5 @@
         <a href="xu-ly-in.php?b=in-can-bo"> <button type="submit" class="btn btn-info width100 ">In
             </button></a>
     </div>
+    <div style="height:20px"></div>
 </div>
-<!-- <a href="'.$xoacanbo.'" class="gachchan2">
-    <button type="submit" class="btn btn-danger">
-        <ion-icon name="trash-outline"></ion-icon>
-    </button>
-</a> -->

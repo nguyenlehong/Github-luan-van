@@ -3,10 +3,20 @@ function  insert_can_bo($hoten,$ngaysinh,$phai,$sdt,$email,$diachi){
 	$sql="insert into can_bo(CB_HOTEN,CB_NGAYSINH,CB_PHAI,CB_SDT,CB_EMAIL,CB_DIACHI)values('$hoten','$ngaysinh','$phai','$sdt','$email','$diachi')";
 	pdo_execute($sql);
 }
+function  cap_nhat_thong_tin_can_bo($id,$sdt,$email,$diachi){
+	$sql="update can_bo set CB_SDT='".$sdt."',CB_EMAIL='".$email."',CB_DIACHI='".$diachi."' where CB_ID=".$id;
+	pdo_execute($sql);
+	
+}
 function load_all_can_bo(){
     $sql="select * from can_bo order by CB_ID desc";
 	$list=pdo_query($sql);
 	return $list; 
+}
+function load_1_can_bo($CB_ID){
+    $sql="select * from can_bo where CB_ID=".$CB_ID;
+	$cb=pdo_query_one($sql);
+	return $cb; 
 }
 function delete_can_bo($CB_ID){
 	$sql="delete from can_bo where CB_ID=".$CB_ID;

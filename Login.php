@@ -9,12 +9,18 @@ include "Model/Tai-khoan.php";
                 $id=$_POST['ID'];
                 $matkhau=$_POST['Matkhau'];
                 $kiemtradangnhap=kiem_tra_dang_nhap($id,$matkhau);    
+                $kiemtradangnhapadmin=kiem_tra_dang_nhap_admin($id,$matkhau);  
                     if(is_array($kiemtradangnhap)){
                         $_SESSION['user']=$kiemtradangnhap;
                          header('location: Xu-ly.php');	  
                         
 
-                    }else{
+                    }else if(is_array( $kiemtradangnhapadmin)){
+                            $_SESSION['admin']= $kiemtradangnhapadmin;
+                             header('location: Admin/index.php');	
+                        
+                    }
+                    else{
                         $thongbaoo="Tài khoản hoặc mật khẩu không đúng";
                         include "index.php";
                     }                                 

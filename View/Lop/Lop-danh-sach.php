@@ -5,6 +5,37 @@
         </h3>
     </div>
     <div class=noi-dung-70>
+        <form action="">
+            <div style="padding-bottom: 15px; height:100px;">
+                <div class="form-group" style="padding-top: 20px;margin-right: 160px;width:40%;float:right">
+                    <label for="exampleFormControlSelect1"></label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php
+                            foreach ($list_khoi as $khoi) {
+                            extract($khoi);
+                            echo '
+                            <option value="'.$KHOI.'">'.$KHOI.'</option>                            
+                            ';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="form-group" style="padding-top: 10px;width:40%;">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+                    <label for="exampleFormControlSelect1"></label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php
+                            foreach ($list_nam_hoc as $namhoc) {
+                            extract($namhoc);
+                            echo '
+                            <option value="'.$NAMHOC.'">'.$NAMHOC.'</option>                            
+                            ';
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+        </form>
 
         <?php
         foreach ($list_lop as $lop) {
@@ -50,10 +81,7 @@
         ?>
 
     </div>
+    <div style="height:25px">
+
+    </div>
 </div>
-<!-- $delete="index.php?a=update-lop&L_ID=".$L_ID; -->
-<!-- <a href="'.$delete.'" class="gachchands">
-    <button type=" reset" class="btn btn-danger" onclick="deleteLM()">
-        <ion-icon name="trash-outline"></ion-icon>
-    </button>
-</a> -->

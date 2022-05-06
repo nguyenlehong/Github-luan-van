@@ -1,6 +1,6 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font">Danh sách lớp </h3>
+        <h3 class="font">Danh sách lớp</h3>
     </div>
     <div class=noi-dung-70>
         <h5>Các nhóm thuộc <?=$KHOI?></h5>
@@ -29,5 +29,5 @@
                 sách khối</button></a>
     </div>
 
-
+    <div style="height:25px"></div>
 </div>

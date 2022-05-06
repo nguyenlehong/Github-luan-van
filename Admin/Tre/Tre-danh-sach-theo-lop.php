@@ -21,13 +21,14 @@
                 $i=1;
                 foreach ($list_tre as $tre) {
                    extract($tre);
+                   $time = strtotime($T_NGAYSINH);
                    $chitiettre="index.php?a=chi-tiet-thong-tin-tre&T_ID=".$T_ID;
                    $chi_so_tre="index.php?a=cap-nhat-chi-so-tre&T_ID=".$T_ID;
                    echo '
                    <tr>
                    <th scope="row">'.$i.'</th>
                    <td class="width-table-300">'.$T_HOTEN.'</td>
-                   <td> '.$T_NGAYSINH.'</td>
+                   <td> '.date("d/m/Y", $time).'</td>
                    <td>'.$T_PHAI.'</td>
                    <td>'.$T_HTCHA.'</td>
                    <td>'.$T_HTME.'</td>

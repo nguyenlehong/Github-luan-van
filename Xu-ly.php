@@ -49,7 +49,9 @@ if(isset($_GET['b'])){
             include "View/Lop/Tre-danh-sach-theo-lop.php";
             break;
         case 'danh-sach-lop':
+            $list_khoi=load_all_khoi();
             $list_lop=load_all_lop();
+            $list_nam_hoc=load_all_nam_hoc();
             include "View/Lop/Lop-danh-sach.php";
             break;
         case 'danh-sach-khoan-thu':
@@ -75,6 +77,37 @@ if(isset($_GET['b'])){
             ob_end_flush();
         break;
         case 'doi-mat-khau':
+            
+            include "View/login.php";
+            break;
+        case 'cap-nhat-mat-khau':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $mk=$_POST['mk'];
+                $mkmoi=$_POST['mkmoi'];
+                $mkmoicheck=$_POST['mkmoicheck'];                
+                $id=$_POST['CB_ID'];
+                $CB_MATKHAU=$_POST['CB_MATKHAU'];
+
+                if($mk = $CB_MATKHAU){
+                    if($mkmoi == $mkmoicheck){
+                    doi_mat_khau($id,$mkmoi);
+                  
+                    $thongbao="Đổi mật khẩu thành công! đăng xuất sau 3s";
+                   
+                    session_unset();
+                    header('refresh:5; url=index.php');	
+                   
+                         }else{
+                            $thongbaoloi2="Nhập lại mật khẩu mới!";
+                            
+                         }
+                    
+                    }else{
+                        $thongbaoloi="Mật khẩu cũ không đúng!";
+                        }
+                }
+                
+            
             include "View/login.php";
             break;
         case 'ho-so':

@@ -1,5 +1,7 @@
 <?php
+ob_start();
 session_start();
+
 include "../Model/pdo.php";
 include "../Model/Mon-an.php";
 include "../Model/Lop.php";
@@ -137,8 +139,51 @@ if(isset($_GET['a'])){
             }
             $list_can_bo=load_all_can_bo();
             include "Can-bo/Danh-sach-can-bo.php";
-        break;
-            
+            break;
+        case 'update-can-bo':
+            if(isset($_GET['CB_ID'])&&($_GET['CB_ID'])>0){
+              $canbo=load_1_can_bo($_GET['CB_ID']);
+            }
+            include "Can-bo/Cap-nhat-can-bo.php";
+            break;
+        case 'cap-nhat-thong-tincb':
+            if(isset($_POST['luu'])&&($_POST['luu'])){             
+                $id = $_POST['id'];
+                $sdt=$_POST['sdt'];
+                $email=$_POST['email'];
+                $diachi=$_POST['diachi'];
+                cap_nhat_thong_tin_can_bo($id,$sdt,$email,$diachi);
+                 $thongbao="Cập nhật thông tin thành công";
+            }   
+            $canbo=load_1_can_bo($id);
+            include "Can-bo/Cap-nhat-can-bo.php";
+            break;
+        case 'cap-nhat-thong-tin-tre':
+            if(isset($_GET['T_ID'])&&($_GET['T_ID'])>0){
+                  $tre=cap_nhat_1_tre($_GET['T_ID']);
+            }
+                include "Tre/Cap-nhat-thong-tin-tre.php";
+                break;
+        case 'cap-nhat-thong-chi-tiet-tin-tree':
+            if(isset($_POST['luu'])&&($_POST['luu'])){  
+                $id=$_POST['id'];    
+                $ten=$_POST['ten'];
+                $ngaysinh=$_POST['ngaysinh'];
+                $phai=$_POST['phai'];
+                $diachi=$_POST['diachi'];
+                $hotenme=$_POST['hotenme'];
+                $sdtme=$_POST['sdtme'];
+                $nnme=$_POST['nnme'];
+                $hotencha=$_POST['hotencha'];
+                $sdtcha=$_POST['sdtcha'];
+                $nncha=$_POST['nncha'];
+                cap_nhat_thong_tin_tre($id,$ten,$ngaysinh,$phai,$diachi,$hotencha,$sdtcha,$nncha,$hotenme,$sdtme,$nnme);  
+                $thongbao="Cập nhật thông tin thành công";          
+            }  
+            $tre=cap_nhat_1_tre($id);
+            include "Tre/Cap-nhat-thong-tin-tre.php";       
+            break;
+                
         case 'phan-cong':
             $list_nam_hoc=load_all_nam_hoc();
             $list_nhiem_vu=load_all_nhiem_vu();
@@ -213,10 +258,7 @@ if(isset($_GET['a'])){
         case 'them-tien-khoan-thu':
             $list_nam_hoc=load_all_nam_hoc();
             $list_khoi=load_all_khoi();
-            $list_khoan_thu=load_all_khoan_thu();
-
-            
-            
+            $list_khoan_thu=load_all_khoan_thu();     
             include "Lop/Muc-thu-them.php"; 
             break;
         case 'them-tre':
@@ -262,6 +304,9 @@ if(isset($_GET['a'])){
                 $idlop=$_POST['L_ID'];
                 $idtre=$_POST['T_ID'];                
                 insert_tre_chon_lop($idlop,$idtre);
+                insert_tre_chi_so($idlop,$idtre);
+                insert_tre_chi_so2($idlop,$idtre);
+                insert_tre_chi_so3($idlop,$idtre);
             }
             $list_all_tre=load_all_tre();
 
@@ -357,6 +402,11 @@ if(isset($_GET['a'])){
         case 'danh-sach-nam-hoc':
             $list_nam_hoc=load_all_nam_hoc();
             include "Lop/Nam-hoc-danh-sach.php";
+            break;
+        case 'admin-dang-xuat':
+            session_unset();
+            header('location: ../index.php');
+            ob_end_flush();
             break;
         default:
            include "home.php";
