@@ -1,6 +1,6 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font">Thực đơn Khối 25-36 tháng</h3>
+        <h3 class="font">Thực đơn toàn trường</h3>
     </div>
     <div class=noi-dung-100>
         <table class="table table-bordered">
@@ -108,11 +108,36 @@
                 </tr>
                 <tr>
                     <th scope="row" class="ogiua">BUỔI CHIỀU</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php 
+                            foreach ($list_thuc_don as $thucdon) {
+                                extract($thucdon);
+                                if(($THU=="Thứ 2")&&($BUOI=="Buổi chiều")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                                echo''.$MONAN.'';
+                        }?></td>
+                    <td><?php 
+                            foreach ($list_thuc_don as $thucdon) {
+                                extract($thucdon);
+                                if(($THU=="Thứ 3")&&($BUOI=="Buổi chiều")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                                echo''.$MONAN.'';
+                        }?></td>
+                    <td> <?php 
+                            foreach ($list_thuc_don as $thucdon) {
+                                extract($thucdon);
+                                if(($THU=="Thứ 4")&&($BUOI=="Buổi chiều")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                                echo''.$MONAN.'';
+                        }?></td>
+                    <td><?php 
+                            foreach ($list_thuc_don as $thucdon) {
+                                extract($thucdon);
+                                if(($THU=="Thứ 5")&&($BUOI=="Buổi chiều")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                                echo''.$MONAN.'';
+                        }?></td>
+                    <td><?php 
+                            foreach ($list_thuc_don as $thucdon) {
+                                extract($thucdon);
+                                if(($THU=="Thứ 6")&&($BUOI=="Buổi chiều")&&($KHOI="Khối từ 25 đến 36 tháng tuổi"))
+                                echo''.$MONAN.'';
+                        }?></td>
                 </tr>
             </tbody>
         </table>

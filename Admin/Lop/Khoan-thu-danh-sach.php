@@ -11,19 +11,24 @@
             <div class="alert alert-primary" role="alert">
             '.$KT_NOIDUNG.'
            
-        <a href="'.$xoa.'" class="gachchands">
-            <button type="button" class="btn btn-danger" >
-                <ion-icon name="trash-outline"></ion-icon>
-            </button>
-        </a>
-        <a href="#" class="gachchands">
-        <button type="button" class="btn btn-success">
-        <ion-icon name="list-outline"></ion-icon>
-        </button>
-    </a>
+    
         </div>
             
             ';
         }
 
         ?>
+    </div>
+    <div style="height:30px"></div>
+
+</div>
+<!-- <a href="'.$xoa.'" class="gachchands">
+    <button type="button" class="btn btn-danger">
+        <ion-icon name="trash-outline"></ion-icon>
+    </button>
+</a>
+<a href="#" class="gachchands">
+    <button type="button" class="btn btn-success">
+        <ion-icon name="list-outline"></ion-icon>
+    </button>
+</a> -->

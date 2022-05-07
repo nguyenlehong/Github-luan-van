@@ -23,7 +23,7 @@
                    extract($tre);
                    $time = strtotime($T_NGAYSINH);
                    $chitiettre="index.php?a=chi-tiet-thong-tin-tre&T_ID=".$T_ID;
-                   $chi_so_tre="index.php?a=cap-nhat-chi-so-tre&T_ID=".$T_ID;
+                   $xoa_tre="index.php?a=xoa-tre&T_ID=".$T_ID;
                    echo '
                    <tr>
                    <th scope="row">'.$i.'</th>
@@ -34,14 +34,14 @@
                    <td>'.$T_HTME.'</td>
                    <td>'.$T_DIACHI.'</td>
                    <td>
-                       <a href="'.$chi_so_tre.'" class="gachchan2">
+                       <a href="'.$chitiettre.'" class="gachchan2">
                            <button type="button" class="btn btn-success">
                                <ion-icon name="pencil-outline"></ion-icon>
                            </button>
-                           <a href="'.$chitiettre.'" class="gachchan2">
-                               <button type=""button class="btn btn-primary">
-                                   <ion-icon name="person-outline"></ion-icon>
-                               </button>
+                           <a href="'.$xoa_tre.'" class="gachchan2">
+                           <button type="button" class="btn btn-danger">
+                           <ion-icon name="trash-outline"></ion-icon>
+                           </button>
                            </a>
 
                        </a>

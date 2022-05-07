@@ -67,7 +67,7 @@
                 <tr class="table-primary">
                     <th scope="col" class="width-table-100"><input type="checkbox" name="" id='checkAll'>check
                     </th>
-                    <th scope="col" class="width-table-100">STT</th>
+                    <th scope="col" class="width-table-100">ID</th>
                     <th scope="col" class="width-table-150">Họ & tên</th>
                     <th scope="col" class="width-table-150">Ngày sinh</th>
                     <th scope="col" class="width-table-150">Giới tính</th>

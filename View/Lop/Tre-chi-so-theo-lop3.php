@@ -67,7 +67,7 @@
                 <tr class="table-primary">
                     <th scope="col" class="width-table-100"><input type="checkbox" name="" id='checkAll'>check
                     </th>
-                    <th scope="col" class="width-table-100">STT</th>
+                    <th scope="col" class="width-table-100">ID</th>
                     <th scope="col" class="width-table-150">Họ & tên</th>
                     <th scope="col" class="width-table-150">Ngày sinh</th>
                     <th scope="col" class="width-table-150">Giới tính</th>
@@ -109,8 +109,8 @@
                     </td>
                     <td> <?=$T_NGAYSINH?></td>
                     <td><?=$T_PHAI?></td>
-                    <td><input type="number" name="CHIEUCAO_<?= $T_ID ?>" value="<?=$cc?>"></td>
-                    <td><input type=" number" name="CANNANG_<?= $T_ID ?>" value='<?=$cn?>'></td>
+                    <td><input type="number" step="0.1" name="CHIEUCAO_<?= $T_ID ?>" value="<?=$cc?>"></td>
+                    <td><input type=" number" step="0.1" name="CANNANG_<?= $T_ID ?>" value='<?=$cn?>'></td>
 
 
 

@@ -48,7 +48,7 @@
             </a>
             <div class="smenu ">
                 <a href="index.php?a=them-thuc-don "> Thực đơn</a>
-                <a href="index.php?a=them-thuc-don-v2 "> Thực đơn v2</a>
+                <!-- <a href="index.php?a=them-thuc-don-v2 "> Thực đơn v2</a> -->
                 <a href="index.php?a=them-loai-mon "> Loại món</a>
                 <!-- <a href="index.php?a=danh-sach-loai-mon ">Dánh sách loại món</a> -->
                 <a href="index.php?a=them-mon-an "> Món ăn</a>
