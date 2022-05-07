@@ -1,4 +1,10 @@
-<div class="menu ">
+<?php
+if(isset($_SESSION['user'])){
+    extract($_SESSION['user']);
+    
+}
+
+?><div class="menu ">
     <div class="menu2 ">
         <li class="item2 " id="giaovien">
             <a href="#giaovien" class="btn2 ">
@@ -15,11 +21,12 @@
         <li class="item2 " id="hocsinh">
             <a href="#hocsinh" class="btn2 ">
                 <ion-icon name="person-outline"></ion-icon>
-                </ion-icon>
+
                 Quản lý học sinh
             </a>
             <div class="smenu">
-                <a href=" "> Cập nhật trẻ</a>
+
+                <a href="Xu-ly.php?b=cap-nhat-tre"> Cập nhật trẻ</a>
                 <a href=" ">Chỉ sổ</a>
 
             </div>
@@ -31,8 +38,8 @@
                 Quản lý lớp
             </a>
             <div class="smenu ">
-                <a href="Xu-ly.php?b=danh-sach-khoi ">Danh sách khối</a>
-                <a href="Xu-ly.php?b=danh-sach-lop ">Danh sách lớp</a>
+                <!-- <a href="Xu-ly.php?b=danh-sach-khoi ">Danh sách khối</a> -->
+                <a href="Xu-ly.php?b=danh-sach-lop ">Chỉ số lớp</a>
                 <a href="Xu-ly.php?b=danh-sach-khoan-thu ">Khoản thu</a>
 
             </div>

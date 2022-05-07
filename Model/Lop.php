@@ -34,11 +34,31 @@ function load_all_lop(){
 	$list=pdo_query($sql);
 	return $list; 
 }
+function load_all_lop2($CB_ID){
+	$sql="SELECT *
+	FROM can_bo INNER JOIN phan_cong
+	on can_bo.CB_ID = phan_cong.CB_ID
+	INNER JOIN lop
+	on lop.L_ID =phan_cong.L_ID
+	WHERE can_bo.CB_ID=".$CB_ID;
+	$list=pdo_query($sql);
+	return $list; 
+}
 
 function load_lop_thuoc_khoi($KHOI){
 	$sql="select * from lop where 1";
 	if($KHOI!=""){
 	$sql.=" and KHOI ='".$KHOI."'";	
+	}
+	$sql.=" order by L_ID desc";
+	
+	$list=pdo_query($sql);
+	return $list; 
+}
+function load_lop_thuoc_nam($NAMHOC){
+	$sql="select * from lop where 1";
+	if($NAMHOC!=""){
+	$sql.=" and NAMHOC ='".$NAMHOC."'";	
 	}
 	$sql.=" order by L_ID desc";
 	
@@ -54,6 +74,16 @@ function load_tre_thuoc_lop($L_ID){
 			ON tre.T_ID=lop_tre.T_ID 
 			where lop.L_ID=".$L_ID;
 	
+	$list=pdo_query($sql);
+	return $list; 
+}
+function load_all_lop_theo_cb($CB_ID){
+	$sql ="SELECT *
+		FROM can_bo INNER JOIN phan_cong
+		on can_bo.CB_ID = phan_cong.CB_ID
+		INNER JOIN lop
+		on lop.L_ID =phan_cong.L_ID
+		WHERE can_bo.CB_ID=".$CB_ID;
 	$list=pdo_query($sql);
 	return $list; 
 }

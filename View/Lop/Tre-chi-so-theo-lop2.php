@@ -108,8 +108,8 @@
                     </td>
                     <td> <?=$T_NGAYSINH?></td>
                     <td><?=$T_PHAI?></td>
-                    <td><input type="number" name="CHIEUCAO_<?= $T_ID ?>" value="<?=$cc?>"></td>
-                    <td><input type=" number" name="CANNANG_<?= $T_ID ?>" value='<?=$cn?>'></td>
+                    <td><input type="number" step="0.1" name="CHIEUCAO_<?= $T_ID ?>" value="<?=$cc?>"></td>
+                    <td><input type=" number" step="0.1" name="CANNANG_<?= $T_ID ?>" value='<?=$cn?>'></td>
 
 
 

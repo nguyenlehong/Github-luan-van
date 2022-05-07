@@ -35,6 +35,7 @@
                 <a href="index.php?a=them-nam-hoc "> Thêm năm học</a>
                 <a href="index.php?a=danh-sach-khoi "> Danh sách khối</a>
                 <a href="index.php?a=them-lop  "> Thêm lớp</a>
+                <a href="index.php?a=danh-sach-lop  "> Danh sách lớp</a>
                 <a href="index.php?a=them-khoan-thu">Khoản thu</a>
             </div>
         </li>

@@ -12,7 +12,9 @@ include "View/header.php";
 include "View/nav.php";
 include "View/menu.php";
 
-
+if(isset($_SESSION['user'])){
+    extract($_SESSION['user']);  
+}
 if(isset($_GET['b'])){
     $b=$_GET['b'];
     switch ($b) {
@@ -48,10 +50,57 @@ if(isset($_GET['b'])){
             }
             include "View/Lop/Tre-danh-sach-theo-lop.php";
             break;
-        case 'danh-sach-lop':
+        case 'cap-nhat-tre-theo-lopcb':
+            if(isset($_GET['L_ID'])&&($_GET['L_ID']>0)){
+                $L_ID=$_GET['L_ID'];            
+                $list_tre=load_tre_thuoc_lop($L_ID);
+                $ten_lop=load_ten_lop($L_ID);
+            }
+            include "View/Tre/Tre-danh-sach-theo-lop-cap-nhat.php";
+            break;
+        case 'cap-nhat-thong-tin-ct-trecb':
+            if(isset($_GET['T_ID'])&&($_GET['T_ID'])>0){
+                $tre=cap_nhat_1_tre($_GET['T_ID']);
+            }
+              include "View/Tre/Hien-thi-Cap-nhat-thong-tin-tre.php";
+            break;
+        case 'luu-cap-nhat-thong-chi-tiet-tin-tre':
+            if(isset($_POST['luu'])&&($_POST['luu'])){  
+                $id=$_POST['id'];    
+                $ten=$_POST['ten'];
+                $ngaysinh=$_POST['ngaysinh'];
+                $phai=$_POST['phai'];
+                $diachi=$_POST['diachi'];
+                $hotenme=$_POST['hotenme'];
+                $sdtme=$_POST['sdtme'];
+                $nnme=$_POST['nnme'];
+                $hotencha=$_POST['hotencha'];
+                $sdtcha=$_POST['sdtcha'];
+                $nncha=$_POST['nncha'];
+                cap_nhat_thong_tin_tre($id,$ten,$ngaysinh,$phai,$diachi,$hotencha,$sdtcha,$nncha,$hotenme,$sdtme,$nnme);  
+                $thongbao="Cập nhật thông tin thành công";          
+            }  
+            $tre=cap_nhat_1_tre($id);
+            include "View/Tre/Hien-thi-Cap-nhat-thong-tin-tre.php";
+            break;
+        case 'danh-sach-lop':         
             $list_khoi=load_all_khoi();
-            $list_lop=load_all_lop();
+            $list_lop_thuoc_khoi=load_all_lop2($_SESSION['user']['CB_ID']);
             $list_nam_hoc=load_all_nam_hoc();
+            // $list_lop_thuoc_khoi=load_lop_thuoc_khoi_NN($KHOI,$NAMHOC);
+            include "View/Lop/Lop-danh-sach.php";
+            break;
+
+            
+        case 'loc-lop-theo-nam-khoi':
+            if(isset($_POST['loc-lop-theo-nam'])&&($_POST['loc-lop-theo-nam'])){             
+                $NAMHOC=$_POST['NAMHOC'];
+            }else{              
+                $NAMHOC='';
+                } 
+            $list_khoi=load_all_khoi();
+            $list_nam_hoc=load_all_nam_hoc();
+            $list_lop_thuoc_khoi=load_lop_thuoc_nam($NAMHOC);
             include "View/Lop/Lop-danh-sach.php";
             break;
         case 'danh-sach-khoan-thu':
@@ -112,6 +161,10 @@ if(isset($_GET['b'])){
             break;
         case 'ho-so':
             include "View/home.php";
+            break;
+        case 'cap-nhat-tre':
+            $list_lop=load_all_lop_theo_cb($_SESSION['user']['CB_ID']);
+            include "View/Tre/Danh-sach-lop.php";
             break;
         case 'nhap-chi-so-tre': 
             $conn = new mysqli('localhost','root','','luanvan');

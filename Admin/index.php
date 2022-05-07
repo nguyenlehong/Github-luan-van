@@ -363,8 +363,22 @@ if(isset($_GET['a'])){
             include "Lop/Lop-danh-sach.php";
             break;
         case 'danh-sach-lop':
+            $list_nam_hoc=load_all_nam_hoc();
             $list_lop=load_all_lop();
             include "Lop/Lop-danh-sach.php";
+            break;
+        case 'loc-lop-theo-nam-khoicb':
+            if(isset($_POST['loc-lop-theo-nam'])&&($_POST['loc-lop-theo-nam'])){             
+                $NAMHOC=$_POST['NAMHOC'];
+            }else{              
+                $NAMHOC='';
+                } 
+            // $list_lop=load_all_lop();
+            $list_khoi=load_all_khoi();
+            $list_nam_hoc=load_all_nam_hoc();
+            $list_lop_thuoc_khoi=load_lop_thuoc_nam($NAMHOC);
+            include "Lop/Lop-danh-sach_theo_nam.php";
+
             break;
         case 'loc-lop-theo-khoi':
             if(isset($_GET['KHOI'])&&($_GET['KHOI']!='')){

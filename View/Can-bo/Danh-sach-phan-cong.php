@@ -7,6 +7,8 @@
             <tbody>
                 <tr class="table-primary">
                     <th class="width-table-100" scope="col">STT</th>
+                    <th class="width-table-50" scope="col">ID</th>
+
                     <th class="width-table-250" scope="col">Họ & tên</th>
                     <th class="width-table-250" scope="col">Nhiệm vụ</th>
                     <th class="width-table-250" scope="col">Lớp</th>
@@ -23,8 +25,8 @@
                     echo'           
                     <tr>
                     <th class="width-table-100" scope="row">'.$i.'</th>
-                    
-                    <td class="width-table-300">'.$CB_HOTEN.'</td>
+                    <th class="width-table-50">'.$CB_ID.'</th>
+                    <td class="width-table-250">'.$CB_HOTEN.'</td>
                     <td class="width-table-250"> '.$NV_TEN.'</td>
                     <td class="width-table-250">'.$L_TEN.'</td>
                     <td class="width-table-250">'.$NAMHOC.'</td>

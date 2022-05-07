@@ -1,6 +1,8 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font"> Cập nhật chỉ số lần 1</h3>
+        <h3 class="font"> Cập nhật chỉ số lần 1
+
+        </h3>
     </div>
 
 
@@ -12,17 +14,14 @@
     $tb="";
     if(isset($_POST['but_update'])){
         if(isset($_POST['update'])){
-            foreach ($_POST['update'] as $updateid ){  
-                        
+            foreach ($_POST['update'] as $updateid ){                          
                 $cc =$_POST['CHIEUCAO_'.$updateid];
                 $cn =$_POST['CANNANG_'.$updateid];      
                 $th=$_POST['thang'];
-                if($cc !='' && $cn !=''){
-                    
+                if($cc !='' && $cn !=''){                   
                     $capnhat = "update chi_so_phat_trien set
                     THANG='".$th."',CHIEUCAO='".$cc."',CANNANG='".$cn."'
-                    where T_ID=".$updateid;
-                    
+                    where T_ID=".$updateid;                  
                     mysqli_query($conn,$capnhat);
                                       
                 }
@@ -95,7 +94,8 @@
                             $cn=$row['CANNANG'];  
                             $T_HOTEN=$row['T_HOTEN'];
                             $T_NGAYSINH=$row['T_NGAYSINH'];                     
-                            $T_PHAI=$row['T_PHAI'];                     
+                            $T_PHAI=$row['T_PHAI']; 
+                            $tenlop=$row['L_TEN'];                    
 
             ?>
                 <tr>
@@ -109,8 +109,8 @@
                     </td>
                     <td> <?=$T_NGAYSINH?></td>
                     <td><?=$T_PHAI?></td>
-                    <td><input type="number" name="CHIEUCAO_<?= $T_ID ?>" value="<?=$cc?>"></td>
-                    <td><input type=" number" name="CANNANG_<?= $T_ID ?>" value='<?=$cn?>'></td>
+                    <td><input type="number" step="0.1" name="CHIEUCAO_<?= $T_ID ?>" value="<?=$cc?>"></td>
+                    <td><input type=" number" step="0.1" name="CANNANG_<?= $T_ID ?>" value='<?=$cn?>'></td>
 
 
 

@@ -7,10 +7,12 @@
             <tbody>
                 <tr class="table-primary">
                     <th class="width-table-100" scope="col">STT</th>
+                    <th class="width-table-100" scope="col">ID</th>
+
                     <th class="width-table-250" scope="col">Họ & tên</th>
                     <th class="width-table-250" scope="col">Nhiệm vụ</th>
-                    <th class="width-table-250" scope="col">Lớp</th>
-                    <th class="width-table-250" scope="col">Năm học</th>
+                    <th class="width-table-200" scope="col">Lớp</th>
+                    <th class="width-table-200" scope="col">Năm học</th>
                     <th scope="col">Thao thác</th>
                 </tr>
 
@@ -22,12 +24,12 @@
                     $delete="index.php?a=xoa-phan-cong&PC_ID=".$PC_ID;
                     echo'           
                     <tr>
-                    <th class="width-table-100" scope="row">'.$i.'</th>
-                    
-                    <td class="width-table-300">'.$CB_HOTEN.'</td>
-                    <td class="width-table-250"> '.$NV_TEN.'</td>
-                    <td class="width-table-250">'.$L_TEN.'</td>
-                    <td class="width-table-250">'.$NAMHOC.'</td>
+                    <th  scope="row">'.$i.'</th>
+                    <th  scope="row">'.$CB_ID.'</th>                   
+                    <td >'.$CB_HOTEN.'</td>
+                    <td > '.$NV_TEN.'</td>
+                    <td >'.$L_TEN.'</td>
+                    <td >'.$NAMHOC.'</td>
                     <td>
                         <a href="#" class="gachchan2">
                             <button type=" reset" class="btn btn-success">
