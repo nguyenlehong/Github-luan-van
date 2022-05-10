@@ -8,7 +8,6 @@ if(isset($_GET['b'])){
     $b=$_GET['b'];
     switch ($b){
         case 'in-can-bo':             
-
             $pdf->SetTitle("In danh sách cán bộ");      
             $pdf->Cell(200,10,"Danh sách Cán bộ" ,"0","1","C");      
             $pdf->SetFont('DejaVu','',11);                    

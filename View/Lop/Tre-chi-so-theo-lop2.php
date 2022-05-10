@@ -1,6 +1,25 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font"> Cập nhật chỉ số lần 2 </h3>
+        <h3 class="font"> Cập nhật chỉ số lần 2
+            <?php
+             if(isset($_GET['L_ID'])&&($_GET['L_ID']>0)){
+                $L_ID=$_GET['L_ID'];
+            }
+            
+            $query="SELECT * from lop 
+            WHERE lop.L_ID=".$L_ID ;
+            
+            $result=mysqli_query($conn,$query);
+            
+            while($row = mysqli_fetch_array($result)){
+                
+                $T_ID=$row['L_ID'];
+                $tenlop=$row['L_TEN'];
+                echo "$tenlop";
+            }
+            
+            ?>
+        </h3>
     </div>
 
 
@@ -41,7 +60,7 @@
 
         <form action="" method="POST">
             <div class="form-group" style="width: 200px; float: left">
-                <select class="form-control" id="exampleFormControlSelect1" name=thang>
+                <!-- <select class="form-control" id="exampleFormControlSelect1" name=thang>
 
                     <option value="Tháng 1">Tháng 1</option>
                     <option value="Tháng 2">Tháng 2</option>
@@ -57,20 +76,24 @@
                     <option value="Tháng 12">Tháng 12</option>
 
 
-                </select>
+                </select> -->
+                <input type="month" name="thang" id="">
+
             </div>
-            <button type=" submit" class="width100 trang btn btn-success text-white" name='but_update'>
+            <button type=" submit" class="width100 trang btn btn-success text-white" name='but_update'
+                style="margin:0px 0px 5px 10px">
                 Lưu</button>
 
-            <table class="table table-hover">
+            <table class=" table table-hover">
 
                 <tr class="table-primary">
                     <th scope="col" class="width-table-100"><input type="checkbox" name="" id='checkAll'>check
                     </th>
                     <th scope="col" class="width-table-100">ID</th>
-                    <th scope="col" class="width-table-150">Họ & tên</th>
+                    <th scope="col" class="width-table-200">Họ & tên</th>
                     <th scope="col" class="width-table-150">Ngày sinh</th>
                     <th scope="col" class="width-table-150">Giới tính</th>
+                    <th scope="col" class="width-table-150">Ngày đo</th>
                     <th scope="col" class="width-table-150">Chiều cao </th>
                     <th scope="col" class="width-table-150">Cân nặng</th>
                 </tr>
@@ -78,7 +101,8 @@
                     if(isset($_GET['L_ID'])&&($_GET['L_ID']>0)){
                         $L_ID=$_GET['L_ID']; }
             
-                        $query="SELECT lop.L_TEN,tre.T_HOTEN,tre.T_NGAYSINH,chi_so_phat_trien2.CHIEUCAO2,chi_so_phat_trien2.CANNANG2,tre.T_PHAI,chi_so_phat_trien2.T_ID
+                        $query="SELECT lop.L_TEN,tre.T_HOTEN,tre.T_NGAYSINH,chi_so_phat_trien2.CHIEUCAO2,chi_so_phat_trien2.CANNANG2,
+                        tre.T_PHAI,chi_so_phat_trien2.T_ID,chi_so_phat_trien2.THANG
                         FROM lop INNER JOIN lop_tre
                         on lop.L_ID = lop_tre.L_ID
                         INNER JOIN tre
@@ -93,8 +117,10 @@
                             $cc=$row['CHIEUCAO2'];
                             $cn=$row['CANNANG2'];  
                             $T_HOTEN=$row['T_HOTEN'];
-                            $T_NGAYSINH=$row['T_NGAYSINH'];                     
-                            $T_PHAI=$row['T_PHAI'];                     
+                            // $T_NGAYSINH=$row['T_NGAYSINH'];                     
+                            $T_PHAI=$row['T_PHAI'];  
+                            $thang=$row['THANG'];     
+                             $time = strtotime($row['T_NGAYSINH']);                    
 
             ?>
                 <tr>
@@ -103,11 +129,12 @@
                     <th scope="row">
                         <?=$T_ID?>
                     </th>
-                    <td class="width-table-300">
+                    <td>
                         <?=$T_HOTEN?>
                     </td>
-                    <td> <?=$T_NGAYSINH?></td>
+                    <td> <?=date("d/m/Y", $time)?></td>
                     <td><?=$T_PHAI?></td>
+                    <td><?=$thang?></td>
                     <td><input type="number" step="0.1" name="CHIEUCAO_<?= $T_ID ?>" value="<?=$cc?>"></td>
                     <td><input type=" number" step="0.1" name="CANNANG_<?= $T_ID ?>" value='<?=$cn?>'></td>
 
@@ -149,5 +176,4 @@ $(document).ready(function() {
         };
     });
 });
-</script>
 </script>

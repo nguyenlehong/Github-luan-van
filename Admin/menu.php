@@ -21,7 +21,7 @@
             <div class="smenu">
                 <a href="index.php?a=them-tre">Thêm trẻ</a>
                 <a href="index.php?a=danh-sach-tre ">Danh sách trẻ</a>
-                <a href="index.php?a=danh-sach-chi-so-tre">Chỉ số</a>
+                <!-- <a href="index.php?a=danh-sach-chi-so-tre">Chỉ số</a> -->
 
             </div>
         </li>

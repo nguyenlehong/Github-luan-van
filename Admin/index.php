@@ -265,6 +265,13 @@ if(isset($_GET['a'])){
             $list_lop=load_all_lop();
             include "Tre/Tre-them.php";
             break;
+        case 'xoa-tre':
+            if(isset($_GET['T_ID'])&&($_GET['T_ID'])>0){
+                delete_tre($_GET['T_ID']);
+            }
+            $list_all_tre=load_all_tre();
+            include "Tre/Tre-danh-sach.php";
+            break;
         case 'insert-tre':
             if(isset($_POST['luu'])&&($_POST['luu'])){       
                 $ten=$_POST['ten'];
@@ -286,16 +293,33 @@ if(isset($_GET['a'])){
             $list_lop=load_all_lop();
             include "Tre/Tre-chon-lop.php";
             break;
+        // case 'chon-lop':
+        //     if(isset($_POST['loc-lop'])&&($_POST['loc-lop'])){
+        //         $KHOI=$_POST['KHOI'];
+        //     }else{
+        //     $KHOI='';
+        //     }      
+        //     $list_khoi=load_all_khoi();
+            
+        //     $list_lop=load_lop_thuoc_khoi($KHOI);
+        //     $list_tre=load_1_tre();
+
+        //     include "Tre/Tre-chon-lop.php";
+        //     break;
         case 'chon-lop':
             if(isset($_POST['loc-lop'])&&($_POST['loc-lop'])){
-                $KHOI=$_POST['KHOI'];
+                $NAMHOC=$_POST['NAMHOC'];
             }else{
-            $KHOI='';
+            $NAMHOC='';
             }      
-            $list_khoi=load_all_khoi();
+            $list_nam_hoc=load_all_nam_hoc();
             
-            $list_lop=load_lop_thuoc_khoi($KHOI);
-            $list_tre=load_1_tre();
+            $list_nam_hoc2=load_lop_thuoc_khoi($NAMHOC);
+// v
+//             $list_khoi=load_all_khoi();
+            
+//             $list_lop=load_lop_thuoc_khoi($KHOI);
+//             $list_tre=load_1_tre();
 
             include "Tre/Tre-chon-lop.php";
             break;
@@ -311,6 +335,22 @@ if(isset($_GET['a'])){
             $list_all_tre=load_all_tre();
 
             include "Tre/Tre-danh-sach.php";
+            break;
+        case 'len-lop-tre':
+            if(isset($_GET['T_ID'])&&($_GET['T_ID']>0)){
+                $T_ID=$_GET['T_ID'];
+                $list_tre=load_1_tre_len_lop($T_ID);
+            }
+            if(isset($_POST['loc-lop'])&&($_POST['loc-lop'])){
+                $NAMHOC=$_POST['NAMHOC'];
+            }else{
+            $NAMHOC='';
+            }
+            $list_lop=load_all_lop();
+
+            $list_nam_hoc2=load_lop_thuoc_khoi($NAMHOC);
+            $list_nam_hoc=load_all_nam_hoc();
+            include "Tre/Tre-chon-lop.php";
             break;
         case 'loc-tre-theo-lop':
             if(isset($_GET['L_ID'])&&($_GET['L_ID']>0)){

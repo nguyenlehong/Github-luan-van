@@ -15,7 +15,7 @@
                     <th scope="col" class="width-table-200">Họ tên cha </th>
                     <th scope="col" class="width-table-200">Họ tên mẹ </th>
                     <th scope="col" class="width-table-400">Địa chỉ</th>
-                    <th scope="col" class="width-table-150">Thao thác</th>
+                    <th scope="col" class="width-table-250">Thao thác</th>
                 </tr>
                 <?php
                 $i=1;
@@ -23,6 +23,8 @@
                    extract($tre);
                    $time = strtotime($T_NGAYSINH);
                    $chitiettre="index.php?a=chi-tiet-thong-tin-tre&T_ID=".$T_ID;
+                   $lop="index.php?a=len-lop-tre&T_ID=".$T_ID;
+
                    $xoa_tre="index.php?a=xoa-tre&T_ID=".$T_ID;
                    echo '
                    <tr>
@@ -38,6 +40,12 @@
                            <button type="button" class="btn btn-success">
                                <ion-icon name="pencil-outline"></ion-icon>
                            </button>
+                           </a>
+                           <a href="'.$lop.'" class="gachchan2">
+                           <button type="button" class="btn btn-primary">
+                               Lớp
+                           </button>
+                           </a>
                            <a href="'.$xoa_tre.'" class="gachchan2">
                            <button type="button" class="btn btn-danger">
                            <ion-icon name="trash-outline"></ion-icon>

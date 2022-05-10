@@ -29,7 +29,7 @@
         foreach ($list_lop as $lop) {
             extract($lop);
             $chitiet="index.php?a=loc-tre-theo-lop&L_ID=".$L_ID;    
-            $in="in.php?L_ID=".$L_ID;    
+            $in="in-thong-tin.php?L_ID=".$L_ID;    
 
             echo '
             <div class="alert alert-primary" role="alert">

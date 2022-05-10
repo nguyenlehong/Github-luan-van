@@ -4,6 +4,10 @@
         values('$ten','$ngaysinh','$phai','$diachi','$hotencha','$sdtcha','$nncha','$hotenme','$sdtme','$nnme')";
 	    pdo_execute($sql);
     }
+    function delete_tre($T_ID){
+        $sql="delete from Tre where T_ID=".$T_ID;
+        pdo_execute($sql);
+    }
 
     function cap_nhat_1_tre($T_ID){
         $sql="select * from tre where T_ID=".$T_ID;
@@ -20,6 +24,11 @@
 
     function load_1_tre(){
         $sql="select * from tre order by T_ID desc limit 1";
+        $list=pdo_query($sql);
+        return $list; 
+    }
+    function load_1_tre_len_lop($T_ID){
+        $sql="select * from tre where T_ID=".$T_ID;
         $list=pdo_query($sql);
         return $list; 
     }
