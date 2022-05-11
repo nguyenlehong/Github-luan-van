@@ -9,7 +9,7 @@
         foreach ($list_lop as $lop) {
             extract($lop);
             $chitiet="Xu-ly.php?b=cap-nhat-tre-theo-lopcb&L_ID=".$L_ID;    
-            $in="Admin/in.php?L_ID=".$L_ID;  
+            
             $in_thong_tin="Admin/in-thong-tin.php?L_ID=".$L_ID;    
             $in_chi_so="Admin/in-chi-so.php?L_ID=".$L_ID;    
 
@@ -23,11 +23,7 @@
         <ion-icon name="list-outline"></ion-icon>
     </button>
 </a>
-<a href="'.$in.'" class="gachchands">
-<button type="button" class="btn btn-info">
-In danh sách 
-</button>
-</a>
+
 <a href="'.$in_thong_tin.'" class="gachchands">
 <button type="button" class="btn btn-info">
 In thông tin

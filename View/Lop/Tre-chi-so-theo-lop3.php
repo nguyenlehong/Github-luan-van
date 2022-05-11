@@ -41,7 +41,7 @@
                     // $capnhat = "update chi_so_phat_trien3 set
                     // THANG='".$th."',CHIEUCAO3='".$cc."',CANNANG3='".$cn."'
                     // where T_ID=".$updateid;
-                    $capnhat = "INSERT INTO chi_so_phat_trien4(L_ID,T_ID,THANG,CHIEUCAO3,CANNANG3)
+                    $capnhat = "INSERT INTO chi_so_phat_trien3(L_ID,T_ID,THANG,CHIEUCAO3,CANNANG3)
                     VALUES('$lop','$id','$th','$cc','$cn')";
                     
                     mysqli_query($conn,$capnhat);
@@ -105,14 +105,12 @@
                     if(isset($_GET['L_ID'])&&($_GET['L_ID']>0)){
                         $L_ID=$_GET['L_ID']; }
             
-                        $query="SELECT lop.L_TEN,tre.T_HOTEN,tre.T_NGAYSINH,chi_so_phat_trien3.CHIEUCAO3,lop.L_ID,
-                        chi_so_phat_trien3.CANNANG3,tre.T_PHAI,chi_so_phat_trien3.T_ID,chi_so_phat_trien3.THANG
+                        $query="SELECT *
                         FROM lop INNER JOIN lop_tre
                         on lop.L_ID = lop_tre.L_ID
                         INNER JOIN tre
                         ON tre.T_ID = lop_tre.T_ID
-                        INNER JOIN chi_so_phat_trien3
-                        on chi_so_phat_trien3.T_ID = tre.T_ID
+                        
                         WHERE lop.L_ID=".$L_ID;
                         
                         $result=mysqli_query($conn,$query);
@@ -120,12 +118,12 @@
                         while($row = mysqli_fetch_array($result)){
                            
                             $T_ID=$row['T_ID'];
-                            $cc=$row['CHIEUCAO3'];
-                            $cn=$row['CANNANG3'];  
+                            // $cc=$row['CHIEUCAO3'];
+                            // $cn=$row['CANNANG3'];  
                             $T_HOTEN=$row['T_HOTEN'];
                             // $T_NGAYSINH=$row['T_NGAYSINH'];                     
                             $T_PHAI=$row['T_PHAI']; 
-                            $THANG=$row['THANG']; 
+                            // $THANG=$row['THANG']; 
                              $lop=$row['L_ID'];
                             
 
@@ -145,8 +143,8 @@
                     </td>
                     <td><?=date("d/m/Y", $time)?> </td>
                     <td><?=$T_PHAI?></td>
-                    <td><?=$THANG?></td>
-
+                    <!-- <td><?=$THANG?></td> -->
+                    <td></td>
                     <!-- <td><?=date("m/Y", $thang)?></td> -->
                     <input type="hidden" name="lop" value="<?=$lop?>">
                     <input type="hidden" name="id_<?=$T_ID ?>" value="<?=$T_ID?>">

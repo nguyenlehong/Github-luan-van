@@ -194,11 +194,13 @@ if(isset($_GET['a'])){
             break;
         case 'insert-phan-cong':
             if(isset($_POST['luu'])&&($_POST['luu'])){
-                $NAMHOC=$_POST['NAMHOC'];
+                // $NAMHOC=$_POST['NAMHOC'];
                 $L_ID=$_POST['L_ID'];
                 $NV_ID=$_POST['NV_ID'];
                 $CB_ID=$_POST['CB_ID'];
-                insert_phan_cong($NAMHOC,$L_ID,$NV_ID,$CB_ID);
+                // insert_phan_cong($NAMHOC,$L_ID,$NV_ID,$CB_ID);
+                insert_phan_cong($L_ID,$NV_ID,$CB_ID);
+                
             }            
             $list_nam_hoc=load_all_nam_hoc();
             $list_nhiem_vu=load_all_nhiem_vu();
