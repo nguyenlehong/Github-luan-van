@@ -5,7 +5,7 @@
     <div class=noi-dung-70>
         <form action="index.php?a=insert-phan-cong" method="POST">
 
-            <div class="form-group row">
+            <!-- <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Năm học</label>
                 <div class="col-sm-10 pad20px">
                     <select class="custom-select form-control" name="NAMHOC">
@@ -19,7 +19,7 @@
                         ?>
                     </select>
                 </div>
-            </div>
+            </div> -->
 
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Lớp</label>
@@ -74,7 +74,7 @@
                 <div class="col-sm-10">
                     <button type="submit" class="btn btn-success width100" name="luu" value="luu">Lưu</button>
                     <button type=" reset" class="btn btn-danger">Nhập lại</button>
-                    <a href="index.php?a=danh-sach-phan-cong"> <button type="button"
+                    <a href="index.php?a=danh-sach-phan-cong-hien-tai"> <button type="button"
                             class=" trang btn btn-info text-white">Danh
                             sách</button></a>
                 </div>

@@ -6,11 +6,12 @@
         <?php
         foreach ($list_nam_hoc as $namhoc) {
             extract($namhoc);
+            $capnhat="index.php?a=cap-nhat-hien-an-nam&NAMHOC=".$NAMHOC;
             echo '
             <div class="alert alert-info" role="alert">
-           '.$NAMHOC.'
+           '.$NAMHOC.' '.$TRANGTHAI.'
            
-            <a href="" class="gachchands">
+            <a href="'.$capnhat.'" class="gachchands">
                 <button type=" reset" class="btn btn-success">
                     <ion-icon name="pencil-outline"></ion-icon>
                 </button>

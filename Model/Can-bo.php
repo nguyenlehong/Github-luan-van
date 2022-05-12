@@ -46,6 +46,22 @@ function insert_phan_cong($L_ID,$NV_ID,$CB_ID){
 // 	$sql="insert into phan_cong(NAMHOC,L_ID,NV_ID,CB_ID)values('$NAMHOC','$L_ID','$NV_ID','$CB_ID')";
 //     pdo_execute($sql);
 // }
+function load_all_phan_cong_hien_tai(){
+	$sql="SELECT *
+	from nam_hoc INNER JOIN lop
+	on nam_hoc.NAMHOC = lop.NAMHOC
+	INNER JOIN phan_cong pc 
+		on lop.L_ID = pc.L_ID
+		INNER JOIN nhiem_vu 
+		on nhiem_vu.NV_ID=pc.NV_ID
+		INNER JOIN can_bo 
+		on can_bo.CB_ID =pc.CB_ID
+		where nam_hoc.TRANGTHAI='hien'
+	
+	";
+	$list=pdo_query($sql);
+	return $list;
+}
 function load_all_phan_cong(){
 	$sql="SELECT  *
 	FROM lop  INNER JOIN phan_cong pc 
@@ -56,6 +72,22 @@ function load_all_phan_cong(){
 	on can_bo.CB_ID =pc.CB_ID";
 	$list=pdo_query($sql);
 	return $list;
+}
+function load_all_phan_cong_tim($id){
+	$sql="SELECT *
+	FROM lop  INNER JOIN phan_cong pc 
+	on lop.L_ID = pc.L_ID
+	INNER JOIN nhiem_vu 
+	on nhiem_vu.NV_ID=pc.NV_ID
+	INNER JOIN can_bo 
+	on can_bo.CB_ID = pc.CB_ID WHERE 1";
+	if($id!=""){
+		$sql.=" and can_bo.CB_ID ='".$id."'";	
+	}
+	// $sql.=" order by L_ID desc";
+	
+	$list=pdo_query($sql);
+	return $list; 
 }
 // function load_all_phan_cong(){
 // 	$sql="SELECT  can_bo.CB_ID,can_bo.CB_HOTEN,nhiem_vu.NV_TEN, lop.L_TEN,nam_hoc.NAMHOC,PC_ID

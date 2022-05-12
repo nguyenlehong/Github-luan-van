@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-
+error_reporting(0);
 include "../Model/pdo.php";
 include "../Model/Mon-an.php";
 include "../Model/Lop.php";
@@ -185,10 +185,10 @@ if(isset($_GET['a'])){
             break;
                 
         case 'phan-cong':
-            $list_nam_hoc=load_all_nam_hoc();
+            // $list_nam_hoc=load_all_nam_hoc();
             $list_nhiem_vu=load_all_nhiem_vu();
             $list_can_bo=load_all_can_bo();
-            $list_lop=load_all_lop();
+            $list_lop=load_all_lop_pc();
 
             include "Can-bo/Phan-cong.php";
             break;
@@ -211,6 +211,10 @@ if(isset($_GET['a'])){
             break;
         case 'danh-sach-phan-cong':
             $list_phan_cong=load_all_phan_cong();
+            include "Can-bo/Danh-sach-phan-cong-all.php";
+            break;
+        case 'danh-sach-phan-cong-hien-tai':
+            $list_phan_cong=load_all_phan_cong_hien_tai();
             include "Can-bo/Danh-sach-phan-cong.php";
             break;
         case 'xoa-phan-cong':
@@ -220,6 +224,17 @@ if(isset($_GET['a'])){
             
             $list_phan_cong=load_all_phan_cong();
             include "Can-bo/Danh-sach-phan-cong.php";
+            break;
+        case 'tim-can-bo-trong-phan-cong':
+            if(isset($_POST['tim'])&&($_POST['tim'])){
+                $id=$_POST['ten'];
+                
+                }else{
+                    $id='';         
+                }
+            $list_phan_cong=load_all_phan_cong_tim($id);   
+            include "Can-bo/Danh-sach-phan-cong-all.php";
+            
             break;
         case 'nhiem-vu':
             include "Can-bo/Nhiem-vu.php";
@@ -459,6 +474,24 @@ if(isset($_GET['a'])){
             $list_nam_hoc=load_all_nam_hoc();
             include "Lop/Nam-hoc-danh-sach.php";
             break;
+        case 'cap-nhat-hien-an-nam':
+        if(isset($_GET['NAMHOC'])&&($_GET['NAMHOC']!='')){
+            $NAMHOC=$_GET['NAMHOC'];   
+            $list_1_nam=load_1_nam_hien_an($NAMHOC);
+        }
+            include "Lop/Nam-hoc-cap-nhat-hien-an.php";
+            break;
+            
+        case 'luu-trang-thai-nam-hoc':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $namhoc=$_POST['ten'];
+                $tt=$_POST['trangthai'];    
+                update_nam($namhoc,$tt);        
+                }
+            $list_nam_hoc=load_all_nam_hoc();
+            include "Lop/Nam-hoc-danh-sach.php";
+            break;
+            
         case 'admin-dang-xuat':
             session_unset();
             header('location: ../index.php');

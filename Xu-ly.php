@@ -27,7 +27,7 @@ if(isset($_GET['b'])){
             include "View/Can-bo/Danh-sach-nhiem-vu.php";
             break;
         case 'danh-sach-phan-cong':
-            $list_phan_cong=load_all_phan_cong();
+            $list_phan_cong=load_all_phan_cong_hien_tai();
             include "View/Can-bo/Danh-sach-phan-cong.php";
             break;
         case 'danh-sach-khoi':

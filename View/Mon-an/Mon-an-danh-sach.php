@@ -1,6 +1,6 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font">Danh sách món ăn</h3>
+        <h3 class="font">Danh sách món ăn </h3>
     </div>
     <div class="noi-dung-100">
         <table class="table table-hover">
@@ -26,10 +26,10 @@
                     $hinh="<img  src='".$duong_dan."' height='100' width='auto'>";
                     echo '                   
                     <tr>
-                    <th class="width-table-50" scope="row">'.$i.'</th>
-                    <td class="width-table-250">'.$M_TEN.'</td>
-                    <td class="width-table-250">'.$hinh.' </td>
-                    <td class="width-table-600">'.$M_MOTA.'</td>
+                    <th  scope="row">'.$i.'</th>
+                    <td >'.$M_TEN.'</td>
+                    <td >'.$hinh.' </td>
+                    <td >'.$M_MOTA.'</td>
                    
                 </tr>
                     

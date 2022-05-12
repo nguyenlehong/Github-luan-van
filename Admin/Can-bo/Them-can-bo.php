@@ -7,7 +7,7 @@
             <fieldset disabled>
                 <div class=" form-group row ">
 
-                    <label for=" inputText3" class="col-sm-2 col-form-label">ID giáo viên</label>
+                    <label for=" inputText3" class="col-sm-2 col-form-label">ID cán bộ</label>
                     <div class="col-sm-10 pad20px">
                         <input type="text" class="form-control" id="" placeholder="">
                     </div>
@@ -58,8 +58,8 @@
             <div class=" form-group row">
                 <label for="inputNumber3" class="col-sm-2 col-form-label">Điện thoại</label>
                 <div class="col-sm-10 pad20px">
-                    <input type="number" class="form-control " id="inputText3" placeholder="VD: 0921 345 345" name="sdt"
-                        required>
+                    <input type="text" class="form-control " id="inputText3" placeholder="VD: 0921 345 345" name="sdt"
+                        pattern="[0-9]{10}">
                 </div>
             </div>
             <div class=" form-group row">

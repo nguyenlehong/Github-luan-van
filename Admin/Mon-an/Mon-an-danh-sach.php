@@ -8,9 +8,9 @@
             <tbody>
                 <tr class="table-primary">
                     <th class="width-table-50" scope="col">STT</th>
-                    <th class="width-table-250" scope="col">Tên món</th>
+                    <th class="width-table-200" scope="col">Tên món</th>
                     <th class="width-table-250" scope="col">Ảnh</th>
-                    <th class="width-table-600" scope="col">Mô tả</th>
+                    <th class="width-table-650" scope="col">Mô tả</th>
                     <th scope="col">Thao tác</th>
 
                 </tr>
@@ -26,16 +26,12 @@
                     $hinh="<img  src='".$duong_dan."' height='100' width='auto'>";
                     echo '                   
                     <tr>
-                    <th class="width-table-50" scope="row">'.$i.'</th>
-                    <td class="width-table-250">'.$M_TEN.'</td>
-                    <td class="width-table-250">'.$hinh.' </td>
-                    <td class="width-table-600">'.$M_MOTA.'</td>
+                    <th  scope="row">'.$i.'</th>
+                    <td>'.$M_TEN.'</td>
+                    <td >'.$hinh.' </td>
+                    <td >'.$M_MOTA.'</td>
                     <td>
-                        <a href="" class="gachchan2">
-                            <button type="button" class="btn btn-success">
-                                <ion-icon name="pencil-outline"></ion-icon>
-                            </button>
-                        </a>
+                      
                         <a href="'.$xoa_mon.'" class="gachchan2">
                             <button type="button" class="btn btn-danger">
                                 <ion-icon name="trash-outline"></ion-icon>
