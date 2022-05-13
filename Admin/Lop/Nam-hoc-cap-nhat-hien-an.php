@@ -12,22 +12,52 @@ if(is_array($list_1_nam)){
 
             <fieldset disabled>
                 <div class="form-group row">
-                    <label for="inputText3" class="col-sm-2 col-form-label">Năm học</label>
+                    <label for="inputText3" class="col-sm-2 col-form-label">ID Năm học</label>
                     <div class="col-sm-10 pad20px">
-                        <input type="text" class="form-control " id="inputText3" name="NAMHOC"
-                            value="<?=$NAMHOC?> <?=$TRANGTHAI?>">
+                        <input type="text" class="form-control " id="inputText3" name="NAMHOC" value="<?=$NAMHOC?>">
                     </div>
                 </div>
             </fieldset>
+            <fieldset disabled>
+                <div class="form-group row">
+                    <label for="inputText3" class="col-sm-2 col-form-label">Tên năm học</label>
+                    <div class="col-sm-10 pad20px">
+                        <input type="text" class="form-control " id="inputText3" name="NAMHOC" value="<?=$TENNAMHOC?> ">
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-group row">
+                <label for="inputText3" class="col-sm-2 col-form-label">Ngày bắt đầu HK1</label>
+                <div class="col-sm-10 pad20px">
+                    <input type="date" class="form-control " id="inputText3" name="bdhk1" value="<?=$BDHK1?>">
+                </div>
+            </div>
+            <div class=" form-group row">
+                <label for="inputText3" class="col-sm-2 col-form-label">Ngày kết thúc HK1</label>
+                <div class="col-sm-10 pad20px">
+                    <input type="date" class="form-control " id="inputText3" name="kthk1" value="<?=$KTHK1?>">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputText3" class="col-sm-2 col-form-label">Ngày bắt đầu HK2</label>
+                <div class="col-sm-10 pad20px">
+                    <input type="date" class="form-control " id="inputText3" name="bdhk2" value="<?=$BDHK2?>">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputText3" class="col-sm-2 col-form-label">Ngày kết thúc HK2</label>
+                <div class="col-sm-10 pad20px">
+                    <input type="date" class="form-control " id="inputText3" name="kthk2" value="<?=$KTHK2?>">
+                </div>
+            </div>
             <div class="form-group row">
                 <label for="inputText3" class="col-sm-2 col-form-label">Trạng thái</label>
                 <div class="col-sm-10 pad20px">
                     <select class="form-control" id="exampleFormControlSelect1" name="trangthai"
                         value="<?=$TRANGTHAI?>">
-                        <option value="">
-                            <?=$TRANGTHAI?> </option>
-                        <option value="hien">Hiện</option>
-                        <option value="an">Ẩn</option>
+                        <option value=""> <?=$TRANGTHAI?> </option>
+                        <option value="danghoatdong">Đang hoạt động </option>
+                        <option value="khonghoatdong">Không hoạt động</option>
 
                     </select>
 

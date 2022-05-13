@@ -40,7 +40,7 @@
                     <td >'.$CB_HOTEN.'</td>
                     <td > '.$NV_TEN.'</td>
                     <td >'.$L_TEN.'</td>
-                    <td >'.$NAMHOC.'</td>
+                    <td >'.$TENNAMHOC.'</td>
                     
                 </tr>
                 

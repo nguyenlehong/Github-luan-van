@@ -188,7 +188,7 @@ if(isset($_GET['a'])){
             // $list_nam_hoc=load_all_nam_hoc();
             $list_nhiem_vu=load_all_nhiem_vu();
             $list_can_bo=load_all_can_bo();
-            $list_lop=load_all_lop_pc();
+            $list_lop=load_all_lop_hoat_dong();
 
             include "Can-bo/Phan-cong.php";
             break;
@@ -421,7 +421,7 @@ if(isset($_GET['a'])){
             break;
         case 'danh-sach-lop':
             $list_nam_hoc=load_all_nam_hoc();
-            $list_lop=load_all_lop();
+            $list_lop=load_all_lop_hoat_dong();
             include "Lop/Lop-danh-sach.php";
             break;
         case 'loc-lop-theo-nam-khoicb':
@@ -465,7 +465,13 @@ if(isset($_GET['a'])){
         case 'insert-nam-hoc':
             if(isset($_POST['luu'])&&($_POST['luu'])){
                 $namhoc=$_POST['namhoc'];
-                insert_nam_hoc($namhoc);        
+                $ten=$_POST['ten'];
+                $bd1=$_POST['bdhk1'];
+                $kt1=$_POST['kthk1'];
+                $bd2=$_POST['bdhk2'];
+                $kt2=$_POST['kthk2'];
+                
+                insert_nam_hoc($namhoc,$ten,$bd1,$kt1,$bd2,$kt2);        
                 }
                 $list_nam_hoc=load_all_nam_hoc();
                 include "Lop/Nam-hoc-danh-sach.php";
@@ -485,8 +491,12 @@ if(isset($_GET['a'])){
         case 'luu-trang-thai-nam-hoc':
             if(isset($_POST['luu'])&&($_POST['luu'])){
                 $namhoc=$_POST['ten'];
-                $tt=$_POST['trangthai'];    
-                update_nam($namhoc,$tt);        
+                $tt=$_POST['trangthai'];
+                $bd1=$_POST['bdhk1'];
+                $kt1=$_POST['kthk1'];
+                $bd2=$_POST['bdhk2'];
+                $kt2=$_POST['kthk2'];    
+                update_nam($namhoc,$tt,$bd1,$kt1,$bd2,$kt2);        
                 }
             $list_nam_hoc=load_all_nam_hoc();
             include "Lop/Nam-hoc-danh-sach.php";
@@ -496,6 +506,11 @@ if(isset($_GET['a'])){
             session_unset();
             header('location: ../index.php');
             ob_end_flush();
+            break;
+        case 'chuyen-lop':
+            $list_lop=load_all_lop_hoat_dong();
+            
+            include "Lop/Len-lop-cho-tre.php";
             break;
         default:
            include "home.php";

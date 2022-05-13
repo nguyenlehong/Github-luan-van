@@ -16,7 +16,7 @@
                             foreach ($list_nam_hoc as $namhoc) {
                             extract($namhoc);
                             echo '
-                            <option value="'.$NAMHOC.'">'.$NAMHOC.'</option>                            
+                            <option value="'.$NAMHOC.'">'.$TENNAMHOC.'</option>                            
                             ';
                         }
                         ?>
@@ -30,6 +30,7 @@
             extract($lop);
             $chitiet="index.php?a=loc-tre-theo-lop&L_ID=".$L_ID;    
             $in="in-thong-tin.php?L_ID=".$L_ID;    
+            $chuyenlop="index.php?a=chuyen-lop&L_ID=".$L_ID;    
 
             echo '
             <div class="alert alert-primary" role="alert">
@@ -43,6 +44,11 @@
 <a href="'.$in.'" class="gachchands">
 <button type="button" class="btn btn-info">
 <ion-icon name="print-outline"></ion-icon>
+</button>
+</a>
+<a href="'.$chuyenlop.'" class="gachchands">
+<button type="button" class="btn btn-primary">
+Chuyển lớp
 </button>
 </a>
         </div>

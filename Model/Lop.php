@@ -14,12 +14,13 @@ function load_all_thang(){
 	return $list; 
 }
 
-function insert_nam_hoc($namhoc){
-	$sql="insert into nam_hoc(NAMHOC) values('$namhoc')";
+function insert_nam_hoc($namhoc,$ten,$bd1,$kt1,$bd2,$kt2){
+	$sql="insert into nam_hoc(NAMHOC,TENNAMHOC,BDHK1,KTHK1,BDHK2,KTHK2) 
+	values('$namhoc','$ten','$bd1','$kt1','$bd2','$kt2')";
 	pdo_execute($sql);
 }
-function update_nam($namhoc,$tt){
-	$sql="UPDATE nam_hoc SET nam_hoc.TRANGTHAI='".$tt."' WHERE nam_hoc.NAMHOC=".$namhoc;
+function update_nam($namhoc,$tt,$bd1,$kt1,$bd2,$kt2){
+	$sql="UPDATE nam_hoc SET nam_hoc.TRANGTHAI='".$tt."',BDHK1='".$bd1."',KTHK1='".$kt1."',BDHK2='".$bd2."',KTHK1='".$kt2."' WHERE nam_hoc.NAMHOC=".$namhoc;
 	pdo_execute($sql);
 }
 function load_all_nam_hoc(){
@@ -48,6 +49,15 @@ function load_all_lop(){
 	$list=pdo_query($sql);
 	return $list; 
 }
+function load_all_lop_hoat_dong(){
+	$sql="SELECT *
+	from nam_hoc INNER JOIN lop
+	on nam_hoc.NAMHOC = lop.NAMHOC
+	WHERE nam_hoc.TRANGTHAI='danghoatdong'";
+	$list=pdo_query($sql);
+	return $list; 
+}
+
 function load_all_lop2($CB_ID){
 	$sql="SELECT *
 	FROM can_bo INNER JOIN phan_cong
@@ -57,7 +67,7 @@ function load_all_lop2($CB_ID){
     INNER JOIN nam_hoc
     on nam_hoc.NAMHOC = lop.NAMHOC
  
-	WHERE nam_hoc.TRANGTHAI='hien' and  can_bo.CB_ID=".$CB_ID;
+	WHERE nam_hoc.TRANGTHAI='danghoatdong' and  can_bo.CB_ID=".$CB_ID;
 	$list=pdo_query($sql);
 	return $list; 
 }

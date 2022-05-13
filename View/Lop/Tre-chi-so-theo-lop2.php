@@ -61,21 +61,8 @@
         <form action="" method="POST">
             <div class="form-group" style="width: 200px; float: left">
                 <!-- <select class="form-control" id="exampleFormControlSelect1" name=thang>
-
                     <option value="Tháng 1">Tháng 1</option>
-                    <option value="Tháng 2">Tháng 2</option>
-                    <option value="Tháng 3">Tháng 3</option>
-                    <option value="Tháng 4">Tháng 4</option>
-                    <option value="Tháng 5">Tháng 5</option>
-                    <option value="Tháng 6">Tháng 6</option>
-                    <option value="Tháng 7">Tháng 7</option>
-                    <option value="Tháng 8">Tháng 8</option>
-                    <option value="Tháng 9">Tháng 9</option>
-                    <option value="Tháng 10">Tháng 10</option>
-                    <option value="Tháng 11">Tháng 11</option>
-                    <option value="Tháng 12">Tháng 12</option>
-
-
+                
                 </select> -->
                 <input type="month" name="thang" id="">
 

@@ -15,8 +15,6 @@
 
                 </tr>
 
-
-
                 <?php
                  $i=1;
                 foreach ($list_mon as $mon) {
