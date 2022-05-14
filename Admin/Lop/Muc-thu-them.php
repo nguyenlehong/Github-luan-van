@@ -3,7 +3,7 @@
         <h3 class="font">Mức thu</h3>
     </div>
     <div class=noi-dung-70>
-        <form action="index.php?a=them-muc-thu" method="POST">
+        <form action="index.php?a=luu-them-muc-thu" method="POST" autocomplete="off">
 
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Khối</label>
@@ -30,7 +30,7 @@
                             foreach ($list_nam_hoc as $namhoc) {
                             extract($namhoc);
                             echo '
-                            <option value="'.$NAMHOC.'">'.$NAMHOC.'</option>                            
+                            <option value="'.$NAMHOC.'">'.$TENNAMHOC.'</option>                            
                             ';
                         }
                         ?>
@@ -57,7 +57,7 @@
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Số tiền</label>
                 <div class="col-sm-10 pad20px">
-                    <input type="text" class="form-control " name="noidung" id="inputText3" placeholder="VD: 200.000đ "
+                    <input type="text" class="form-control " name="sotien" id="inputText3" placeholder="VD: 200.000đ "
                         required>
                 </div>
             </div>
@@ -65,7 +65,8 @@
                 <div class="col-sm-10">
                     <button type="submit" class="btn btn-success width100" name="luu" value="luu">Lưu</button>
                     <button type=" reset" class="btn btn-danger">Nhập lại</button>
-                    <a href="#"> <button type="button" class=" trang btn btn-info text-white">Danh
+                    <a href="index.php?a=danh-sach-muc-thu-khoi-mam"> <button type="button"
+                            class=" trang btn btn-info text-white">Danh
                             sách</button></a>
                 </div>
             </div>

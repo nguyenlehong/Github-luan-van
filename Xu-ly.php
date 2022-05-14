@@ -112,6 +112,13 @@ if(isset($_GET['b'])){
             $list_loai_mon=load_all_loai_mon();
             include "View/Mon-an/Loai-mon-danh-sach.php";
             break;
+        case 'danh-sach-mon-an-theo-loai-mon':
+            if(isset($_GET['LM_ID'])&&($_GET['LM_ID']>0)){
+                $LM_ID=$_GET['LM_ID'];              
+                $list_mon=load_mon_theo_loai2($_GET['LM_ID']);  
+            }
+            include "View/Mon-an/Mon-an-danh-sach-theo-loai.php";
+            break;
         case 'danh-sach-mon-an':
             $list_mon=load_all_mon();
             include "View/Mon-an/Mon-an-danh-sach.php";
@@ -166,20 +173,40 @@ if(isset($_GET['b'])){
             $list_lop=load_all_lop_theo_cb($_SESSION['user']['CB_ID']);
             include "View/Tre/Danh-sach-lop.php";
             break;
-        case 'nhap-chi-so-tre': 
-            $conn = new mysqli('localhost','root','','luanvan');
-            error_reporting(0);      
-            include "View/Lop/Tre-chi-so-theo-lop.php";
-            break;
-        case 'nhap-chi-so-tre2': 
+        // case 'nhap-chi-so-tre': 
+        //     $conn = new mysqli('localhost','root','','luanvan');
+        //     error_reporting(0);      
+        //     include "View/Lop/Tre-chi-so-theo-lop.php";
+        //     break;
+        // case 'nhap-chi-so-tre2': 
+        //     $conn = new mysqli('localhost','root','','luanvan');
+        //     error_reporting(0);
+        //     include "View/Lop/Tre-chi-so-theo-lop2.php";
+        //     break;
+        // case 'nhap-chi-so-tre3': lop/lop-danh-sach.php chu thich cuoi cung 
+        //     $conn = new mysqli('localhost','root','','luanvan');
+        //     error_reporting(0);     
+        //     include "View/Lop/Tre-chi-so-theo-lop3.php";
+        //     break;
+        case 'nhap-chi-so-lan1':
             $conn = new mysqli('localhost','root','','luanvan');
             error_reporting(0);
-            include "View/Lop/Tre-chi-so-theo-lop2.php";
+            include "View/Lop/Nhap-chi-so-lan1.php";
             break;
-        case 'nhap-chi-so-tre3': 
+        case 'nhap-chi-so-lan2':
             $conn = new mysqli('localhost','root','','luanvan');
-            error_reporting(0);     
-            include "View/Lop/Tre-chi-so-theo-lop3.php";
+            error_reporting(0);
+            include "View/Lop/Nhap-chi-so-lan2.php";
+            break;
+        case 'nhap-chi-so-lan3':
+            $conn = new mysqli('localhost','root','','luanvan');
+            error_reporting(0);
+            include "View/Lop/Nhap-chi-so-lan3.php";
+            break;
+        case 'nhap-chi-so-lan4':
+            $conn = new mysqli('localhost','root','','luanvan');
+            error_reporting(0);
+            include "View/Lop/Nhap-chi-so-lan4.php";
             break;
         default:
             include "home.php";

@@ -43,7 +43,11 @@ function insert_thuc_don($khoi,$buoi,$thu,$mon){
 	$sql="insert into thuc_don(KHOI,BUOI,THU,MONAN) values('$khoi','$buoi','$thu','$mon')";
 	pdo_execute($sql);
 }
-
+function load_mon_theo_loai2($LM_ID){
+	$sql="select * from mon where LM_ID=".$LM_ID;
+	$list=pdo_query($sql);
+	return $list; 
+}
 function load_mon_thuoc_loai_mon($LM_ID){
 	$sql="select * from mon where 1";
 	if($LM_ID>0){

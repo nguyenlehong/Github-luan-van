@@ -6,10 +6,15 @@
         <?php
         foreach ($list_loai_mon as $loaimon) {
             extract($loaimon);
-           
+            $list_mon="Xu-ly.php?b=danh-sach-mon-an-theo-loai-mon&LM_ID=".$LM_ID; 
             echo '
             <div class="alert alert-primary" role="alert">
             '.$LM_TEN.'
+            <a href="'.$list_mon.'" class="gachchands">
+                <button type="button" class="btn btn-success">
+                <ion-icon name="list-outline"></ion-icon>
+            </button>
+            </a>
            
         </div>
             

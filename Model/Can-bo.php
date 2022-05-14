@@ -8,6 +8,10 @@ function  cap_nhat_thong_tin_can_bo($id,$sdt,$email,$diachi){
 	pdo_execute($sql);
 	
 }
+function update_can_bo_phan_cong($PC_ID,$tencanbo){
+	$sql="update phan_cong set CB_ID='".$tencanbo."' where PC_ID=".$PC_ID;
+	pdo_execute($sql);
+}
 function load_all_can_bo(){
     $sql="select * from can_bo order by CB_ID desc";
 	$list=pdo_query($sql);
@@ -46,6 +50,22 @@ function insert_phan_cong($L_ID,$NV_ID,$CB_ID){
 // 	$sql="insert into phan_cong(NAMHOC,L_ID,NV_ID,CB_ID)values('$NAMHOC','$L_ID','$NV_ID','$CB_ID')";
 //     pdo_execute($sql);
 // }
+function load_1_phan_cong($PC_ID){
+	$sql="SELECT *
+	from nam_hoc INNER JOIN lop
+	on nam_hoc.NAMHOC = lop.NAMHOC
+	INNER JOIN phan_cong pc 
+		on lop.L_ID = pc.L_ID
+		INNER JOIN nhiem_vu 
+		on nhiem_vu.NV_ID=pc.NV_ID
+		INNER JOIN can_bo 
+		on can_bo.CB_ID =pc.CB_ID
+		where PC_ID=".$PC_ID;
+	$pc=pdo_query_one($sql);
+        return $pc; 
+
+	
+}
 function load_all_phan_cong_hien_tai(){
 	$sql="SELECT *
 	from nam_hoc INNER JOIN lop

@@ -13,7 +13,6 @@
                 <tr class="table-primary">
                     <th class="width-table-100" scope="col">STT</th>
                     <th class="width-table-100" scope="col">ID</th>
-
                     <th class="width-table-250" scope="col">Họ & tên</th>
                     <th class="width-table-250" scope="col">Nhiệm vụ</th>
                     <th class="width-table-200" scope="col">Lớp</th>
@@ -27,6 +26,8 @@
                 foreach ($list_phan_cong as $phancong) {
                     extract($phancong);
                     $delete="index.php?a=xoa-phan-cong&PC_ID=".$PC_ID;
+                    $update="index.php?a=update-cong&PC_ID=".$PC_ID;
+
                     echo'           
                     <tr>
                     <th  scope="row">'.$i.'</th>
@@ -36,8 +37,8 @@
                     <td >'.$L_TEN.'</td>
                     <td >'.$TENNAMHOC.'</td>
                     <td>
-                        <a href="#" class="gachchan2">
-                            <button type=" reset" class="btn btn-success">
+                        <a href="'.$update.'" class="gachchan2">
+                            <button type="button" class="btn btn-success">
                                 <ion-icon name="pencil-outline"></ion-icon>
                             </button>
                         </a>

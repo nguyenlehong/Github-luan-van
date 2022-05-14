@@ -220,9 +220,26 @@ if(isset($_GET['a'])){
         case 'xoa-phan-cong':
             if(isset($_GET['PC_ID'])&&($_GET['PC_ID'])>0){
                 delete_phan_cong($_GET['PC_ID']);
-            }
-            
+            }           
             $list_phan_cong=load_all_phan_cong();
+            include "Can-bo/Danh-sach-phan-cong.php";
+            break;
+        case 'update-cong':
+            if(isset($_GET['PC_ID'])&&($_GET['PC_ID'])>0){
+                $PC_ID=$_GET['PC_ID'];
+                $phancong=load_1_phan_cong($PC_ID);        
+              }
+                $list_can_bo=load_all_can_bo();
+
+            include "Can-bo/Cap-nhat-phan-cong.php";
+            break;
+        case 'luu-cap-nhat-phan-cong':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $PC_ID=$_POST['PC_ID'];
+                $tencanbo=$_POST['CB_ID'];
+                update_can_bo_phan_cong($PC_ID,$tencanbo);    
+            } 
+            $list_phan_cong=load_all_phan_cong_hien_tai();
             include "Can-bo/Danh-sach-phan-cong.php";
             break;
         case 'tim-can-bo-trong-phan-cong':
@@ -278,6 +295,34 @@ if(isset($_GET['a'])){
             $list_khoan_thu=load_all_khoan_thu();     
             include "Lop/Muc-thu-them.php"; 
             break;
+        case 'luu-them-muc-thu':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $nam=$_POST['NAMHOC'];
+                $khoi=$_POST['KHOI'];
+                $kt=$_POST['KHOANTHU'];
+                $tien=$_POST['sotien'];
+
+                insert_muc_thu($nam,$khoi,$kt,$tien);    
+            }
+            break;
+        case 'danh-sach-muc-thu':
+            $list_muc_thu_mam= load_muc_thu_khoi_mam();
+            $list_muc_thu_choi= load_muc_thu_khoi_choi();
+            $list_muc_thu_la= load_muc_thu_khoi_la();
+            include "Lop/Muc-thu-danh-sach-hien-tai.php";
+            break;
+        case 'danh-sach-muc-thu-khoi-mam':
+            $list_muc_thu_mam= load_muc_thu_khoi_mam();
+            include "Lop/Muc-thu-khoi-mam.php"; 
+            break;
+        case 'danh-sach-muc-thu-khoi-choi':
+            $list_muc_thu_choi= load_muc_thu_khoi_choi();
+            include "Lop/Muc-thu-khoi-choi.php";    
+            break;
+        case 'danh-sach-muc-thu-khoi-la':
+            $list_muc_thu_la= load_muc_thu_khoi_la();
+            include "Lop/Muc-thu-khoi-la.php";    
+            break;
         case 'them-tre':
             $list_lop=load_all_lop();
             include "Tre/Tre-them.php";
@@ -327,8 +372,8 @@ if(isset($_GET['a'])){
             if(isset($_POST['loc-lop'])&&($_POST['loc-lop'])){
                 $NAMHOC=$_POST['NAMHOC'];
             }else{
-            $NAMHOC='';
-            }      
+                $NAMHOC='';
+                }      
             $list_nam_hoc=load_all_nam_hoc();
             
             $list_nam_hoc2=load_lop_thuoc_khoi($NAMHOC);
@@ -345,9 +390,14 @@ if(isset($_GET['a'])){
                 $idlop=$_POST['L_ID'];
                 $idtre=$_POST['T_ID'];                
                 insert_tre_chon_lop($idlop,$idtre);
-                insert_tre_chi_so($idlop,$idtre);
-                insert_tre_chi_so2($idlop,$idtre);
-                insert_tre_chi_so3($idlop,$idtre);
+                // insert_tre_chi_so($idlop,$idtre);
+                // insert_tre_chi_so2($idlop,$idtre);
+                // insert_tre_chi_so3($idlop,$idtre);
+                insert_tre_cs_dau_hk1($idlop,$idtre);
+                insert_tre_cs_cuoi_hk1($idlop,$idtre);
+                insert_tre_cs_dau_hk2($idlop,$idtre);
+                insert_tre_cs_cuoi_hk2($idlop,$idtre);
+
             }
             $list_all_tre=load_all_tre();
 

@@ -31,35 +31,49 @@
         foreach ($list_lop_thuoc_khoi as $lop) {
             extract($lop);
             $chitiet="Xu-ly.php?b=loc-tre-theo-lop&L_ID=".$L_ID;    
-
-            $chiso3="Xu-ly.php?b=nhap-chi-so-tre3&L_ID=".$L_ID; 
-            $in="Admin/in.php?L_ID=".$L_ID;  
-
+             
+            $in="Admin/in.php?L_ID=".$L_ID;
+            $lan1="Xu-ly.php?b=nhap-chi-so-lan1&L_ID=".$L_ID; 
+            $lan2="Xu-ly.php?b=nhap-chi-so-lan2&L_ID=".$L_ID; 
+            $lan3="Xu-ly.php?b=nhap-chi-so-lan3&L_ID=".$L_ID; 
+            $lan4="Xu-ly.php?b=nhap-chi-so-lan4&L_ID=".$L_ID; 
 
             echo '
-            <div class="alert alert-primary" role="alert">
+        <div class="alert alert-primary" role="alert">
             '.$L_TEN.' - '.$NAMHOC.'       
  
-        
             <a href="'.$chitiet.'" class="gachchands">
-            <button type="button" class="btn btn-success">
+                <button type="button" class="btn btn-success">
                 <ion-icon name="list-outline"></ion-icon>
-            </button>
-        </a>
-        <a href="'.$in.'" class="gachchands">
-<button type="button" class="btn btn-info">
-    In danh sách
-</button>
-</a>
-<a href="'.$chiso3.'" class="gachchands">
-<button type="button" class="btn btn-info">
-    Nhập chỉ số
-</button>
-</a>
-
- </div>
-            
-            ';
+                </button>
+            </a>
+            <a href="'.$in.'" class="gachchands">
+                <button type="button" class="btn btn-info">
+                In
+                </button>
+            </a>
+          
+            <a href="'.$lan1.'" class="gachchands">
+                <button type="button" class="btn btn-info">
+                Lần 1
+                </button>
+            </a>
+            <a href="'.$lan2.'" class="gachchands">
+                <button type="button" class="btn btn-info">
+                Lần 2
+                </button>
+            </a> 
+            <a href="'.$lan3.'" class="gachchands">
+                <button type="button" class="btn btn-info">
+                Lần 3
+                </button>
+            </a> 
+            <a href="'.$lan4.'" class="gachchands">
+                <button type="button" class="btn btn-info">
+                Lần 4
+                </button>
+            </a>
+    </div> ';
         }
         ?>
 
@@ -68,7 +82,15 @@
 
     </div>
 </div>
+<!-- $chiso3="Xu-ly.php?b=nhap-chi-so-tre3&L_ID=".$L_ID;
+<a href="'.$chiso3.'" class="gachchands">
+    <button type="button" class="btn btn-info">
+        Nhập chỉ số
+    </button>
+</a> 
+cap nhat chi so lan 3. nay la insert khong phai cap nhat
 
+-->
 <!-- <a href="'.$chiso.'" class="gachchands">
     <button type="button" class="btn btn-info">
         Lần 1

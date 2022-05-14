@@ -19,6 +19,8 @@
                 Quản lý trẻ
             </a>
             <div class="smenu">
+                <a href="index.php?a=them-khoan-thu">Khoản thu</a>
+                <a href="index.php?a=them-tien-khoan-thu">Mức thu</a>
                 <a href="index.php?a=them-tre">Thêm trẻ</a>
                 <a href="index.php?a=danh-sach-tre ">Danh sách trẻ</a>
                 <!-- <a href="index.php?a=danh-sach-chi-so-tre">Chỉ số</a> -->
@@ -36,7 +38,8 @@
                 <a href="index.php?a=danh-sach-khoi "> Danh sách khối</a>
                 <a href="index.php?a=them-lop  "> Thêm lớp</a>
                 <a href="index.php?a=danh-sach-lop  "> Danh sách lớp</a>
-                <a href="index.php?a=them-khoan-thu">Khoản thu</a>
+
+
             </div>
         </li>
 

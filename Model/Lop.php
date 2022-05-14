@@ -155,8 +155,48 @@ function load_all_khoan_thu(){
 	$list=pdo_query($sql);
 	return $list; 
 }
+function load_muc_thu_khoi_mam(){
+	$sql="SELECT *
+	from khoi INNER JOIN muc_thu
+	on khoi.KHOI = muc_thu.KHOI
+	INNER JOIN nam_hoc
+	on nam_hoc.NAMHOC=muc_thu.NAMHOC
+	INNER JOIN khoan_thu
+	on khoan_thu.KT_ID= muc_thu.KT_ID
+	WHERE nam_hoc.TRANGTHAI='danghoatdong' and khoi.KHOI='khối mầm'";
+	$list=pdo_query($sql);
+	return $list; 
+}
+function load_muc_thu_khoi_choi(){
+	$sql="SELECT *
+	from khoi INNER JOIN muc_thu
+	on khoi.KHOI = muc_thu.KHOI
+	INNER JOIN nam_hoc
+	on nam_hoc.NAMHOC=muc_thu.NAMHOC
+	INNER JOIN khoan_thu
+	on khoan_thu.KT_ID= muc_thu.KT_ID
+	WHERE nam_hoc.TRANGTHAI='danghoatdong' and khoi.KHOI='khối chồi'";
+	$list=pdo_query($sql);
+	return $list; 
+}
+function load_muc_thu_khoi_la(){
+	$sql="SELECT *
+	from khoi INNER JOIN muc_thu
+	on khoi.KHOI = muc_thu.KHOI
+	INNER JOIN nam_hoc
+	on nam_hoc.NAMHOC=muc_thu.NAMHOC
+	INNER JOIN khoan_thu
+	on khoan_thu.KT_ID= muc_thu.KT_ID
+	WHERE nam_hoc.TRANGTHAI='danghoatdong' and khoi.KHOI='khối lá'";
+	$list=pdo_query($sql);
+	return $list; 
+}
 function capnhat($cc,$cn){
 	$sql="update chi_so_phat_trien set CHIEUCAO='".$cc."', CANNANG='".$cn."' where T_ID=".$updateid;
+	pdo_execute($sql);
+}
+function insert_muc_thu($nam,$khoi,$kt,$tien){
+	$sql="insert into muc_thu(NAMHOC,KHOI,KT_ID,SOTIEN) values('$nam','$khoi','$kt','$tien')";
 	pdo_execute($sql);
 }
 ?>

@@ -18,10 +18,10 @@
             </button>
         </a>
         <a href="'.$list_mon_theo_loai.'" class="gachchands">
-        <button type="button" class="btn btn-success">
-        <ion-icon name="list-outline"></ion-icon>
-        </button>
-    </a>
+            <button type="button" class="btn btn-success">
+                <ion-icon name="list-outline"></ion-icon>
+            </button>
+        </a>
         </div>
             
             ';
