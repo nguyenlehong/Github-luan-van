@@ -28,12 +28,16 @@
                                 
                     $lan4 = "INSERT INTO chi_so_cuoi_hk2(L_ID,T_ID)
                                 VALUES('$lop','$id')";
+
+                    $phieuthu = "INSERT INTO phieu_thu(L_ID,T_ID)
+                                VALUES('$lop','$id')";
                                                
                     mysqli_query($conn,$capnhat);
                     mysqli_query($conn,$lan1);                                      
                     mysqli_query($conn,$lan2);                                      
                     mysqli_query($conn,$lan3);                                      
                     mysqli_query($conn,$lan4);                                      
+                    mysqli_query($conn,$phieuthu);                                      
 
                 }              
             }

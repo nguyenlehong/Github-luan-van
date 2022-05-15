@@ -397,6 +397,8 @@ if(isset($_GET['a'])){
                 insert_tre_cs_cuoi_hk1($idlop,$idtre);
                 insert_tre_cs_dau_hk2($idlop,$idtre);
                 insert_tre_cs_cuoi_hk2($idlop,$idtre);
+                insert_tre_phieu_thu_($idlop,$idtre);
+
 
             }
             $list_all_tre=load_all_tre();

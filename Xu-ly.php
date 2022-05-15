@@ -90,6 +90,12 @@ if(isset($_GET['b'])){
             // $list_lop_thuoc_khoi=load_lop_thuoc_khoi_NN($KHOI,$NAMHOC);
             include "View/Lop/Lop-danh-sach.php";
             break;
+        case 'danh-sach-lop-phieu-thu':
+            $list_khoi=load_all_khoi();
+            $list_lop_thuoc_khoi=load_all_lop2($_SESSION['user']['CB_ID']);
+            $list_nam_hoc=load_all_nam_hoc();
+            include "View/Lop/Lop-danh-sach-phieu-thu.php";
+            break;
 
             
         case 'loc-lop-theo-nam-khoi':
@@ -207,6 +213,11 @@ if(isset($_GET['b'])){
             $conn = new mysqli('localhost','root','','luanvan');
             error_reporting(0);
             include "View/Lop/Nhap-chi-so-lan4.php";
+            break;
+        case 'nhap-phieu-thu-lop':
+            $conn = new mysqli('localhost','root','','luanvan');
+            error_reporting(0);
+            include "View/Lop/Nhap-phieu-thu.php";
             break;
         default:
             include "home.php";

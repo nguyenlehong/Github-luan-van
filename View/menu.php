@@ -40,6 +40,7 @@ if(isset($_SESSION['user'])){
             <div class="smenu ">
                 <!-- <a href="Xu-ly.php?b=danh-sach-khoi ">Danh sách khối</a> -->
                 <a href="Xu-ly.php?b=danh-sach-lop ">Chỉ số lớp</a>
+                <a href="Xu-ly.php?b=danh-sach-lop-phieu-thu ">Phiếu thu</a>
                 <a href="Xu-ly.php?b=danh-sach-khoan-thu ">Khoản thu</a>
 
             </div>

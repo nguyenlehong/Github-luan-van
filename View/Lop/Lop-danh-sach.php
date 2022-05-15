@@ -18,7 +18,7 @@
                             foreach ($list_nam_hoc as $namhoc) {
                             extract($namhoc);
                             echo '
-                            <option value="'.$NAMHOC.'">'.$NAMHOC.'</option>                            
+                            <option value="'.$NAMHOC.'">'.$TENNAMHOC.'</option>                            
                             ';
                         }
                         ?>
@@ -40,7 +40,7 @@
 
             echo '
         <div class="alert alert-primary" role="alert">
-            '.$L_TEN.' - '.$NAMHOC.'       
+            '.$L_TEN.' - '.$TENNAMHOC.'       
  
             <a href="'.$chitiet.'" class="gachchands">
                 <button type="button" class="btn btn-success">

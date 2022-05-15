@@ -41,17 +41,17 @@
         $sql="insert into lop_tre(L_ID,T_ID) values('$idlop','$idtre')";
         pdo_execute($sql);
     }
-    function insert_tre_chi_so($idlop,$idtre){
-        $sql="insert into chi_so_phat_trien(L_ID,T_ID) values('$idlop','$idtre')";
-        pdo_execute($sql);
-    }
-    function insert_tre_chi_so2($idlop,$idtre){
-        $sql="insert into chi_so_phat_trien2(L_ID,T_ID) values('$idlop','$idtre')";
-        pdo_execute($sql);
-    }function insert_tre_chi_so3($idlop,$idtre){
-        $sql="insert into chi_so_phat_trien3(L_ID,T_ID) values('$idlop','$idtre')";
-        pdo_execute($sql);
-    }
+    // function insert_tre_chi_so($idlop,$idtre){
+    //     $sql="insert into chi_so_phat_trien(L_ID,T_ID) values('$idlop','$idtre')";
+    //     pdo_execute($sql);
+    // }
+    // function insert_tre_chi_so2($idlop,$idtre){
+    //     $sql="insert into chi_so_phat_trien2(L_ID,T_ID) values('$idlop','$idtre')";
+    //     pdo_execute($sql);
+    // }function insert_tre_chi_so3($idlop,$idtre){
+    //     $sql="insert into chi_so_phat_trien3(L_ID,T_ID) values('$idlop','$idtre')";
+    //     pdo_execute($sql);
+    // }
 // cap nhat chi so tre v1
 
 function insert_tre_cs_dau_hk1($idlop,$idtre){
@@ -68,6 +68,10 @@ function insert_tre_cs_dau_hk2($idlop,$idtre){
 }
 function insert_tre_cs_cuoi_hk2($idlop,$idtre){
     $sql="insert into chi_so_cuoi_hk2(L_ID,T_ID) values('$idlop','$idtre')";
+    pdo_execute($sql);
+}
+function insert_tre_phieu_thu_($idlop,$idtre){
+    $sql="insert into phien_thu(L_ID,T_ID) values('$idlop','$idtre')";
     pdo_execute($sql);
 }
     

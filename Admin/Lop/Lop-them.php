@@ -3,7 +3,7 @@
         <h3 class="font">Thêm lớp</h3>
     </div>
     <div class=noi-dung-70>
-        <form action="index.php?a=insert-lop" method="POST">
+        <form action="index.php?a=insert-lop" method="POST" autocomplete="off">
             <fieldset disabled>
                 <div class="form-group row ">
                     <label for="inputText3" class="col-sm-2 col-form-label">ID lớp</label>
@@ -27,7 +27,7 @@
                             foreach ($list_nam_hoc as $namhoc) {
                             extract($namhoc);
                             echo '
-                            <option value="'.$NAMHOC.'">'.$NAMHOC.'</option>                            
+                            <option value="'.$NAMHOC.'">'.$TENNAMHOC.'</option>                            
                             ';
                         }
                         ?>
