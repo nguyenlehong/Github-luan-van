@@ -350,9 +350,9 @@ if(isset($_GET['a'])){
             }  
             $KHOI='';
             $list_khoi=load_all_khoi();           
-            $list_lop=load_lop_thuoc_khoi($KHOI);
+            // $list_lop=load_lop_thuoc_khoi($KHOI);
             $list_tre=load_1_tre();
-            $list_lop=load_all_lop();
+            $list_lop=load_all_lop_hoat_dong();
             include "Tre/Tre-chon-lop.php";
             break;
         // case 'chon-lop':
@@ -368,42 +368,52 @@ if(isset($_GET['a'])){
 
         //     include "Tre/Tre-chon-lop.php";
         //     break;
-        case 'chon-lop':
-            if(isset($_POST['loc-lop'])&&($_POST['loc-lop'])){
-                $NAMHOC=$_POST['NAMHOC'];
-            }else{
-                $NAMHOC='';
-                }      
-            $list_nam_hoc=load_all_nam_hoc();
+//         case 'chon-lop':
+//             if(isset($_POST['loc-lop'])&&($_POST['loc-lop'])){
+//                 $NAMHOC=$_POST['NAMHOC'];
+//             }else{
+//                 $NAMHOC='';
+//                 }      
+//             $list_nam_hoc=load_all_nam_hoc();
             
-            $list_nam_hoc2=load_lop_thuoc_khoi($NAMHOC);
+//             $list_nam_hoc2=load_lop_thuoc_khoi($NAMHOC);
 // v
 //             $list_khoi=load_all_khoi();
             
 //             $list_lop=load_lop_thuoc_khoi($KHOI);
 //             $list_tre=load_1_tre();
 
-            include "Tre/Tre-chon-lop.php";
-            break;
+//             include "Tre/Tre-chon-lop.php";
+//             break;
         case 'insert-tre-chon-lop':
+            $max=4;
+            $conn = new mysqli('localhost','root','','luanvan');     
+
             if(isset($_POST['luu'])&&($_POST['luu'])){
                 $idlop=$_POST['L_ID'];
-                $idtre=$_POST['T_ID'];                
-                insert_tre_chon_lop($idlop,$idtre);
-                // insert_tre_chi_so($idlop,$idtre);
-                // insert_tre_chi_so2($idlop,$idtre);
-                // insert_tre_chi_so3($idlop,$idtre);
-                insert_tre_cs_dau_hk1($idlop,$idtre);
-                insert_tre_cs_cuoi_hk1($idlop,$idtre);
-                insert_tre_cs_dau_hk2($idlop,$idtre);
-                insert_tre_cs_cuoi_hk2($idlop,$idtre);
-                insert_tre_phieu_thu_($idlop,$idtre);
+                $idtre=$_POST['T_ID'];    
+                $query="SELECT count(L_ID) AS tong from lop_tre 
+                WHERE lop_tre.L_ID=".$idlop;         
+                    $result=mysqli_query($conn,$query); 
+                    $data = mysqli_fetch_assoc($result);
+                   if($data['tong'] < $max){
+                        insert_tre_chon_lop($idlop,$idtre);
+                        insert_tre_cs_dau_hk1($idlop,$idtre);
+                        insert_tre_cs_cuoi_hk1($idlop,$idtre);
+                        insert_tre_cs_dau_hk2($idlop,$idtre);
+                        insert_tre_cs_cuoi_hk2($idlop,$idtre);
+                        insert_tre_phieu_thu($idlop,$idtre);
 
-
+                        $list_all_tre=load_all_tre();
+                        include "Tre/Tre-danh-sach.php";
+                   }else{
+                       $thongbao="Lỗi! Lớp đã đầy chọn lại lớp";
+                    $list_lop=load_all_lop_hoat_dong();
+                    $list_tre=load_1_tre();
+                    include "Tre/Tre-chon-lop.php";
+                   }
             }
-            $list_all_tre=load_all_tre();
 
-            include "Tre/Tre-danh-sach.php";
             break;
         case 'len-lop-tre':
             if(isset($_GET['T_ID'])&&($_GET['T_ID']>0)){
@@ -430,6 +440,7 @@ if(isset($_GET['a'])){
             include "Tre/Tre-danh-sach-theo-lop.php";
             break;
         case 'danh-sach-tre':
+      
             $list_all_tre=load_all_tre();
             include "Tre/Tre-danh-sach.php";
             break;

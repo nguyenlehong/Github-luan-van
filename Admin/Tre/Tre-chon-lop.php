@@ -94,7 +94,15 @@
 <!-- test -->
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font">Cập nhật lớp </h3>
+        <h3 class="font">Cập nhật lớp
+
+
+            <?php
+if(isset($thongbao)&&($thongbao!=""))
+echo $thongbao;
+;
+?>
+        </h3>
     </div>
     <div class=noi-dung-80b>
         <div class="formphuynh1">
@@ -112,8 +120,8 @@
                         ?>
                     </select>
             </form>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="loc-lop"
-                value="loc-lop">Tìm</button>
+            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="loc-lop"
+                value="loc-lop">Tìm</button> -->
         </div>
         <form action="index.php?a=insert-tre-chon-lop" method="POST">
             <div class="form-group ">
@@ -123,7 +131,7 @@
                             foreach ($list_lop as $lop) {
                             extract($lop);
                             echo '
-                            <option name="L_ID" value="'.$L_ID.'">'.$L_TEN.' năm học '.$NAMHOC.' </option>       
+                            <option name="L_ID" value="'.$L_ID.'">'.$L_TEN.' năm học '.$TENNAMHOC.' </option>       
                                             
                             ';
                         }

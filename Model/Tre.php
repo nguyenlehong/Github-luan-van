@@ -70,8 +70,8 @@ function insert_tre_cs_cuoi_hk2($idlop,$idtre){
     $sql="insert into chi_so_cuoi_hk2(L_ID,T_ID) values('$idlop','$idtre')";
     pdo_execute($sql);
 }
-function insert_tre_phieu_thu_($idlop,$idtre){
-    $sql="insert into phien_thu(L_ID,T_ID) values('$idlop','$idtre')";
+function insert_tre_phieu_thu($idlop,$idtre){
+    $sql="insert into phieu_thu(L_ID,T_ID) values('$idlop','$idtre')";
     pdo_execute($sql);
 }
     

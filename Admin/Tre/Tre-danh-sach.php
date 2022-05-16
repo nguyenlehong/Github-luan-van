@@ -1,8 +1,13 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font">Danh sách trẻ </h3>
+        <h3 class="font">Danh sách trẻ
+            <?php
+             echo $data['tong'];
+            ?>
+        </h3>
     </div>
     <div class="noi-dung-100">
+
         <table class="table table-hover">
 
             <tbody>
