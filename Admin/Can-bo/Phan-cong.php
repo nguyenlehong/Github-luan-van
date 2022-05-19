@@ -30,7 +30,7 @@
                             foreach ($list_lop as $lop) {
                             extract($lop);
                             echo '
-                            <option value="'.$L_ID.'">'.$L_TEN.'  '.$NAMHOC.'</option>                            
+                            <option value="'.$L_ID.'">'.$L_TEN.'  '.$TENNAMHOC.'</option>                            
                             ';
                         }
                         ?>

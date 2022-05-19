@@ -29,7 +29,7 @@
                     <td class="width-table-250">'.$CB_HOTEN.'</td>
                     <td class="width-table-250"> '.$NV_TEN.'</td>
                     <td class="width-table-250">'.$L_TEN.'</td>
-                    <td class="width-table-250">'.$NAMHOC.'</td>
+                    <td class="width-table-250">'.$TENNAMHOC.'</td>
                    
                 </tr>
                 

@@ -16,7 +16,7 @@
 
             echo '
             <div class="alert alert-primary" role="alert">
-            '.$L_TEN.' - '.$NAMHOC.'       
+            '.$L_TEN.'       
  
         <a href="'.$chitiet.'" class="gachchands">
     <button type="button" class="btn btn-success">
@@ -43,4 +43,8 @@ In chỉ số
     </div>
     <div style="height:25px"></div>
 </div>
-<!-- <ion-icon name="print-outline"></ion-icon> -->
+<!-- <ion-icon name="print-outline"></ion-icon> 
+
+
+- '.$NAMHOC.'  o phần tên lớp
+-->

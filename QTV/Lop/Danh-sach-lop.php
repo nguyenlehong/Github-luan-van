@@ -3,8 +3,9 @@
         <h3 class="font">Danh sách lớp </h3>
     </div>
     <div class=noi-dung-70>
-        <form action="index.php?a=loc-lop-theo-nam-khoicb" method="POST">
-
+        <a href="index.php?b=them-lop"> <button type="button" class=" trang btn btn-success width100 text-white">Thêm
+            </button></a>
+        <!-- <form action="index.php?a=loc-lop-theo-nam-khoicb" method="POST">
 
             <div class="form-group" style="padding-top: 10px;padding-bottom: 10px;">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="loc-lop-theo-nam"
@@ -23,34 +24,19 @@
                 </select>
             </div>
 
-        </form>
+        </form> -->
 
         <?php
         foreach ($list_lop as $lop) {
             extract($lop);
-            $chitiet="index.php?a=loc-tre-theo-lop&L_ID=".$L_ID;    
-            $in="in-thong-tin.php?L_ID=".$L_ID;    
-            $chuyenlop="index.php?a=chuyen-lop&L_ID=".$L_ID;    
-
+           
             echo '
             <div class="alert alert-primary" role="alert">
-            '.$L_TEN.' - '.$TENNAMHOC.'       
+            '.$L_TEN.' <ion-icon name="calendar-outline"></ion-icon> '.$TENNAMHOC.'       
  
-        <a href="'.$chitiet.'" class="gachchands">
-    <button type="button" class="btn btn-success">
-        <ion-icon name="list-outline"></ion-icon>
-    </button>
-</a>
-<a href="'.$in.'" class="gachchands">
-<button type="button" class="btn btn-info">
-<ion-icon name="print-outline"></ion-icon>
-</button>
-</a>
-<a href="'.$chuyenlop.'" class="gachchands">
-<button type="button" class="btn btn-primary">
-Chuyển lớp
-</button>
-</a>
+        
+
+
         </div>
             
             ';
@@ -60,3 +46,13 @@ Chuyển lớp
     </div>
     <div style="height:25px"></div>
 </div>
+<!-- <a href="'.$xoa.'" class="gachchands">
+    <button type="button" class="btn btn-danger">
+        <ion-icon name="trash-outline"></ion-icon>
+    </button>
+</a>
+$xoa="index.php?b=xoa-lop&L_ID=".$L_ID; 
+
+
+xóa 1 lớp ở trang qtv
+-->

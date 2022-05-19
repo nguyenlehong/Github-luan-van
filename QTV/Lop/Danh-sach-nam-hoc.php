@@ -4,7 +4,9 @@
     </div>
     <div class=noi-dung-100>
         <table class="table table-hover">
-
+            <a href="index.php?b=them-nam-hoc"> <button type="button"
+                    class=" trang btn btn-success width100 text-white">Thêm
+                </button></a>
             <tbody>
                 <tr class="table-primary">
                     <th scope="col" class="width-table-50">STT</th>
@@ -28,7 +30,7 @@
                     if($TRANGTHAI=='danghoatdong'){
                         $TRANGTHAI1 ="Đang hoạt động";
                     }else{
-                        $TRANGTHAI0 ="Đang hoạt động";
+                        $TRANGTHAI1 =" Không hoạt động";
                         
                     }
 

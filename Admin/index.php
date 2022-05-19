@@ -304,7 +304,12 @@ if(isset($_GET['a'])){
 
                 insert_muc_thu($nam,$khoi,$kt,$tien);    
             }
+            $list_muc_thu_mam= load_muc_thu_khoi_mam();
+            $list_muc_thu_choi= load_muc_thu_khoi_choi();
+            $list_muc_thu_la= load_muc_thu_khoi_la();
+            include "Lop/Muc-thu-danh-sach-hien-tai.php";
             break;
+           
         case 'danh-sach-muc-thu':
             $list_muc_thu_mam= load_muc_thu_khoi_mam();
             $list_muc_thu_choi= load_muc_thu_khoi_choi();
@@ -386,7 +391,7 @@ if(isset($_GET['a'])){
 //             include "Tre/Tre-chon-lop.php";
 //             break;
         case 'insert-tre-chon-lop':
-            $max=4;
+            $max=25;
             $conn = new mysqli('localhost','root','','luanvan');     
 
             if(isset($_POST['luu'])&&($_POST['luu'])){
@@ -498,7 +503,6 @@ if(isset($_GET['a'])){
             $list_nam_hoc=load_all_nam_hoc();
             $list_lop_thuoc_khoi=load_lop_thuoc_nam($NAMHOC);
             include "Lop/Lop-danh-sach_theo_nam.php";
-
             break;
         case 'loc-lop-theo-khoi':
             if(isset($_GET['KHOI'])&&($_GET['KHOI']!='')){
@@ -544,10 +548,10 @@ if(isset($_GET['a'])){
             include "Lop/Nam-hoc-danh-sach.php";
             break;
         case 'cap-nhat-hien-an-nam':
-        if(isset($_GET['NAMHOC'])&&($_GET['NAMHOC']!='')){
-            $NAMHOC=$_GET['NAMHOC'];   
-            $list_1_nam=load_1_nam_hien_an($NAMHOC);
-        }
+            if(isset($_GET['NAMHOC'])&&($_GET['NAMHOC']!='')){
+                $NAMHOC=$_GET['NAMHOC'];   
+                $list_1_nam=load_1_nam_hien_an($NAMHOC);
+            }
             include "Lop/Nam-hoc-cap-nhat-hien-an.php";
             break;
             

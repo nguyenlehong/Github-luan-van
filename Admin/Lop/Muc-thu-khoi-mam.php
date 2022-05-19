@@ -40,9 +40,11 @@
                         <td>'. $spformat_tien_mam.'đ</td>
                         <td></td>
                     </tr>                                            
+                
                     ';
+                    $i++;
                 }   
-                $i++;         
+                         
                 ?>
                 <tr>
                     <td></td>

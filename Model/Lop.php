@@ -28,6 +28,11 @@ function load_all_nam_hoc(){
 	$list=pdo_query($sql);
 	return $list; 
 }
+function load_all_nam_hoc_hoat_dong(){
+	$sql="SELECT * from nam_hoc where TRANGTHAI='danghoatdong' order by NAMHOC desc";
+	$list=pdo_query($sql);
+	return $list; 
+}
 function load_1_nam($NAMHOC){
 	$sql="SELECT * FROM nam_hoc where nam_hoc.NAMHOC=".$NAMHOC;
 	$list=pdo_query($sql);
@@ -86,6 +91,19 @@ function load_lop_thuoc_khoi($KHOI){
 	$sql.=" and KHOI ='".$KHOI."'";	
 	}
 	$sql.=" order by L_ID desc";
+	
+	$list=pdo_query($sql);
+	return $list; 
+}
+function load_lop_thuoc_khoi_hoat_dong($KHOI){
+	$sql="SELECT *
+	from nam_hoc INNER JOIN lop
+	on nam_hoc.NAMHOC = lop.NAMHOC
+	WHERE 1";
+	if($KHOI!=""){
+	$sql.=" and KHOI ='".$KHOI."'";	
+	}
+	$sql.=" and nam_hoc.TRANGTHAI='danghoatdong'";
 	
 	$list=pdo_query($sql);
 	return $list; 

@@ -128,6 +128,10 @@ function delete_phan_cong($PC_ID){
 	$sql="delete from phan_cong where PC_ID=".$PC_ID;
 	pdo_execute($sql);
 }
+function delete_khoan_thu($KT_ID){
+	$sql="delete from khoan_thu where KT_ID=".$KT_ID;
+	pdo_execute($sql);
+}
 function load_tre_chi_so_theo_lop(){
 	$sql="SELECT tre.T_HOTEN,thang,chi_so_phat_trien.CHIEUCAO,chi_so_phat_trien.CANNANG,lop.L_TEN
 	FROM tre INNER JOIN lop_tre
