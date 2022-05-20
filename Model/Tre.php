@@ -95,4 +95,16 @@ function insert_tre_phieu_thu($idlop,$idtre){
         $list=pdo_query($sql);
         return $list; 
     }
+    function load_all_tre_dang_hoat_dong(){
+        $sql="SELECT *
+        FROM tre INNER JOIN lop_tre
+        on tre.T_ID = lop_tre.T_ID
+        INNER JOIN lop
+        on lop.L_ID = lop_tre.L_ID
+        INNER JOIN nam_hoc
+        on lop.NAMHOC = nam_hoc.NAMHOC
+        WHERE nam_hoc.TRANGTHAI='danghoatdong' order by tre.T_ID desc";
+        $list=pdo_query($sql);
+        return $list;
+    }
 ?>

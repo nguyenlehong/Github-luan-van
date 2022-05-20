@@ -3,14 +3,18 @@
         <h3 class="font">Khối mầm</h3>
     </div>
     <div class="noi-dung-70">
-        <a href="index.php?a=danh-sach-muc-thu-khoi-mam">
+
+        <a href="index.php?b=danh-sach-muc-thu-khoi-mam">
             <button class="btn btn-outline-success my-2 my-sm-0" type="button">Khối mầm</button>
         </a>
-        <a href="">
+        <a href="index.php?b=danh-sach-muc-thu-khoi-choi">
             <button class="btn btn-outline-success my-2 my-sm-0" type="button">Khối chồi</button>
         </a>
-        <a href="">
+        <a href="index.php?b=danh-sach-muc-thu-khoi-la">
             <button class="btn btn-outline-success my-2 my-sm-0" type="button">Khối lá</button>
+        </a>
+        <a href="index.php?b=danh-sach-muc-thu-tat-ca">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="button">Tất cả mức thu</button>
         </a>
 
         <table class="table table-hover">
@@ -39,9 +43,11 @@
                         <td>'. $spformat_tien_mam.'đ</td>
                         <td></td>
                     </tr>                                            
+                
                     ';
+                    $i++;
                 }   
-                $i++;         
+                         
                 ?>
                 <tr>
                     <td></td>

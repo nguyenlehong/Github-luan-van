@@ -152,16 +152,12 @@ if(isset($_GET['b'])){
 
                 if($mk = $CB_MATKHAU){
                     if($mkmoi == $mkmoicheck){
-                    doi_mat_khau($id,$mkmoi);
-                  
-                    $thongbao="Đổi mật khẩu thành công! đăng xuất sau 3s";
-                   
+                    doi_mat_khau($id,$mkmoi);                 
+                    $thongbao="Đổi mật khẩu thành công! đăng xuất sau 3s";                 
                     session_unset();
-                    header('refresh:5; url=index.php');	
-                   
+                    header('refresh:5; url=index.php');	                  
                          }else{
-                            $thongbaoloi2="Nhập lại mật khẩu mới!";
-                            
+                            $thongbaoloi2="Nhập lại mật khẩu mới!";                          
                          }
                     
                     }else{

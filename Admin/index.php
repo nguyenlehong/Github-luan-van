@@ -12,7 +12,7 @@ include "header.php";
 // include "View/login.php";
 include "nav.php";
 include "menu.php";
-
+$list_thuc_don=load_all_thuc_don();
 if(isset($_GET['a'])){
     $a=$_GET['a'];
     switch ($a) {
@@ -445,8 +445,8 @@ if(isset($_GET['a'])){
             include "Tre/Tre-danh-sach-theo-lop.php";
             break;
         case 'danh-sach-tre':
-      
-            $list_all_tre=load_all_tre();
+      //load_all_tre()
+            $list_all_tre=load_all_tre_dang_hoat_dong();
             include "Tre/Tre-danh-sach.php";
             break;
         case 'cap-nhat-chi-so-tre':
@@ -576,8 +576,34 @@ if(isset($_GET['a'])){
             break;
         case 'chuyen-lop':
             $list_lop=load_all_lop_hoat_dong();
-            
             include "Lop/Len-lop-cho-tre.php";
+            break;
+        case 'doi-mat-khau':
+            include 'Doi-mat-khau.php';
+            break;
+        case 'luu-mat-khau-moi':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $mk=$_POST['mk'];
+                 $mkmoi=$_POST['mkmoi'];       
+                 $id=$_POST['ID'];  
+                 if($mk==$mkmoi){           
+                                                             //ham admin sai
+                        admin($id,$mk);                 
+                        $thongbao="Đổi mật khẩu thành công";       
+                        include 'Doi-mat-khau.php';
+                 }
+                 if($mk != $mkmoi){
+                        $thongbaoloi2="Nhập lại mật khẩu mới!";                          
+                        include 'Doi-mat-khau.php';
+                     
+                 }        
+            
+            }
+                
+            break;
+        case 'trang-chu':
+             $list_thuc_don=load_all_thuc_don();
+            include 'home.php';
             break;
         default:
            include "home.php";

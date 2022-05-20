@@ -18,4 +18,8 @@ function doi_mat_khau($id,$mkmoi){
 	$sql="update can_bo set CB_MATKHAU='".$mkmoi."' where CB_ID=".$id;
 	pdo_execute($sql);
 }
+function admin($id,$mk){
+	$sql="UPDATE tai_khoan_admin SET ad_MK='".$mk."' WHERE ad_TK=".$id;
+	pdo_execute($sql);
+}
 ?>

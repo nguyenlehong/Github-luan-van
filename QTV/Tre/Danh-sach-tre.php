@@ -20,17 +20,15 @@
                     <th scope="col" class="width-table-100">Giới tính</th>
                     <th scope="col" class="width-table-250">Họ tên cha </th>
                     <th scope="col" class="width-table-250">Họ tên mẹ </th>
-                    <th scope="col" class="width-table-150">Lớp</th>
-                    <th scope="col" class="width-table-250">Thao thác</th>
+                    <th scope="col" class="width-table-150">SĐT mẹ</th>
+                    <th scope="col" class="width-table-250">Lớp</th>
                 </tr>
                 <?php
                 $i=1;
                 foreach ($list_all_tre as $tre) {
                    extract($tre);
                    $time = strtotime($T_NGAYSINH);
-                   $xoa="index.php?a=xoa-tre&T_ID=".$T_ID;
-                   $capnhat="index.php?a=cap-nhat-thong-tin-tre&T_ID=".$T_ID;
-                   $lenlop="index.php?a=len-lop-tre&T_ID=".$T_ID;
+                 
                    echo '
                    <tr>
                    <th scope="row">'.$i.'</th>
@@ -41,25 +39,9 @@
                    <td>'.$T_PHAI.'</td>
                    <td>'.$T_HTCHA.'</td>
                    <td>'.$T_HTME.'</td>
-                   <td>'.$L_TEN.'</td>
+                   <td>0'.$T_SDTME.'</td>
                    <td>
-                   <a href="'.$lenlop.'" class="gachchan2">
-                           <button type="button" class="btn btn-primary">
-                               <ion-icon name="pencil-outline"></ion-icon>
-                           </button>
-                           </a>
-                       <a href="'.$capnhat.'" class="gachchan2">
-                           <button type="button" class="btn btn-success">
-                               <ion-icon name="pencil-outline"></ion-icon>
-                           </button>
-                           </a>
-                           <a href="'.$xoa.'" class="gachchan2">
-                               <button type="button" class="btn btn-danger">
-                               <ion-icon name="trash-outline"></ion-icon>
-                               </button>
-                           </a>
-
-                       </>
+                   '.$L_TEN.' '.$TENNAMHOC.'
                    </td>
                </tr>            
                    ';

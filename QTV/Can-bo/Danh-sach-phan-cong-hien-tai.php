@@ -1,11 +1,13 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font">Bảng phân công nhiệm vụ</h3>
+        <h3 class="font">Bảng phân công nhiệm vụ
+
+        </h3>
     </div>
     <div class="noi-dung-100">
-        <a href="index.php?a=phan-cong" class="">
-            <button type="button" class="btn btn-success width100" style="color:#fff">
-                Thêm
+        <a href="index.php?b=danh-sach-phan-cong" class="">
+            <button type="button" class="btn btn-info" style="color:#fff">
+                Danh sách phân công
             </button>
         </a>
         <table class="table table-hover">

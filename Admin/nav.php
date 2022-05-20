@@ -13,6 +13,7 @@ if(isset($_SESSION['admin'])){
             <?=$ad_TK?>
         </p>
         <ul>
+            <li> <a href="index.php?a=doi-mat-khau">Đổi mật khẩu</a></li>
 
             <li> <a href="index.php?a=admin-dang-xuat">Đăng xuất</a></li>
 

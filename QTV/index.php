@@ -9,18 +9,42 @@ include "../Model/Can-bo.php";
 include "../Model/Tre.php";
 
 include "header.php";
-
 include "nav.php";
 include "menu.php";
-
+$list_thuc_don=load_all_thuc_don();
 if(isset($_GET['b'])){
     $b=$_GET['b'];
     switch ($b) {
-  
+        case 'trang-chu':
+            $list_thuc_don=load_all_thuc_don();
+            include 'home.php';
+            break;
         case 'dang-xuat':
             session_unset();
             header('location: ../index.php');
             ob_end_flush(); 
+            break;
+        case 'danh-sach-nhiem-vu':
+            $list_nhiem_vu=load_all_nhiem_vu();
+            include 'Can-bo/Danh-sach-nhiem-vu.php';
+            break;
+        case 'danh-sach-phan-cong':
+            $list_phan_cong=load_all_phan_cong();
+            include 'Can-bo/Danh-sach-phan-cong.php';
+            break;
+        case 'danh-sach-phan-cong-hien-tai':
+            $list_phan_cong=load_all_phan_cong_hien_tai();
+            include 'Can-bo/Danh-sach-phan-cong-hien-tai.php';
+            break;
+        case 'tim-can-bo-trong-phan-cong':
+            if(isset($_POST['tim'])&&($_POST['tim'])){
+                $id=$_POST['ten'];
+                
+                }else{
+                    $id='';         
+                }
+            $list_phan_cong=load_all_phan_cong_tim($id);   
+            include "Can-bo/Danh-sach-phan-cong.php";
             break;
         case 'them-can-bo':
             include "Can-bo/Them-can-bo.php";
@@ -161,8 +185,100 @@ if(isset($_GET['b'])){
             $list_khoan_thu=load_all_khoan_thu();
             include "Tre/Danh-sach-khoan-thu.php";
             break;
-                     
+        case 'danh-sach-muc-thu-khoi-mam':
+            $list_muc_thu_mam= load_muc_thu_khoi_mam();
+            include 'Tre/Danh-sach-muc-thu-khoi-mam.php';
+            break;
+        case 'danh-sach-muc-thu-khoi-choi':
+            $list_muc_thu_choi= load_muc_thu_khoi_choi();
+            include "Tre/Danh-sach-muc-thu-khoi-choi.php";    
+            break;
+        case 'danh-sach-muc-thu-khoi-la':
+            $list_muc_thu_la= load_muc_thu_khoi_la();
+            include "Tre/Danh-sach-muc-thu-khoi-la.php";    
+            break;  
+        case 'danh-sach-muc-thu-tat-ca':
+            $list_nam_hoc=load_all_nam_hoc();
+            include "Tre/Danh-sach-muc-thu-tat-ca.php";    
+            break;
+        case 'danh-sach-muc-thu-theo-nam':
+            $list_nam_hoc=load_all_nam_hoc();
+            if(isset($_POST['tim'])&&($_POST['tim'])){
+                $NAMHOC=$_POST['NAMHOC'];
+            }else{
+                $NAMHOC='';         
+                } 
+            $list_muc_thu=load_all_muc_thu_theo_nam($NAMHOC); 
+            include "Tre/Danh-sach-muc-thu-tat-ca.php";    
+            break;
+        case 'danh-sach-tre':
+            $list_all_tre=load_all_tre_dang_hoat_dong();
+            include 'Tre/Danh-sach-tre.php';
+            break;
+        case 'danh-sach-loai-mon':
+            $list_loai_mon=load_all_loai_mon();
+            include 'Mon/Danh-sach-loai-mon.php';
+            break;
+        case 'them-loai-mon':
+            include 'Mon/Them-loai-mon.php';
+            break;    
+        case 'luu-loai-mon':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $ten_loai_mon=$_POST['tenloaimon'];
+                insert_loai_mon($ten_loai_mon);        
+            }
+            $list_loai_mon=load_all_loai_mon();
+            include 'Mon/Danh-sach-loai-mon.php';
+            break;
+        case 'xoa-loai-mon':
+            if(isset($_GET['LM_ID'])&&($_GET['LM_ID'])>0){
+                delete_loai_mon($_GET['LM_ID']);
+            }
+            $list_loai_mon=load_all_loai_mon();
+            include 'Mon/Danh-sach-loai-mon.php';
+            break;
+        case 'danh-sach-mon-an':
+            $list_mon=load_all_mon();
+            include "Mon/Danh-sach-mon-an.php";
+            break;
+        case 'them-mon-an':
+            $list_loai_mon=load_all_loai_mon();
+            include 'Mon/Them-mon-an.php';
+            break;
+        case 'luu-mon-an':
+            if(isset($_POST['luu'])&&($_POST['luu'])){
+                $ten_mon=$_POST['tenmon'];
+                $hinh_mon=$_FILES['hinh_mon']['name'];
+                $mo_ta_mon=$_POST['motamon'];
+                $LM_ID=$_POST['LM_ID'];
+                $target_dir ="../Upload/";
+                $target_file = $target_dir . basename($_FILES["hinh_mon"]["name"]);
+                move_uploaded_file($_FILES["hinh_mon"]["tmp_name"], $target_file);
+                insert_mon($ten_mon,$hinh_mon,$mo_ta_mon,$LM_ID);        
+            }
+            $list_mon=load_all_mon();
+            include "Mon/Danh-sach-mon-an.php";
+        case 'xoa-mon-an':
+            if(isset($_GET['M_ID'])&&($_GET['M_ID'])>0){
+                delete_mon_an($_GET['M_ID']);
+            }
+            $list_mon=load_all_mon();
+            include "Mon/Danh-sach-mon-an.php";
+            break;
+        case 'danh-sach-mon-theo-loai':
+            if(isset($_GET['LM_ID'])&&($_GET['LM_ID']>0)){
+                $LM_ID=$_GET['LM_ID'];              
+                $list_mon=load_mon_thuoc_loai_mon($_GET['LM_ID']);
+                $ten_loai_mon=load_ten_loai_mon($LM_ID);
+            }
+            include "Mon/Danh-sach-mon-an.php";
+            break;
+        case 'thuc-don':
+            $list_thuc_don=load_all_thuc_don();
+            include 'Mon/Thuc-don.php';
+            break;
         default:
+            $list_thuc_don=load_all_thuc_don();
             include "home.php";
              break;
      }

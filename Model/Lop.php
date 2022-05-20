@@ -209,6 +209,26 @@ function load_muc_thu_khoi_la(){
 	$list=pdo_query($sql);
 	return $list; 
 }
+
+function load_all_muc_thu_theo_nam($NAMHOC){
+	$sql="SELECT *
+	from khoi INNER JOIN muc_thu
+	on khoi.KHOI = muc_thu.KHOI
+	INNER JOIN nam_hoc
+	on nam_hoc.NAMHOC=muc_thu.NAMHOC
+	INNER JOIN khoan_thu
+	on khoan_thu.KT_ID= muc_thu.KT_ID
+	WHERE 1";
+	if($NAMHOC!=""){
+	$sql.=" and nam_hoc.NAMHOC ='".$NAMHOC."'";	
+	}
+	$sql.=" order by khoi.KHOI desc";
+	
+	$list=pdo_query($sql);
+	return $list; 
+	
+}
+
 function capnhat($cc,$cn){
 	$sql="update chi_so_phat_trien set CHIEUCAO='".$cc."', CANNANG='".$cn."' where T_ID=".$updateid;
 	pdo_execute($sql);

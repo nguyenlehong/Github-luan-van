@@ -1,13 +1,21 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font">Bảng phân công nhiệm vụ</h3>
+        <h3 class="font">Tất cả phân công nhiệm vụ</h3>
     </div>
     <div class="noi-dung-100">
-        <a href="index.php?a=phan-cong" class="">
-            <button type="button" class="btn btn-success width100" style="color:#fff">
-                Thêm
-            </button>
-        </a>
+        <form action="index.php?b=tim-can-bo-trong-phan-cong" method='POST' autocomplete="off">
+            <button style="" class=" btn btn-outline-success" type="submit" name="tim" value="tim">Tìm</button>
+
+            <a href="index.php?b=danh-sach-phan-cong-hien-tai" class="">
+                <button type="button" class="btn btn-info" style="color:#fff">
+                    Danh sách phân công hiện tại
+                </button>
+            </a>
+
+            <input class="form-control mr-sm-2" type="number" placeholder="Nhập ID cán bộ" aria-label="Search"
+                style="width:200px; float:left;margin-right:5px" name="ten">
+        </form>
+
         <table class="table table-hover">
             <tbody>
                 <tr class="table-primary">
@@ -17,17 +25,14 @@
                     <th class="width-table-250" scope="col">Nhiệm vụ</th>
                     <th class="width-table-200" scope="col">Lớp</th>
                     <th class="width-table-200" scope="col">Năm học</th>
-                    <th scope="col">Thao thác</th>
-                </tr>
 
+                </tr>
 
                 <?php
                 $i = 1;
                 foreach ($list_phan_cong as $phancong) {
                     extract($phancong);
                     $delete="index.php?a=xoa-phan-cong&PC_ID=".$PC_ID;
-                    $update="index.php?a=update-cong&PC_ID=".$PC_ID;
-
                     echo'           
                     <tr>
                     <th  scope="row">'.$i.'</th>
@@ -36,18 +41,7 @@
                     <td > '.$NV_TEN.'</td>
                     <td >'.$L_TEN.'</td>
                     <td >'.$TENNAMHOC.'</td>
-                    <td>
-                        <a href="'.$update.'" class="gachchan2">
-                            <button type="button" class="btn btn-success">
-                                <ion-icon name="pencil-outline"></ion-icon>
-                            </button>
-                        </a>
-                        <a href="'.$delete.'" class="gachchan2">
-                            <button type="button" class="btn btn-danger">
-                                <ion-icon name="trash-outline"></ion-icon>
-                            </button>
-                        </a>
-                    </td>
+                    
                 </tr>
                 
                     ';

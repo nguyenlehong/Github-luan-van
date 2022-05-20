@@ -1,6 +1,12 @@
 <div class="menu ">
 
     <div class="menu2 ">
+        <li class="item2 " id=" ">
+            <a href="index.php?a=trang-chu " class="btn2">
+                <ion-icon name="home-outline"></ion-icon>
+                Trang chủ
+            </a>
+        </li>
         <li class="item2 " id="canbo">
             <a href="#canbo" class="btn2 ">
                 <ion-icon name="person-outline"></ion-icon> Quản lý cán bộ
@@ -8,8 +14,9 @@
             <div class="smenu ">
                 <!-- <a href="index.php?a=them-can-bo"> Thêm cán bộ</a> -->
                 <a href="index.php?a=danh-sach-can-bo ">Danh sách cán bộ</a>
+                <a href="index.php?a=danh-sach-nhiem-vu ">Nhiệm vụ</a>
                 <a href="index.php?a=phan-cong ">Phân công</a>
-                <a href="index.php?a=nhiem-vu ">Nhiệm vụ</a>
+
             </div>
         </li>
         <li class="item2 " id="tre">
@@ -19,7 +26,7 @@
                 Quản lý trẻ
             </a>
             <div class="smenu">
-                <a href="index.php?a=them-khoan-thu">Khoản thu</a>
+                <a href="index.php?a=danh-sach-khoan-thu">Khoản thu</a>
                 <a href="index.php?a=them-tien-khoan-thu">Mức thu</a>
                 <a href="index.php?a=them-tre">Thêm trẻ</a>
                 <a href="index.php?a=danh-sach-tre ">Danh sách trẻ</a>
