@@ -3,24 +3,15 @@
         <h3 class="font">Phân công nhiệm vụ</h3>
     </div>
     <div class=noi-dung-70>
-        <form action="index.php?a=insert-phan-cong" method="POST">
 
-            <!-- <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Năm học</label>
-                <div class="col-sm-10 pad20px">
-                    <select class="custom-select form-control" name="NAMHOC">
-                        <?php
-                            foreach ($list_nam_hoc as $namhoc) {
-                            extract($namhoc);
-                            echo '
-                            <option value="'.$NAMHOC.'">'.$NAMHOC.'</option>                            
-                            ';
-                        }
-                        ?>
-                    </select>
+        <?php
+        if(isset($thongbao)&&($thongbao!=""))
+            echo'<div class="alert alert-danger" role="alert">
+                    '.$thongbao.'
                 </div>
-            </div> -->
-
+        ';
+        ?>
+        <form action="index.php?a=insert-phan-cong" method="POST">
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Lớp</label>
                 <div class="col-sm-10 pad20px">
@@ -83,3 +74,18 @@
     </div>
     <div style="height:25px"></div>
 </div>
+<!-- <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Năm học</label>
+                <div class="col-sm-10 pad20px">
+                    <select class="custom-select form-control" name="NAMHOC">
+                    <?php
+                            foreach ($list_nam_hoc as $namhoc) {
+                            extract($namhoc);
+                            echo '
+                            <option value="'.$NAMHOC.'">'.$NAMHOC.'</option>                            
+                            ';
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div> -->

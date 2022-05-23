@@ -11,3 +11,5 @@ the thong tin can bo: https://www.youtube.com/watch?v=vVDD3O_p5Q4
 
 
 view/lop/Tre-chi-so-theo-lop.php 2 3 không sư dụng
+                <li>https://www.youtube.com/watch?v=hnjHCmaUVPg</li>
+ video hướng dẫn viết cv 

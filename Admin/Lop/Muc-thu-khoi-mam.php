@@ -12,6 +12,9 @@
         <a href="index.php?a=danh-sach-muc-thu-khoi-la">
             <button class="btn btn-outline-success my-2 my-sm-0" type="button">Khối lá</button>
         </a>
+        <a href="index.php?a=them-tien-khoan-thu">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button">Thêm</button>
+        </a>
 
 
         <table class="table table-hover">

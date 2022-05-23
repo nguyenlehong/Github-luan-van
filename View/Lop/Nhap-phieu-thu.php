@@ -76,11 +76,12 @@
                             $T_HOTEN=$row['T_HOTEN'];               
                             $T_PHAI=$row['T_PHAI'];  
                             $ngay=$row['NGAY']; 
-                            $sotien=$row['SOTIEN'];     
-                            $spformat_tien =number_format($sotien,0, '.', '.');
+                            $sotienn=$row['SOTIEN'];     
+                            // $tien =number_format($sotien,0, '.', '.');
 
                              $time = strtotime($row['T_NGAYSINH']);                    
                              $ngay = strtotime($row['NGAY']);                    
+                             $spformat_tien = number_format($sotienn,0, '.', '.');
 
             ?>
                 <tr>
@@ -90,7 +91,9 @@
                     <td> <?=date("d/m/Y", $time)?></td>
                     <td><?=$T_PHAI?></td>
                     <td><?=date("d/m/Y", $ngay)?></td>
-                    <td><input type="number" step="0.1" name="SOTIEN_<?= $T_ID ?>" value="<?= $spformat_tien?>">đ</td>
+                    <td><input type="number" step="0.1" name="SOTIEN_<?= $T_ID ?>" value='<?=$spformat_tien?>'>
+                        <?=$spformat_tien?>đ
+                    </td>
 
                 </tr>
                 <?php
@@ -101,25 +104,26 @@
 </div>
 <script type=" text/javascript">
 $(document).ready(function() {
-    // Check/Uncheck AL1
-    $('#checkAll').change(function() {
-        if ($(this).is(':checked')) {
-            $('input[name="update[]"]').prop('checked', true);
-        } else {
-            $('input[name="update[]"]').each(function() {
-                $(this).prop('checked', false);
-            });
-        }
-    });
-    //checkbox
-    $('input[name="update[]"]').click(function() {
-        var total_checkboxes = $('input[name="update[]"]').length;
-        var total_checkboxes_checked = $('input[name="update[]"]:checked').length;
-        if (total_checkboxes_checked == total_checkboxes) {
-            $('#checkAll').prop('checked', true);
-        } else {
-            $('#checkAll').prop('checked', false);
-        };
-    });
+// Check/Uncheck AL1
+$(' #checkAll').change(function() {
+    if ($(this).is(':checked')) {
+        $('input[name="update[]" ]').prop('checked',
+            true);
+    } else {
+        $('input[name="update[]" ]').each(function() {
+            $(this).prop('checked',
+                false);
+        });
+    }
+}); //checkbox $('input[name="update[]" ]').click(function() { var
+total_checkboxes = $('input[name="update[]" ]').length;
+var
+    total_checkboxes_checked = $('input[name="update[]" ]:checked').length;
+if (total_checkboxes_checked == total_checkboxes) {
+    $('#checkAll').prop('checked', true);
+} else {
+    $('#checkAll').prop('checked', false);
+};
+});
 });
 </script>

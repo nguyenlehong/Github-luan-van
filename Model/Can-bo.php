@@ -75,9 +75,8 @@ function load_all_phan_cong_hien_tai(){
 		INNER JOIN nhiem_vu 
 		on nhiem_vu.NV_ID=pc.NV_ID
 		INNER JOIN can_bo 
-		on can_bo.CB_ID =pc.CB_ID
-		where nam_hoc.TRANGTHAI='danghoatdong'
-	
+		on can_bo.CB_ID =pc.CB_ID 
+		where nam_hoc.TRANGTHAI='danghoatdong' order by pc.L_ID desc
 	";
 	$list=pdo_query($sql);
 	return $list;
@@ -91,7 +90,7 @@ function load_all_phan_cong(){
 		INNER JOIN nhiem_vu 
 		on nhiem_vu.NV_ID=pc.NV_ID
 		INNER JOIN can_bo 
-		on can_bo.CB_ID =pc.CB_ID";
+		on can_bo.CB_ID =pc.CB_ID ";
 	$list=pdo_query($sql);
 	return $list;
 }

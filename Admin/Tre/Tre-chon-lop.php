@@ -99,12 +99,19 @@
 
             <?php
 if(isset($thongbao)&&($thongbao!=""))
-echo $thongbao;
-;
+echo '
+<div class="alert alert-danger" role="alert">
+'.$thongbao.'
+</div>
+';
+
 ?>
         </h3>
     </div>
     <div class=noi-dung-80b>
+        <div class="alert alert-danger" role="alert">
+            Lỗi! Lớp đã đầy chọn lại lớp
+        </div>
         <div class="formphuynh1">
             <form action="index.php?a=chon-lop" method="POST">
                 <div class="form-group pad20px">

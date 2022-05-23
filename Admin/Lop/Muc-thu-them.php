@@ -3,6 +3,13 @@
         <h3 class="font">Mức thu</h3>
     </div>
     <div class=noi-dung-70>
+        <?php
+        if(isset($thongbao)&&($thongbao!=""))
+            echo'<div class="alert alert-danger" role="alert">
+                    '.$thongbao.'
+                </div>
+        ';
+        ?>
         <form action="index.php?a=luu-them-muc-thu" method="POST" autocomplete="off">
 
             <div class="form-group row">
@@ -57,7 +64,7 @@
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Số tiền</label>
                 <div class="col-sm-10 pad20px">
-                    <input type="text" class="form-control " name="sotien" id="inputText3" placeholder="VD: 200.000đ "
+                    <input type="number" class="form-control " name="sotien" id="inputText3" placeholder="VD: 200.000đ "
                         required>
                 </div>
             </div>

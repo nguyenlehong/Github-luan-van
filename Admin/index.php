@@ -86,29 +86,66 @@ if(isset($_GET['a'])){
             $list_mon=load_all_mon();
             include 'Mon-an/Thuc-don-them.php';
             break;
-        case 'them-thuc-don-v2':       
-            $list_khoi=load_all_khoi();
-            $list_buoi=load_all_buoi();
-            $list_thu=load_all_thu();
-            $list_mon=load_all_mon();
-
-            include 'Mon-an/Thuc-don-them-v2.php';
-            break;
+   
         case 'insert-thuc-don':
-            if(isset($_POST['luu'])&&($_POST['luu'])){
-                $khoi=$_POST['KHOI'];
+            if(isset($_POST['luu'])&&($_POST['luu'])){             
                 $buoi=$_POST['BUOI'];
                 $thu=$_POST['THU'];
                 $mon=implode(', ' ,$_POST['M_TEN']);
-                insert_thuc_don($khoi,$buoi,$thu,$mon);        
+              
+                $con = new mysqli('localhost','root','','luanvan');     
+                $sql = "SELECT * FROM thuc_don WHERE THU = '$thu' and BUOI = '$buoi'";
+	            $result = $con->query($sql);
+	            if($result->num_rows>0){
+		            $thongbao="Thực đã tồn tại! Vui lòng nhập lại";
+                    $list_khoi=load_all_khoi();
+                    $list_buoi=load_all_buoi();
+                    $list_thu=load_all_thu();
+                    $list_mon=load_all_mon();
+                    include 'Mon-an/Thuc-don-them.php';
+                    break;
+	            }else{
+                    insert_thuc_don($buoi,$thu,$mon);        
+                    // $list_buoi=load_all_buoi();
+                    // $list_thu=load_all_thu();
+                    // $list_mon=load_all_mon();
+                    $list_thuc_don=load_all_thuc_don();
+                    include 'Mon-an/Thuc-don-danh-sach.php';
+                    break; 
+                }
+                
+
             }          
-            $list_khoi=load_all_khoi();
-            $list_buoi=load_all_buoi();
-            $list_thu=load_all_thu();
-            $list_mon=load_all_mon();
+          
+             
+            // $khoi=$_POST['KHOI'];
+              // insert_thuc_don($khoi,$buoi,$thu,$mon);   
+            //   $list_khoi=load_all_khoi(); 
+        case 'xoa-thuc-don-thu-2':
+            xoa_thuc_don_thu2();
             $list_thuc_don=load_all_thuc_don();
             include 'Mon-an/Thuc-don-danh-sach.php';
-            break;   
+            break;
+        case 'xoa-thuc-don-thu-3':
+            xoa_thuc_don_thu3();
+            $list_thuc_don=load_all_thuc_don();
+            include 'Mon-an/Thuc-don-danh-sach.php';
+            break;
+        case 'xoa-thuc-don-thu-4':
+            xoa_thuc_don_thu4();
+            $list_thuc_don=load_all_thuc_don();
+            include 'Mon-an/Thuc-don-danh-sach.php';
+            break;
+        case 'xoa-thuc-don-thu-5':
+            xoa_thuc_don_thu5();
+            $list_thuc_don=load_all_thuc_don();
+            include 'Mon-an/Thuc-don-danh-sach.php';
+            break;
+        case 'xoa-thuc-don-thu-6':
+            xoa_thuc_don_thu6();
+            $list_thuc_don=load_all_thuc_don();
+            include 'Mon-an/Thuc-don-danh-sach.php';
+            break;
         case 'danh-sach-thuc-don':
             $list_thuc_don=load_all_thuc_don();
             include 'Mon-an/Thuc-don-danh-sach.php';
@@ -192,23 +229,56 @@ if(isset($_GET['a'])){
 
             include "Can-bo/Phan-cong.php";
             break;
+
+
+            
         case 'insert-phan-cong':
-            if(isset($_POST['luu'])&&($_POST['luu'])){
-                // $NAMHOC=$_POST['NAMHOC'];
+            $max=2;
+            $conn = new mysqli('localhost','root','','luanvan'); 
+            if(isset($_POST['luu'])&&($_POST['luu'])){              
                 $L_ID=$_POST['L_ID'];
                 $NV_ID=$_POST['NV_ID'];
-                $CB_ID=$_POST['CB_ID'];
-                // insert_phan_cong($NAMHOC,$L_ID,$NV_ID,$CB_ID);
-                insert_phan_cong($L_ID,$NV_ID,$CB_ID);
+                $CB_ID=$_POST['CB_ID']; 
+                        
+                $query="SELECT count(L_ID) AS tong from phan_cong WHERE phan_cong.L_ID=".$L_ID;         
+                $result=mysqli_query($conn,$query); 
+                $data = mysqli_fetch_assoc($result);
+                if($data['tong'] < $max){
+                    $sql2 = "SELECT * from phan_cong WHERE (phan_cong.CB_ID='$CB_ID' OR phan_cong.NV_ID='$NV_ID') 
+                            AND phan_cong.L_ID= '$L_ID'";
+                    $result2 = $conn->query($sql2);
+                        if($result2->num_rows>0){
+                            $thongbao="Cán bộ hoặc nhiệm vụ đã được phân công! Vui lòng nhập lại";
+                            $list_nhiem_vu=load_all_nhiem_vu();
+                            $list_can_bo=load_all_can_bo();
+                            $list_lop=load_all_lop_hoat_dong();           
+                            include "Can-bo/Phan-cong.php";
+                            break;
+                        }else{
+                            insert_phan_cong($L_ID,$NV_ID,$CB_ID);
+                            $list_phan_cong=load_all_phan_cong();
+                            include "Can-bo/Danh-sach-phan-cong.php";
+                            break;
+                        }               
+                   }else{
+                       $thongbao="Lỗi! Lớp đã phân công đủ cán bộ";
+                       $list_nhiem_vu=load_all_nhiem_vu();
+                       $list_can_bo=load_all_can_bo();
+                       $list_lop=load_all_lop_hoat_dong();
+           
+                       include "Can-bo/Phan-cong.php";
+                       break;
+                   }
                 
-            }            
-            $list_nam_hoc=load_all_nam_hoc();
-            $list_nhiem_vu=load_all_nhiem_vu();
-            $list_can_bo=load_all_can_bo();
-            $list_lop=load_all_lop();
-            $list_phan_cong=load_all_phan_cong();
-            include "Can-bo/Danh-sach-phan-cong.php";
-            break;
+                
+            }   
+             // $NAMHOC=$_POST['NAMHOC'];         
+             // insert_phan_cong($NAMHOC,$L_ID,$NV_ID,$CB_ID);
+            // $list_nam_hoc=load_all_nam_hoc();
+            // $list_nhiem_vu=load_all_nhiem_vu();
+            // $list_can_bo=load_all_can_bo();
+            // $list_lop=load_all_lop();
+          
         case 'danh-sach-phan-cong':
             $list_phan_cong=load_all_phan_cong();
             include "Can-bo/Danh-sach-phan-cong-all.php";
@@ -290,25 +360,41 @@ if(isset($_GET['a'])){
             include "Lop/Khoan-thu-danh-sach.php";   
             break;
         case 'them-tien-khoan-thu':
-            $list_nam_hoc=load_all_nam_hoc();
+            $list_nam_hoc=load_all_nam_hoc_hoat_dong();
             $list_khoi=load_all_khoi();
             $list_khoan_thu=load_all_khoan_thu();     
             include "Lop/Muc-thu-them.php"; 
             break;
         case 'luu-them-muc-thu':
+            $conn = new mysqli('localhost','root','','luanvan'); 
             if(isset($_POST['luu'])&&($_POST['luu'])){
                 $nam=$_POST['NAMHOC'];
                 $khoi=$_POST['KHOI'];
                 $kt=$_POST['KHOANTHU'];
                 $tien=$_POST['sotien'];
+                $sql = "SELECT * from muc_thu WHERE muc_thu.KHOI='$khoi' and muc_thu.KT_ID='$kt' 
+                        AND muc_thu.NAMHOC= '$nam'";
+                $result = $conn->query($sql);
+                if($result->num_rows>0){
+                    $thongbao="Khoản thu đã tồn tại! vui lòng nhập lại";
+                    // $list_nam_hoc=load_all_nam_hoc();
+                    $list_nam_hoc=load_all_nam_hoc_hoat_dong();
 
-                insert_muc_thu($nam,$khoi,$kt,$tien);    
-            }
-            $list_muc_thu_mam= load_muc_thu_khoi_mam();
-            $list_muc_thu_choi= load_muc_thu_khoi_choi();
-            $list_muc_thu_la= load_muc_thu_khoi_la();
-            include "Lop/Muc-thu-danh-sach-hien-tai.php";
-            break;
+                    
+                    $list_khoi=load_all_khoi();
+                    $list_khoan_thu=load_all_khoan_thu();     
+                    include "Lop/Muc-thu-them.php"; 
+                    break;
+
+                }else{
+                    insert_muc_thu($nam,$khoi,$kt,$tien);    
+                    $list_muc_thu_mam= load_muc_thu_khoi_mam();
+                    $list_muc_thu_choi= load_muc_thu_khoi_choi();
+                    $list_muc_thu_la= load_muc_thu_khoi_la();
+                    include "Lop/Muc-thu-danh-sach-hien-tai.php";
+                    break;
+        }
+    }
            
         case 'danh-sach-muc-thu':
             $list_muc_thu_mam= load_muc_thu_khoi_mam();
@@ -605,6 +691,7 @@ if(isset($_GET['a'])){
              $list_thuc_don=load_all_thuc_don();
             include 'home.php';
             break;
+      
         default:
            include "home.php";
             break;

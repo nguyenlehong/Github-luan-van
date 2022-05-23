@@ -14,7 +14,7 @@
                     <th scope="col" class="width-table-150">Bắt đầu HK2 </th>
                     <th scope="col" class="width-table-150">Kết thúc HK2</th>
                     <th scope="col" class="width-table-150">Trạng Thái</th>
-                    <th scope="col" class="width-table-150">Thao thác</th>
+                    <!-- <th scope="col" class="width-table-150">Thao thác</th> -->
                 </tr>
                 <?php
                 $i=1;
@@ -42,11 +42,7 @@
                             <td>'.date("d/m/Y", $kt2).'</td>
                             <td>'.$TRANGTHAI1.'</td>
                             
-                            <td> <a href="'.$capnhat.'" class="gachchand">
-                                    <button type="button" class="btn btn-success">
-                                    <ion-icon name="pencil-outline"></ion-icon>
-                                    </button>
-                                </a></td>
+                           
                         </tr>
                            
                     ';
@@ -62,3 +58,8 @@
     <div style="height:25px">
     </div>
 </div>
+<!-- <td> <a href="'.$capnhat.'" class="gachchand">
+        <button type="button" class="btn btn-success">
+            <ion-icon name="pencil-outline"></ion-icon>
+        </button>
+    </a></td> -->

@@ -28,7 +28,31 @@ function delete_mon_an($M_ID){
 	$sql="delete from mon where M_ID=".$M_ID;
 	pdo_execute($sql);
 }
-
+function xoa_thuc_don_thu2(){
+	$sql="DELETE FROM thuc_don
+	WHERE thuc_don.THU='Thứ 2'";
+	pdo_execute($sql);
+}
+function xoa_thuc_don_thu3(){
+	$sql="DELETE FROM thuc_don
+	WHERE thuc_don.THU='Thứ 3'";
+	pdo_execute($sql);
+}
+function xoa_thuc_don_thu4(){
+	$sql="DELETE FROM thuc_don
+	WHERE thuc_don.THU='Thứ 4'";
+	pdo_execute($sql);
+}
+function xoa_thuc_don_thu5(){
+	$sql="DELETE FROM thuc_don
+	WHERE thuc_don.THU='Thứ 5'";
+	pdo_execute($sql);
+}
+function xoa_thuc_don_thu6(){
+	$sql="DELETE FROM thuc_don
+	WHERE thuc_don.THU='Thứ 6'";
+	pdo_execute($sql);
+}
 function load_all_buoi(){
 	$sql="select * from buoi";
 	$list=pdo_query($sql);
@@ -39,8 +63,12 @@ function load_all_thu(){
 	$list=pdo_query($sql);
 	return $list; 
 }
-function insert_thuc_don($khoi,$buoi,$thu,$mon){
-	$sql="insert into thuc_don(KHOI,BUOI,THU,MONAN) values('$khoi','$buoi','$thu','$mon')";
+// function insert_thuc_don($khoi,$buoi,$thu,$mon){
+// 	$sql="insert into thuc_don(KHOI,BUOI,THU,MONAN) values('$khoi','$buoi','$thu','$mon')";
+// 	pdo_execute($sql);
+// }
+function insert_thuc_don($buoi,$thu,$mon){
+	$sql="insert into thuc_don(BUOI,THU,MONAN) values('$buoi','$thu','$mon')";
 	pdo_execute($sql);
 }
 function load_mon_theo_loai2($LM_ID){

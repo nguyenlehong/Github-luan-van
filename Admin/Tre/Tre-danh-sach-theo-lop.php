@@ -15,7 +15,6 @@
                     <th scope="col" class="width-table-200">Họ tên cha </th>
                     <th scope="col" class="width-table-200">Họ tên mẹ </th>
                     <th scope="col" class="width-table-400">Địa chỉ</th>
-                    <th scope="col" class="width-table-250">Thao thác</th>
                 </tr>
                 <?php
                 $i=1;
@@ -35,25 +34,7 @@
                    <td>'.$T_HTCHA.'</td>
                    <td>'.$T_HTME.'</td>
                    <td>'.$T_DIACHI.'</td>
-                   <td>
-                       <a href="'.$chitiettre.'" class="gachchan2">
-                           <button type="button" class="btn btn-success">
-                               <ion-icon name="pencil-outline"></ion-icon>
-                           </button>
-                           </a>
-                           <a href="'.$lop.'" class="gachchan2">
-                           <button type="button" class="btn btn-primary">
-                               Lớp
-                           </button>
-                           </a>
-                           <a href="'.$xoa_tre.'" class="gachchan2">
-                           <button type="button" class="btn btn-danger">
-                           <ion-icon name="trash-outline"></ion-icon>
-                           </button>
-                           </a>
-
-                       </a>
-                   </td>
+                  
                </tr>
               
                    '; $i++;
@@ -65,3 +46,23 @@
 
     </div>
 </div>
+<!-- <td>
+    <a href="'.$chitiettre.'" class="gachchan2">
+        <button type="button" class="btn btn-success">
+            <ion-icon name="pencil-outline"></ion-icon>
+        </button>
+    </a>
+    <a href="'.$lop.'" class="gachchan2">
+        <button type="button" class="btn btn-primary">
+            Lớp
+        </button>
+    </a>
+    <a href="'.$xoa_tre.'" class="gachchan2">
+        <button type="button" class="btn btn-danger">
+            <ion-icon name="trash-outline"></ion-icon>
+        </button>
+    </a>
+
+    </a>
+</td>
+<th scope="col" class="width-table-250">Thao thác</th> -->

@@ -3,25 +3,16 @@
         <h3 class="font">Tạo thực đơn</h3>
     </div>
     <div class=noi-dung-80>
-        <form action="index.php?a=insert-thuc-don" method="POST" enctype="multipart/form-data">
-            <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Khối</label>
-                <div class="col-sm-10 pad20px">
-                    <select class="custom-select form-control" name="KHOI">
-
-                        <?php
-                            foreach ($list_khoi as $khoi) {
-                            extract($khoi);
-                            echo '
-                            <option value="'.$KHOI.'">'.$KHOI.'</option>                            
-                            ';
-                        }
-                        ?>
-
-
-                    </select>
+        <?php
+        if(isset($thongbao)&&($thongbao!=""))
+            echo'<div class="alert alert-danger" role="alert">
+                    '.$thongbao.'
                 </div>
-            </div>
+        ';
+        ?>
+
+        <form action="index.php?a=insert-thuc-don" method="POST" enctype="multipart/form-data">
+
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Buổi</label>
                 <div class="col-sm-10 pad20px">
@@ -30,6 +21,7 @@
                         <?php
                             foreach ($list_buoi as $buoi) {
                             extract($buoi);
+                          
                             echo '
                             <option value="'.$BUOI.'">'.$BUOI.'</option>                            
                             ';
