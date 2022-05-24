@@ -97,4 +97,11 @@ function load_all_thuc_don(){
 	$list=pdo_query($sql);
 	return $list; 
 }
+function load_all_thuc_don_bep(){
+	$sql="SELECT *
+	FROM mon INNER JOIN thuc_don
+	on mon.M_ID = thuc_don.MONAN";
+	$list=pdo_query($sql);
+	return $list; 
+}
 ?>

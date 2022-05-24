@@ -11,6 +11,8 @@ include "Model/Tai-khoan.php";
                 $kiemtradangnhap=kiem_tra_dang_nhap($id,$matkhau);    
                 $kiemtradangnhapadmin=kiem_tra_dang_nhap_admin($id,$matkhau);
                 $kiemtradangnhapqtv=kiem_tra_dang_nhap_qtv($id,$matkhau);  
+                $kiemtradangnhapbep=kiem_tra_dang_nhap_bep($id,$matkhau);  
+
 
                     if(is_array($kiemtradangnhap)){
                         $_SESSION['user']=$kiemtradangnhap;
@@ -24,7 +26,11 @@ include "Model/Tai-khoan.php";
                         $_SESSION['qtv']= $kiemtradangnhapqtv;
                          header('location: QTV/index.php');	
                     
-                }else{
+                    }else if(is_array( $kiemtradangnhapbep)){
+                        $_SESSION['bep']= $kiemtradangnhapbep;
+                         header('location: Bep/index.php?c=danh-sach-thuc-don');	
+                    
+                    }else{
                         $thongbaoo="Tài khoản hoặc mật khẩu không đúng";
                         include "index.php";
                     }                                 

@@ -256,7 +256,9 @@ if(isset($_GET['a'])){
                             break;
                         }else{
                             insert_phan_cong($L_ID,$NV_ID,$CB_ID);
-                            $list_phan_cong=load_all_phan_cong();
+                            $list_phan_cong=load_all_phan_cong_hien_tai();
+                            // $list_phan_cong=load_all_phan_cong();
+
                             include "Can-bo/Danh-sach-phan-cong.php";
                             break;
                         }               

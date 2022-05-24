@@ -3,7 +3,7 @@
         <h3 class="font">Danh sách loại món</h3>
     </div>
     <div class=noi-dung-70>
-        <a href="index.php?b=them-loai-mon"> <button type="button"
+        <a href="index.php?c=them-loai-mon"> <button type="button"
                 class=" trang btn btn-success width100 text-white">Thêm
             </button></a>
         <?php
@@ -16,7 +16,7 @@
             '.$LM_TEN.'
            
         <a href="'.$delete.'" class="gachchands">
-            <button type=" reset" class="btn btn-danger">
+            <button type=" reset" class="btn btn-danger"">
                 <ion-icon name="trash-outline"></ion-icon>
             </button>
         </a>

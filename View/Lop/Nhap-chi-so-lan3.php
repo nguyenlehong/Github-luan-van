@@ -53,13 +53,14 @@
             <table class=" table table-hover">
                 <tr class="table-primary">
                     <th scope="col" class="width-table-100"><input type="checkbox" name="" id='checkAll'>check</th>
-                    <th scope="col" class="width-table-100">ID</th>
+                    <th scope="col" class="width-table-50">ID</th>
                     <th scope="col" class="width-table-200">Họ & tên</th>
                     <th scope="col" class="width-table-150">Ngày sinh</th>
-                    <th scope="col" class="width-table-150">Giới tính</th>
+                    <th scope="col" class="width-table-100">Giới tính</th>
                     <th scope="col" class="width-table-150">Ngày đo</th>
-                    <th scope="col" class="width-table-150">Chiều cao </th>
-                    <th scope="col" class="width-table-150">Cân nặng</th>
+                    <th scope="col" class="width-table-100">Chiều cao </th>
+                    <th scope="col" class="width-table-100">Cân nặng</th>
+                    <th scope="col" class="width-table-150">Trạng thái</th>
                 </tr>
                 <?php                           
                     if(isset($_GET['L_ID'])&&($_GET['L_ID']>0)){
@@ -83,7 +84,22 @@
                             // $T_NGAYSINH=$row['T_NGAYSINH'];                     
                             $T_PHAI=$row['T_PHAI'];  
                             $thang=$row['THANG'];     
-                             $time = strtotime($row['T_NGAYSINH']);                    
+                             $time = strtotime($row['T_NGAYSINH']);     
+                             
+                             $ccM= ($cc/100);               
+                             $BMI=$cn/($ccM * $ccM );
+                             if($BMI < 14){
+                                 $thongbao="Thiếu cân";
+                             } 
+                             else if(14 < $BMI && $BMI < 17) {
+                                 $thongbao="Bình thường ";
+                             } 
+                             else if($BMI >17) {
+                                 $thongbao="thừa cân ";
+                                 
+                             } else {
+                                 $thongbao="";
+                             }
 
             ?>
                 <tr>
@@ -95,6 +111,13 @@
                     <td><?=$thang?></td>
                     <td><input type="number" step="0.1" name="CHIEUCAO_<?= $T_ID ?>" value="<?=$cc?>"></td>
                     <td><input type=" number" step="0.1" name="CANNANG_<?= $T_ID ?>" value='<?=$cn?>'></td>
+                    <td>
+                        <?php
+                          if(isset($thongbao)&&($thongbao!=""))
+                          echo $thongbao;
+                      ?>
+
+                    </td>
                 </tr>
                 <?php
             }
