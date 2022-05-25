@@ -29,9 +29,26 @@
                 $cc =$_POST['CHIEUCAO_'.$updateid];
                 $cn =$_POST['CANNANG_'.$updateid];      
                 $th=$_POST['thang'];
+
+
+                $ccM= ($cc/100);               
+                $BMI=$cn/($ccM * $ccM );
+                if($BMI < 14){
+                    $xeploai="Thiếu cân";
+                } 
+                else if(14 < $BMI && $BMI < 17) {
+                    $xeploai="Bình thường ";
+                } 
+                else if($BMI >17) {
+                    $xeploai="Thừa cân ";
+                    
+                } else {
+                    $xeploai="";
+                }
+                
                 if($cc !='' && $cn !=''){                    
                     $capnhat = "update chi_so_dau_hk2 set
-                    THANG='".$th."',CHIEUCAO='".$cc."',CANNANG='".$cn."'
+                    THANG='".$th."',CHIEUCAO='".$cc."',CANNANG='".$cn."',XEPLOAI='".$xeploai."'
                     where T_ID=".$updateid;                   
                     mysqli_query($conn,$capnhat);                                   
                 }              

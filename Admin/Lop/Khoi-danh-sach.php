@@ -7,15 +7,19 @@
         foreach ($list_khoi as $khoi) {
             extract($khoi);
             $listlopkhoi="index.php?a=loc-lop-theo-khoi&KHOI=".$KHOI;
+          
+
             echo '
             
             <div class="alert alert-success" role="alert">
            '.$KHOI.'
+
             <a href="'.$listlopkhoi.'" class="gachchands">
                 <button type=" reset" class="btn btn-success">
                 <ion-icon name="list-outline"></ion-icon>
                 </button>
             </a>
+   
         </div>
                    
             ';

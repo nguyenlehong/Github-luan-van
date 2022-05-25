@@ -30,7 +30,6 @@
                    $time = strtotime($T_NGAYSINH);
                    $xoa="index.php?a=xoa-tre&T_ID=".$T_ID;
                    $capnhat="index.php?a=cap-nhat-thong-tin-tre&T_ID=".$T_ID;
-                   $lenlop="index.php?a=len-lop-tre&T_ID=".$T_ID;
                    echo '
                    <tr>
                    <th scope="row">'.$i.'</th>
@@ -43,11 +42,7 @@
                    <td>'.$T_HTME.'</td>
                    <td>'.$L_TEN.'</td>
                    <td>
-                   <a href="'.$lenlop.'" class="gachchan2">
-                           <button type="button" class="btn btn-primary">
-                               <ion-icon name="pencil-outline"></ion-icon>
-                           </button>
-                           </a>
+                
                        <a href="'.$capnhat.'" class="gachchan2">
                            <button type="button" class="btn btn-success">
                                <ion-icon name="pencil-outline"></ion-icon>
@@ -73,3 +68,9 @@
 
     </div>
 </div>
+<!-- $lenlop="index.php?a=len-lop-tre&T_ID=".$T_ID;
+<a href="'.$lenlop.'" class="gachchan2">
+    <button type="button" class="btn btn-primary">
+        <ion-icon name="pencil-outline"></ion-icon>
+    </button>
+</a> -->

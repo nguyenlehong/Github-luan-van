@@ -147,7 +147,7 @@ if(isset($_GET['a'])){
             include 'Mon-an/Thuc-don-danh-sach.php';
             break;
         case 'danh-sach-thuc-don':
-            $list_thuc_don=load_all_thuc_don();
+            $list_thuc_don=load_all_thuc_don_bep();
             include 'Mon-an/Thuc-don-danh-sach.php';
             break;
         case 'them-can-bo':
@@ -600,6 +600,50 @@ if(isset($_GET['a'])){
             }
             include "Lop/Lop-danh-sach-theo-khoi.php";
             break;
+
+
+            
+        case 'danh-sach-chi-so-suc-khoe':   
+            include "Lop/Danh-sach-lan-do.php";
+            break;
+        case 'danh-sach-tre-thieu-can-lan1':
+            $list=Load_thieu_can_lan_1();
+            include "Lop/Danh-sach-thieu-can.php"; 
+            break;
+        case 'danh-sach-tre-thieu-can-lan2':
+            $list=Load_thieu_can_lan_2();
+            include "Lop/Danh-sach-thieu-can.php"; 
+            break;
+        case 'danh-sach-tre-thieu-can-dau-hk2':
+            $list=Load_thieu_can_lan_dau_hk2();
+            include "Lop/Danh-sach-thieu-can.php"; 
+            break;
+        case 'danh-sach-tre-thieu-can-cuoi-hk2':
+            $list=Load_thieu_can_lan_cuoi_hk2();
+            include "Lop/Danh-sach-thieu-can.php"; 
+            break;
+
+
+            
+        case 'danh-sach-tre-thua-can-lan1':
+            $list=Load_thua_can_lan_1();
+            include "Lop/Danh-sach-thua-can.php"; 
+            break;
+        case 'danh-sach-tre-thua-can-lan2':
+            $list=Load_thua_can_lan_2();
+            include "Lop/Danh-sach-thua-can.php"; 
+            break;   
+            
+        case 'danh-sach-tre-thua-can-dau-hk2':
+            $list=Load_thua_can_dau_hk2();
+            include "Lop/Danh-sach-thua-can.php"; 
+            break;   
+         
+        case 'danh-sach-tre-thua-can-cuoi-hk2':
+            $list=Load_thua_can_cuoi_hk2();
+            include "Lop/Danh-sach-thua-can.php"; 
+            break;  
+            
         case 'them-khoi':
             include "Lop/Khoi-them.php";
             break;
@@ -690,15 +734,19 @@ if(isset($_GET['a'])){
                 
             break;
         case 'trang-chu':
-             $list_thuc_don=load_all_thuc_don();
+            $list_thuc_don=load_all_thuc_don_bep();
             include 'home.php';
             break;
+
       
         default:
+            $list_thuc_don=load_all_thuc_don_bep();
            include "home.php";
             break;
     }
 }else{
+    $list_thuc_don=load_all_thuc_don_bep();
+
     include "home.php";
 }
 include "footer.php";

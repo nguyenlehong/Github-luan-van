@@ -85,6 +85,154 @@ function load_all_lop_pc(){
 	return $list; 
 }
 
+function load_all_tre_test($KHOI){
+	$sql="SELECT *
+FROM khoi INNER JOIN lop
+on khoi.KHOI = lop.KHOI
+INNER JOIN lop_tre
+on lop.L_ID = lop_tre.L_ID
+
+
+where 1";
+if($KHOI!=""){
+	$sql.=" and khoi.KHOI ='".$KHOI."'";	
+	}
+	$sql.=" order by L_ID desc";
+	
+	$list=pdo_query($sql);
+	return $list; 
+
+	
+}
+function Load_thieu_can_lan_dau_hk2(){	
+	$sql="SELECT *
+	FROM nam_hoc INNER JOIN lop
+	on nam_hoc.NAMHOC =lop.NAMHOC
+	INNER JOIN lop_tre
+	on lop.L_ID = lop_tre.L_ID
+	INNER JOIN tre
+	on tre.T_ID = lop_tre.T_ID
+	INNER JOIN chi_so_dau_hk2
+	on chi_so_dau_hk2.T_ID = tre.T_ID
+	WHERE nam_hoc.TRANGTHAI='danghoatdong' and chi_so_dau_hk2.XEPLOAI='Thiếu cân'
+	order by lop.L_ID desc";
+	$list=pdo_query($sql);
+	return $list; 	
+}
+function Load_thieu_can_lan_cuoi_hk2(){	
+	$sql="SELECT *
+	FROM nam_hoc INNER JOIN lop
+	on nam_hoc.NAMHOC =lop.NAMHOC
+	INNER JOIN lop_tre
+	on lop.L_ID = lop_tre.L_ID
+	INNER JOIN tre
+	on tre.T_ID = lop_tre.T_ID
+	INNER JOIN chi_so_cuoi_hk2
+	on chi_so_cuoi_hk2.T_ID = tre.T_ID
+	WHERE nam_hoc.TRANGTHAI='danghoatdong' and chi_so_cuoi_hk2.XEPLOAI='Thiếu cân'
+	order by lop.L_ID desc";
+	$list=pdo_query($sql);
+	return $list; 	
+}
+
+
+
+function Load_thieu_can_lan_1(){	
+	$sql="SELECT *
+	FROM nam_hoc INNER JOIN lop
+	on nam_hoc.NAMHOC =lop.NAMHOC
+	INNER JOIN lop_tre
+	on lop.L_ID = lop_tre.L_ID
+	INNER JOIN tre
+	on tre.T_ID = lop_tre.T_ID
+	INNER JOIN chi_so_dau_hk1
+	on chi_so_dau_hk1.T_ID = tre.T_ID
+	WHERE nam_hoc.TRANGTHAI='danghoatdong' and chi_so_dau_hk1.XEPLOAI='Thiếu cân'
+	order by lop.L_ID desc";
+	$list=pdo_query($sql);
+	return $list; 	
+}
+function Load_thieu_can_lan_2(){	
+	$sql="SELECT *
+	FROM nam_hoc INNER JOIN lop
+	on nam_hoc.NAMHOC =lop.NAMHOC
+	INNER JOIN lop_tre
+	on lop.L_ID = lop_tre.L_ID
+	INNER JOIN tre
+	on tre.T_ID = lop_tre.T_ID
+	INNER JOIN chi_so_cuoi_hk1
+	on chi_so_cuoi_hk1.T_ID = tre.T_ID
+	WHERE nam_hoc.TRANGTHAI='danghoatdong' and chi_so_cuoi_hk1.XEPLOAI='Thiếu cân'
+	order by lop.L_ID desc";
+	$list=pdo_query($sql);
+	return $list; 	
+}
+function Load_thua_can_lan_1(){
+	
+	$sql="SELECT *
+	FROM nam_hoc INNER JOIN lop
+	on nam_hoc.NAMHOC =lop.NAMHOC
+	INNER JOIN lop_tre
+	on lop.L_ID = lop_tre.L_ID
+	INNER JOIN tre
+	on tre.T_ID = lop_tre.T_ID
+	INNER JOIN chi_so_dau_hk1
+	on chi_so_dau_hk1.T_ID = tre.T_ID
+	WHERE nam_hoc.TRANGTHAI='danghoatdong' and chi_so_dau_hk1.XEPLOAI='Thừa cân'
+	
+	order by lop.L_ID desc";
+	$list=pdo_query($sql);
+	return $list; 	
+}
+function Load_thua_can_lan_2(){
+	
+	$sql="SELECT *
+	FROM nam_hoc INNER JOIN lop
+	on nam_hoc.NAMHOC =lop.NAMHOC
+	INNER JOIN lop_tre
+	on lop.L_ID = lop_tre.L_ID
+	INNER JOIN tre
+	on tre.T_ID = lop_tre.T_ID
+	INNER JOIN chi_so_cuoi_hk1
+	on chi_so_cuoi_hk1.T_ID = tre.T_ID
+	WHERE nam_hoc.TRANGTHAI='danghoatdong' and chi_so_cuoi_hk1.XEPLOAI='Thừa cân'
+	
+	order by lop.L_ID desc";
+	$list=pdo_query($sql);
+	return $list; 
+	
+}
+function Load_thua_can_dau_hk2(){
+	$sql="SELECT *
+	FROM nam_hoc INNER JOIN lop
+	on nam_hoc.NAMHOC =lop.NAMHOC
+	INNER JOIN lop_tre
+	on lop.L_ID = lop_tre.L_ID
+	INNER JOIN tre
+	on tre.T_ID = lop_tre.T_ID
+	INNER JOIN chi_so_dau_hk2
+	on chi_so_dau_hk2.T_ID = tre.T_ID
+	WHERE nam_hoc.TRANGTHAI='danghoatdong' and chi_so_dau_hk2.XEPLOAI='Thừa cân'	
+	order by lop.L_ID desc";
+	$list=pdo_query($sql);
+	return $list; 
+}
+function Load_thua_can_cuoi_hk2(){
+	$sql="SELECT *
+	FROM nam_hoc INNER JOIN lop
+	on nam_hoc.NAMHOC =lop.NAMHOC
+	INNER JOIN lop_tre
+	on lop.L_ID = lop_tre.L_ID
+	INNER JOIN tre
+	on tre.T_ID = lop_tre.T_ID
+	INNER JOIN chi_so_cuoi_hk2
+	on chi_so_cuoi_hk2.T_ID = tre.T_ID
+	WHERE nam_hoc.TRANGTHAI='danghoatdong' and chi_so_cuoi_hk2.XEPLOAI='Thừa cân'	
+	order by lop.L_ID desc";
+	$list=pdo_query($sql);
+	return $list; 
+}
+
 function load_lop_thuoc_khoi($KHOI){
 	$sql="select * from lop where 1";
 	if($KHOI!=""){
@@ -95,6 +243,8 @@ function load_lop_thuoc_khoi($KHOI){
 	$list=pdo_query($sql);
 	return $list; 
 }
+
+
 function load_lop_thuoc_khoi_hoat_dong($KHOI){
 	$sql="SELECT *
 	from nam_hoc INNER JOIN lop

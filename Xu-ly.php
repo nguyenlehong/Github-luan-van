@@ -130,7 +130,7 @@ if(isset($_GET['b'])){
             include "View/Mon-an/Mon-an-danh-sach.php";
             break;
         case 'danh-sach-thuc-don':
-            $list_thuc_don=load_all_thuc_don();
+            $list_thuc_don=load_all_thuc_don_bep();
             include 'View/Mon-an/Thuc-don-danh-sach.php';
             break;
         case 'dang-xuat':

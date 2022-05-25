@@ -23,7 +23,7 @@
     <div style="height:25px"></div>
 </div>
 <!-- <a href="'.$delete.'" class="gachchands">
-    <button type="button" class="btn btn-danger" onclick="deleteLM()">
+    <button type="button" class="btn btn-danger" ">
         <ion-icon name="trash-outline"></ion-icon>
     </button>
 </a>

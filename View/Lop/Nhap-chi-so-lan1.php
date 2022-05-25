@@ -30,7 +30,6 @@
                 $cn =$_POST['CANNANG_'.$updateid];      
                 $th=$_POST['thang'];
                 
-
                 $ccM= ($cc/100);               
                 $BMI=$cn/($ccM * $ccM );
                 if($BMI < 14){
@@ -40,16 +39,12 @@
                     $xeploai="Bình thường ";
                 } 
                 else if($BMI >17) {
-                    $xeploai="thừa cân ";
+                    $xeploai="Thừa cân ";
                     
                 } else {
                     $xeploai="";
                 }
-                   
-
-
-
-                
+                               
                 if($cc !='' && $cn !=''){                    
                     $capnhat = "update chi_so_dau_hk1 set
                     THANG='".$th."',CHIEUCAO='".$cc."',CANNANG='".$cn."',XEPLOAI='".$xeploai."'
@@ -117,7 +112,7 @@
                                 $thongbao="Bình thường ";
                             } 
                             else if($BMI >17) {
-                                $thongbao="thừa cân ";
+                                $thongbao="Thừa cân ";
                                 
                             } else {
                                 $thongbao="";

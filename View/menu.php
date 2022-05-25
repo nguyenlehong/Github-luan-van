@@ -6,6 +6,12 @@ if(isset($_SESSION['user'])){
 
 ?><div class="menu ">
     <div class="menu2 ">
+        <li class="item2 " id=" ">
+            <a href="Xu-ly.php?b=ho-so " class="btn2">
+                <ion-icon name="home-outline"></ion-icon>
+                Trang chủ
+            </a>
+        </li>
         <li class="item2 " id="giaovien">
             <a href="#giaovien" class="btn2 ">
                 <ion-icon name="person-outline"></ion-icon> Cán bộ
@@ -22,12 +28,13 @@ if(isset($_SESSION['user'])){
             <a href="#hocsinh" class="btn2 ">
                 <ion-icon name="person-outline"></ion-icon>
 
-                Quản lý học sinh
+                Quản lý trẻ
             </a>
             <div class="smenu">
+                <a href="Xu-ly.php?b=danh-sach-khoan-thu ">Khoản thu</a>
 
                 <a href="Xu-ly.php?b=cap-nhat-tre"> Cập nhật trẻ</a>
-                <a href=" ">Chỉ sổ</a>
+                <!-- <a href=" ">Chỉ sổ</a> -->
 
             </div>
         </li>
@@ -41,7 +48,6 @@ if(isset($_SESSION['user'])){
                 <!-- <a href="Xu-ly.php?b=danh-sach-khoi ">Danh sách khối</a> -->
                 <a href="Xu-ly.php?b=danh-sach-lop ">Chỉ số lớp</a>
                 <a href="Xu-ly.php?b=danh-sach-lop-phieu-thu ">Phiếu thu</a>
-                <a href="Xu-ly.php?b=danh-sach-khoan-thu ">Khoản thu</a>
 
             </div>
         </li>
@@ -53,9 +59,9 @@ if(isset($_SESSION['user'])){
                 Quản lý Món Ăn
             </a>
             <div class="smenu ">
-                <a href="Xu-ly.php?b=danh-sach-loai-mon "> Loại món ăn</a>
-                <a href="Xu-ly.php?b=danh-sach-mon-an">Món ăn</a>
                 <a href="Xu-ly.php?b=danh-sach-thuc-don ">Thực đơn</a>
+                <a href="Xu-ly.php?b=danh-sach-loai-mon "> Danh sách loại món</a>
+                <a href="Xu-ly.php?b=danh-sach-mon-an">Danh sách món ăn</a>
 
             </div>
         </li>

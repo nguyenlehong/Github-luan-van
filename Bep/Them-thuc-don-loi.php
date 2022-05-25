@@ -9,7 +9,7 @@
         $result2 = $conn->query($sql2);
         if($result2->num_rows>0){
              $thongbao="lỗi thực đơn đã tồn tại! Vui lòng nhập lại";
-             header('location:index.php?c=them-thuc-don-loi');
+             header('location:index.php?c=them-thuc-don');
          exit;
         }
 
@@ -45,13 +45,11 @@
         <h3 class="font">Tạo thực đơn</h3>
     </div>
     <div class=noi-dung-80>
-        <?php
-        if(isset($thongbao)&&($thongbao!=""))
-            echo'<div class="alert alert-success" role="alert">
-                    '.$thongbao.'
-                </div>
-        ';
-        ?>
+
+        <div class="alert alert-danger" role="alert">
+            Lỗi! thực đơn đã tồn tại!
+        </div>
+
 
         <form action="" method="POST">
 
@@ -177,49 +175,3 @@ $(document).ready(function() {
     });
 });
 </script>
-
-
-
-<!-- <?php                           
-                    $query="SELECT * FROM mon";                       
-                        $result=mysqli_query($conn,$query);
-                        while($row = mysqli_fetch_array($result)){
-                            $M_ID=$row['M_ID'];
-                            $tenmon=$row['M_TEN'];
-                            $mota=$row['M_MOTA'];  
-                                           
-
-                          
-                         
-            ?>
-<tr>
-    <td><input type="checkbox" name="update[]" value='<?=$M_ID?>' id=""></td>
-    <th scope="row"> <?=$M_ID?> </th>
-    <td>
-        <?=$tenmon?>
-    </td>
-
-
-
-    <td> <?=$mota?></td>
-</tr>
-<?php
-            }
-            ?> -->
-
-
-<!-- <?php
-            foreach ($list_mon as $mon) {
-                extract($mon);
-                echo '
-                <tr>
-                <td><input type="checkbox" name="update[]" value="<?=$M_ID?>" id=""></td>
-<td>'.$M_ID.'</td>
-<td>'.$M_TEN.'</td>
-<input type="hidden" name="id_<?=$M_ID ?>" value="'.$M_ID.'">
-</tr>
-
-
-';
-}
-?> -->

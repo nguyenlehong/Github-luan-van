@@ -32,6 +32,13 @@
         $list=pdo_query($sql);
         return $list; 
     }
+
+
+
+
+
+
+    
     function load_1_tre_chi_so($T_ID){
         $sql="select * from tre where T_ID=".$T_ID;
         $list=pdo_query_one($sql);

@@ -89,6 +89,13 @@ if(isset($_GET['c'])){
             $list_mon=load_all_mon();
             include 'Them-thuc-don.php';
             break;
+            case 'them-thuc-don-loi':
+           
+                $list_buoi=load_all_buoi();
+                $list_thu=load_all_thu();
+                $list_mon=load_all_mon();
+                include 'Them-thuc-don-loi.php';
+                break;
         case 'danh-sach-thuc-don':
             $list_thuc_don=load_all_thuc_don_bep();
             include 'Danh-sach-thuc-don.php';

@@ -98,6 +98,8 @@ function load_all_phan_cong_tim($id){
 	$sql="SELECT *
 	FROM lop  INNER JOIN phan_cong pc 
 	on lop.L_ID = pc.L_ID
+	INNER JOIN nam_hoc
+	on nam_hoc.NAMHOC = lop.NAMHOC
 	INNER JOIN nhiem_vu 
 	on nhiem_vu.NV_ID=pc.NV_ID
 	INNER JOIN can_bo 

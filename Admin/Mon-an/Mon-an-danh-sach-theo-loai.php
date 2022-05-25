@@ -11,7 +11,7 @@
                     <th class="width-table-250" scope="col">Tên món</th>
                     <th class="width-table-250" scope="col">Ảnh</th>
                     <th class="width-table-600" scope="col">Mô tả</th>
-                    <th scope="col">Thao tác</th>
+
 
                 </tr>
                 <?php
@@ -27,18 +27,7 @@
                     <td class="width-table-250">'.$M_TEN.'</td>
                     <td class="width-table-250">'.$hinh.' </td>
                     <td class="width-table-600">'.$M_MOTA.'</td>
-                    <td>
-                        <a href="" class="gachchan2">
-                            <button type="button" class="btn btn-success">
-                                <ion-icon name="pencil-outline"></ion-icon>
-                            </button>
-                        </a>
-                        <a href="'.$xoa_mon.'" class="gachchan2">
-                            <button type="button" class="btn btn-danger">
-                                <ion-icon name="trash-outline"></ion-icon>
-                            </button>
-                        </a>
-                    </td>
+                
                 </tr>
                     
                     ';

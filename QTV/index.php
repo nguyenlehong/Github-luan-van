@@ -16,7 +16,8 @@ if(isset($_GET['b'])){
     $b=$_GET['b'];
     switch ($b) {
         case 'trang-chu':
-            $list_thuc_don=load_all_thuc_don();
+            $list_thuc_don=load_all_thuc_don_bep();
+
             include 'home.php';
             break;
         case 'dang-xuat':
@@ -274,7 +275,7 @@ if(isset($_GET['b'])){
             include "Mon/Danh-sach-mon-an.php";
             break;
         case 'thuc-don':
-            $list_thuc_don=load_all_thuc_don();
+            $list_thuc_don=load_all_thuc_don_bep();
             include 'Mon/Thuc-don.php';
             break;
         default:
@@ -283,6 +284,7 @@ if(isset($_GET['b'])){
              break;
      }
  }else{
+    $list_thuc_don=load_all_thuc_don_bep();
      include "home.php";
  }
  include "footer.php";

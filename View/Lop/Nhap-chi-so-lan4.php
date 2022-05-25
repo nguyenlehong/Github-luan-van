@@ -1,6 +1,6 @@
 <div class="content">
     <div class="tieu-de">
-        <h3 class="font"> Chỉ số đo đầu HK2:
+        <h3 class="font"> Chỉ số đo cuối HK2:
             <?php
              if(isset($_GET['L_ID'])&&($_GET['L_ID']>0)){
                 $L_ID=$_GET['L_ID'];
@@ -29,9 +29,27 @@
                 $cc =$_POST['CHIEUCAO_'.$updateid];
                 $cn =$_POST['CANNANG_'.$updateid];      
                 $th=$_POST['thang'];
+                $ccM= ($cc/100);               
+                $BMI=$cn/($ccM * $ccM );
+                if($BMI < 14){
+                    $xeploai="Thiếu cân";
+                } 
+                else if(14 < $BMI && $BMI < 17) {
+                    $xeploai="Bình thường ";
+                } 
+                else if($BMI >17) {
+                    $xeploai="Thừa cân ";
+                    
+                } else {
+                    $xeploai="";
+                }
+
+
+
+                
                 if($cc !='' && $cn !=''){                    
                     $capnhat = "update chi_so_cuoi_hk2 set
-                    THANG='".$th."',CHIEUCAO='".$cc."',CANNANG='".$cn."'
+                    THANG='".$th."',CHIEUCAO='".$cc."',CANNANG='".$cn."',XEPLOAI='".$xeploai."'
                     where T_ID=".$updateid;                   
                     mysqli_query($conn,$capnhat);                                   
                 }              
