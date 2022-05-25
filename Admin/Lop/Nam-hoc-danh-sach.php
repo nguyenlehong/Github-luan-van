@@ -25,12 +25,12 @@
                     $kt1 = strtotime($KTHK1);
                     $bd2 = strtotime($BDHK2);
                     $kt2 = strtotime($KTHK2);
-                    if($TRANGTHAI=='danghoatdong'){
-                        $TRANGTHAI1 ="Đang hoạt động";
-                    }else{
-                        $TRANGTHAI0 ="Đang hoạt động";
+                    // if($TRANGTHAI=='danghoatdong'){
+                    //     $TRANGTHAI1 ="Đang hoạt động";
+                    // }else{
+                    //     $TRANGTHAI0 ="Đang hoạt động";
                         
-                    }
+                    // }
 
                     echo '
                     <tr>
@@ -40,7 +40,7 @@
                             <td>'.date("d/m/Y", $kt1).'</td>
                             <td>'.date("d/m/Y", $bd2).'</td>
                             <td>'.date("d/m/Y", $kt2).'</td>
-                            <td>'.$TRANGTHAI1.'</td>
+                            <td>'.$TRANGTHAI.'</td>
                             
                            
                         </tr>
